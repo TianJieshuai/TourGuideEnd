@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <Button
+        android:id="@+id/mBt_Register_Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/mEt_Register_password"
+        android:layout_below="@+id/mEt_Register_password"
+        android:layout_marginTop="102dp"
+        android:text="确定" />
+
+    <EditText
+        android:id="@+id/mEt_Register_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="139dp"
+        android:ems="10"
+        android:hint="请注册账号" />
+
+    <EditText
+        android:id="@+id/mEt_Register_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/mEt_Register_name"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/mBtn_Register_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mBt_Register_Enter"
+        android:layout_alignBottom="@+id/mBt_Register_Enter"
+        android:layout_alignEnd="@+id/mEt_Register_password"
+        android:text="返回"
+        android:layout_alignRight="@+id/mEt_Register_password" />
+</RelativeLayout>

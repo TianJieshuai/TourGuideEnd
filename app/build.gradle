@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.shuaijie.tourguideend"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //为解决64K问题
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //为解决64K问题
+    compile 'com.android.support:multidex:1.0.2'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //volley
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    //retrofit和rxjava中间的适配器主要Rxjava2CallAdapter
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //retrofit的gson
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //rxjava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
+    //rxandroid
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //design资源包
+    implementation 'com.android.support:design:27.0.2'
+    //瀑布流控件依赖
+    implementation 'com.android.support:recyclerview-v7:27.0.2'
+    //zxing核心依赖
+    compile 'com.google.zxing:core:3.2.1'
+    //生成二维码依赖
+    compile 'com.journeyapps:zxing-android-embedded:3.3.0'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    compile 'com.tencent.bugly:crashreport:2.6.6.1'
+    //友盟推送
+    compile project(':PushSDK')
+}
+

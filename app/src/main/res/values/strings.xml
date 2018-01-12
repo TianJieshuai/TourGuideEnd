@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">导游端</string>
+    <string name="load_more_loading">加载中，请稍后...</string>
+    <string name="load_more_loaded_no_more">亲，没有更多了...</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="finish">ProgressBar is finished.</string>
+
+    <string name="qq_header_reset">下拉刷新</string>
+    <string name="qq_header_pull">下拉刷新</string>
+    <string name="qq_header_pull_over">释放立即刷新</string>
+    <string name="qq_header_refreshing">正在刷新...</string>
+    <string name="qq_header_completed">刷新成功</string>
+</resources>
