@@ -14,7 +14,7 @@ import com.shuaijie.tourguideend.ui.main.MainActivity;
 import com.shuaijie.tourguideend.ui.register.RegisterActivity;
 
 /**
- * 登录对方的世界观
+ * 登录
  */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     private SharedPreferences sp;
