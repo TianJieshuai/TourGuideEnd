@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBarView">
+        <attr name="left_icon_visibility" format="integer" />
+        <attr name="left_text_visibility" format="integer" />
+        <attr name="center_text_visibility" format="integer" />
+        <attr name="right_icon_visibility" format="integer" />
+        <attr name="right_text_visibility" format="integer" />
+    </declare-styleable>
+</resources>
