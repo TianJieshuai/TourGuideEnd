@@ -4,11 +4,10 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.shuaijie.tourguideend.http.HttpCallback;
 import com.shuaijie.tourguideend.http.httptoos.RetrofitTools;
 import com.shuaijie.tourguideend.service.RetrofitService;
-import com.shuaijie.tourguideend.utils.GsonUtils;
+import com.shuaijie.tourguideend.utils.Gson;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -62,7 +61,7 @@ public class RetrofitRequest<T> implements HttpRequest<T> {
                             String string = responseBody.string();
                             Log.e("TAG", string);
 
-                            Gson gson = new Gson();
+                            com.google.gson.Gson gson = new com.google.gson.Gson();
                             T t = gson.fromJson(string, type);
                             callback.success(t);
 
@@ -103,7 +102,7 @@ public class RetrofitRequest<T> implements HttpRequest<T> {
                             String string = responseBody.string();
                             Log.e("TAG", string);
                             //TODO 注意这个地方：
-                            T t = GsonUtils.fromJson(string, type);
+                            T t = Gson.fromJson(string, type);
 
                             callback.success(t);
                         } catch (IOException e) {

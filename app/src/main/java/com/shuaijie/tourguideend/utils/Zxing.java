@@ -14,7 +14,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
  * 此情无计可消除，才下眉头，却上心头。
  */
 
-public class ZxingUtils {
+public class Zxing {
     public static Bitmap createBitmap(String str) {
         Bitmap bitmap = null;
         BitMatrix result = null;

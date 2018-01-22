@@ -5,7 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
-import com.shuaijie.tourguideend.utils.VersionUtils;
+import com.shuaijie.tourguideend.utils.Version;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
@@ -50,7 +50,7 @@ public class App extends Application {
         //登录注册
         UMShareAPI.get(this);
         Config.DEBUG = true;
-        VersionUtils.init(this);
+        Version.init(this);
         PushAgent mPushAgent = PushAgent.getInstance(this);
         //消息推送
         //注册推送服务，每次调用register方法都会回调该接口

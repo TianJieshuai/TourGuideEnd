@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.shuaijie.tourguideend.utils.GsonUtils;
+import com.shuaijie.tourguideend.utils.Gson;
 
 import java.lang.reflect.Type;
 
@@ -156,10 +156,10 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public String toJson(Object o) {
-        return GsonUtils.toJson(o);
+        return Gson.toJson(o);
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
-        return GsonUtils.fromJson(json, typeOfT);
+        return Gson.fromJson(json, typeOfT);
     }
 }

@@ -18,7 +18,7 @@ import com.google.zxing.integration.android.IntentResult;
 import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
 import com.shuaijie.tourguideend.ui.version.VersionActivity;
-import com.shuaijie.tourguideend.utils.ZxingUtils;
+import com.shuaijie.tourguideend.utils.Zxing;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
@@ -126,7 +126,7 @@ public class ZxingActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()) {
             //生成二维码
             case R.id.btn_test:
-                Bitmap bitmap = ZxingUtils.createBitmap("I like you,But just like you!!");
+                Bitmap bitmap = Zxing.createBitmap("I like you,But just like you!!");
                 pic_test.setImageBitmap(bitmap);
                 break;
             //扫描二维码

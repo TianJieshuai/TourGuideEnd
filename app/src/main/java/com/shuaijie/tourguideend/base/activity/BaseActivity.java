@@ -21,7 +21,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.shuaijie.tourguideend.R;
-import com.shuaijie.tourguideend.utils.GsonUtils;
+import com.shuaijie.tourguideend.utils.Gson;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -506,10 +506,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public String toJson(Object o) {
-        return GsonUtils.toJson(o);
+        return Gson.toJson(o);
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
-        return GsonUtils.fromJson(json, typeOfT);
+        return Gson.fromJson(json, typeOfT);
     }
 }
