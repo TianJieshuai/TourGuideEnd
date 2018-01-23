@@ -3,11 +3,8 @@ package com.shuaijie.tourguideend.utils;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-
-import com.shuaijie.tourguideend.R;
 
 /**
  * Created by shuaiJie on 2017/12/2.
