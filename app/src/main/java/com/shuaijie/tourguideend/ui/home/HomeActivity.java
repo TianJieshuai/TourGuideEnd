@@ -1,22 +1,28 @@
 package com.shuaijie.tourguideend.ui.home;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 
 import com.shuaijie.tourguideend.R;
-import com.shuaijie.tourguideend.ui.Zxing.ZxingActivity;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
 
 
-public class HomeActivity extends BaseActivity implements View.OnClickListener {
+public class HomeActivity extends BaseActivity {
 
 
-    private Button bu_main;
+    private ViewPager viewpager;
+    private TabLayout tablayout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     protected void init() {
-        addBodyView(R.layout.activity_home);
+        addBodyView(R.layout.view_viewpager);
+        setFooterView(R.layout.view_tablayout);
     }
 
     @Override
@@ -24,18 +30,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
+
     protected void initView() {
-        bu_main = (Button) findViewById(R.id.bu_main);
-
-        bu_main.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.bu_main:
-                startActivity(new Intent(this, ZxingActivity.class));
-                break;
-        }
+        viewpager = (ViewPager) findViewById(R.id.viewpager);
+        tablayout = (TabLayout) findViewById(R.id.tablayout);
     }
 }
