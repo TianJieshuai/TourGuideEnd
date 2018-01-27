@@ -1,1 +1,1 @@
-include ':app', ':PushSDK', ':vitamio'
+include ':app', ':PushSDK'
