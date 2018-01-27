@@ -40,16 +40,17 @@ public class StartActivity extends BaseActivity {
         if (!guideShowed) {
             // 跳转到功能引导页
             startActivity(new Intent(StartActivity.this, WelcomActivity.class));
+            finish();
         } else {
             rlSplash = (RelativeLayout) findViewById(R.id.rl_splash);
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     startActivity(new Intent(StartActivity.this, LoginActivity.class));
+                    finish();
                 }
             }, 2000);
         }
-        finish();
     }
 
 }
