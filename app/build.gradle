@@ -51,7 +51,7 @@ dependencies {
     //友盟推送
     compile project(':PushSDK')
     // TODO 百分比适配     https://github.com/hongyangAndroid/android-percent-support-extend
-    compile 'com.android.support:percent:27.0.2'
+    //    compile 'com.android.support:percent:27.0.2'
     // TODO 根据原稿尺寸经行屏幕自动百分化  https://github.com/hongyangAndroid/AndroidAutoLayout
     compile 'com.zhy:autolayout:1.4.5'
 }

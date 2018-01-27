@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +21,7 @@ import android.widget.Toast;
 
 import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.utils.Gson;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.Stack;
  *定义抽象的BaseActivity,其余的Activity全部继承BaseActivity，
  *便于统一管理，一处修改，到处有效
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AutoLayoutActivity {
 
     //是否状态栏透明
     protected boolean isSetStatusBar = false;

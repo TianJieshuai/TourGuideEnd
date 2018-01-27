@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/mBt_Register_Enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/mEt_Register_password"
+        android:layout_alignLeft="@+id/mEt_Register_password"
         android:layout_below="@+id/mEt_Register_password"
         android:layout_marginTop="102dp"
         android:text="确定" />
@@ -43,6 +42,6 @@
         android:layout_alignBaseline="@+id/mBt_Register_Enter"
         android:layout_alignBottom="@+id/mBt_Register_Enter"
         android:layout_alignEnd="@+id/mEt_Register_password"
-        android:text="返回"
-        android:layout_alignRight="@+id/mEt_Register_password" />
+        android:layout_alignRight="@+id/mEt_Register_password"
+        android:text="返回" />
 </RelativeLayout>

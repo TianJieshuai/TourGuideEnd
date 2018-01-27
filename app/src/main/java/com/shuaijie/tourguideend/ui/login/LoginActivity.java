@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
-import com.shuaijie.tourguideend.ui.main.MainActivity;
+import com.shuaijie.tourguideend.ui.home.HomeActivity;
 import com.shuaijie.tourguideend.ui.register.RegisterActivity;
 
 /**
@@ -59,7 +59,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 //设置默认是自动登录状态
                 mCb_automatic_logon.setChecked(true);
                 //跳转界面
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             }
         }
     }
@@ -113,7 +113,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             editor.putString("PASSWORD", pass1);
             editor.commit();*/
             //跳转界面
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             finish();
         }
     }

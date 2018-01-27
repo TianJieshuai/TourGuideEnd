@@ -1,4 +1,4 @@
-package com.shuaijie.tourguideend.ui.main;
+package com.shuaijie.tourguideend.ui.home;
 
 import android.content.Intent;
 import android.view.View;
@@ -9,7 +9,7 @@ import com.shuaijie.tourguideend.ui.Zxing.ZxingActivity;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
 
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
 
     private Button bu_main;
