@@ -1,16 +1,24 @@
 package com.shuaijie.tourguideend.base.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Toast;
 
+import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.utils.Gson;
 
 import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 你能看到我留在屏幕上的字，却看不到我滴在键盘上的泪！
@@ -36,24 +44,191 @@ public abstract class BaseFragment extends Fragment {
      */
     protected boolean mIsPrepare;
 
+    //setHeaderView设置的view作用加载头布局
+    private View headerView;
+    //身体布局可同时存储多个
+    private Map<Integer, View> bodyViewMap = new HashMap<>();
+    //尾布局
+    private View footerView;
+    private LinearLayout headerlayout;
+    private View header_body_interval;
+    private LinearLayout not_scroll_body_layout;
+    private LinearLayout scroll_body_layout;
+    private ScrollView scroll_body_view;
+    private LinearLayout refresh_body_layout;
+    private SwipeRefreshLayout refresh_body_view;
+    private RelativeLayout body_layout;
+    private View body_footer_interval;
+    private LinearLayout footerlayout;
+    private LinearLayout base;
+    private RelativeLayout dock;
+
+
+    public final View inflate(int res) {
+        return View.inflate(getContext(), res, null);
+    }
+
+    //头布局
+    public void setHeaderView(int headerView) {
+        setHeaderView(inflate(headerView));
+    }
+
+    //头布局
+    public void setHeaderView(View headerView) {
+        this.headerView = headerView;
+    }
+
+    //设置身体布局 key = resID
+    protected void addBodyView(int res) {
+        this.bodyViewMap.put(res, inflate(res));
+    }
+
+    //设置尾布局
+    public void setFooterView(int footerView) {
+        setFooterView(inflate(footerView));
+    }
+
+    //设置尾布局
+    public void setFooterView(View footerView) {
+        this.footerView = footerView;
+    }
+
+    //检测加载头布局
+    private final void checkLoadHeader() {
+        if (headerView != null) {
+            headerlayout.addView(headerView);
+            header_body_interval.setVisibility(View.VISIBLE);
+        }
+    }
+
+    //身体布局加载模式
+    private int bodyShowModl = 1;
+    //不可滚动
+    private final int NOTSCROLL = 1;
+    //可滚动
+    private final int SCROLL = 2;
+    //下拉刷新
+    private final int REFRESH = 3;
+
+    //设置身体布局加载模式
+    public void setBodyShowModl(int bodyShowModl) {
+        switch (bodyShowModl) {
+            case NOTSCROLL:
+            case SCROLL:
+            case REFRESH:
+                this.bodyShowModl = bodyShowModl;
+                break;
+            default:
+                throw new NullPointerException("未识别");
+        }
+    }
+
+    private final void checkShowBody() {
+        switch (bodyShowModl) {
+            case NOTSCROLL:
+                not_scroll_body_layout.setVisibility(View.VISIBLE);
+                break;
+            case SCROLL:
+                scroll_body_layout.setVisibility(View.VISIBLE);
+                break;
+            case REFRESH:
+                refresh_body_layout.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
+    /**
+     * 加载布局
+     *
+     * @param res
+     */
+    protected final void loadBody(int res) {
+        removeBodyAllViews();
+        View bodyView = bodyViewMap.get(res);
+        try {
+            if (bodyView == null) {
+                bodyViewMap.put(res, inflate(res));
+            }
+            switch (bodyShowModl) {
+                case NOTSCROLL:
+                    not_scroll_body_layout.addView(bodyViewMap.get(res));
+                    break;
+                case SCROLL:
+                    scroll_body_layout.addView(bodyViewMap.get(res));
+                    break;
+                case REFRESH:
+                    refresh_body_layout.addView(bodyViewMap.get(res));
+                    break;
+            }
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "未找到此布局", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * 移除现在显示的身体布局
+     */
+    private final void removeBodyAllViews() {
+        not_scroll_body_layout.removeAllViews();
+        scroll_body_layout.removeAllViews();
+        refresh_body_layout.removeAllViews();
+    }
+
+    /**
+     * 检测加载尾布局
+     */
+    private final void checkLoadFooter() {
+        if (footerView != null) {
+            footerlayout.addView(footerView);
+            body_footer_interval.setVisibility(View.VISIBLE);
+        }
+    }
+
+
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(getLayoutResouceId(), container, false);
-
+        mRootView = inflater.inflate(R.layout.activity_base, container, false);
+        // 初始化基础控件
+        initViews();
         initData(getArguments());
 
-        initView();
+
+        //检测加载头布局
+        checkLoadHeader();
+        //检测加载身体布局
+        checkShowBody();
+        //检测加载尾布局
+        checkLoadFooter();
+        //加载身体布局
+        Iterator<Map.Entry<Integer, View>> iterator = bodyViewMap.entrySet().iterator();
+        if (iterator.hasNext())
+            loadBody(iterator.next().getKey());
+        // 初始化数据
+        onVisibleToUser();
+
 
         mIsPrepare = true;
 
-        onLazyLoad();
-
-        setListener();
-
         return mRootView;
     }
+
+    private void initViews() {
+        headerlayout = findViewById(R.id.headerlayout);
+        header_body_interval = findViewById(R.id.header_body_interval);
+        not_scroll_body_layout = findViewById(R.id.not_scroll_body_layout);
+        scroll_body_layout = findViewById(R.id.scroll_body_layout);
+        scroll_body_view = findViewById(R.id.scroll_body_view);
+        refresh_body_layout = findViewById(R.id.refresh_body_layout);
+        refresh_body_view = findViewById(R.id.refresh_body_view);
+        body_layout = findViewById(R.id.body_layout);
+        body_footer_interval = findViewById(R.id.body_footer_interval);
+        footerlayout = findViewById(R.id.footerlayout);
+        base = findViewById(R.id.base);
+        dock = findViewById(R.id.dock);
+    }
+
 
     /**
      * 初始化数据
@@ -61,16 +236,6 @@ public abstract class BaseFragment extends Fragment {
      * @param arguments 接收到的从其他地方传递过来的参数
      */
     protected abstract void initData(Bundle arguments);
-
-    /**
-     * 初始化View
-     */
-    protected abstract void initView();
-
-    /**
-     * 设置监听事件
-     */
-    protected abstract void setListener();
 
     /*
      * 懒加载的方法，只用在base里面重写就可以了
@@ -92,14 +257,14 @@ public abstract class BaseFragment extends Fragment {
     private void onVisibleToUser() {
         if (mIsPrepare && mIsVisible) {
             //由名字就可以看出，真正的懒加载的方法，子类必须重写，然后方法中完成具体的逻辑
-            onLazyLoad();
+            run();
         }
     }
 
     /**
      * 懒加载，仅当用户可见切view初始化结束后才会执行
      */
-    protected abstract void onLazyLoad();
+    protected abstract void run();
 
     /*
      * 查找控件的方法
@@ -108,51 +273,7 @@ public abstract class BaseFragment extends Fragment {
         if (mRootView == null) {
             return null;
         }
-
         return (T) mRootView.findViewById(id);
-    }
-
-    /**
-     * 设置根布局资源id
-     */
-    protected abstract int getLayoutResouceId();
-
-    /*
-     * 这是跳转的方法，只跳转
-     */
-    protected void readyGo(Class<?> clazz) {
-        Intent intent = new Intent(getActivity(), clazz);
-        startActivity(intent);
-    }
-
-    /*
-     * 这是携带数据的跳转
-     */
-    protected void readyGo(Class<?> clazz, Bundle bundle) {
-        Intent intent = new Intent(getActivity(), clazz);
-        if (null != bundle) {
-            intent.putExtras(bundle);
-        }
-        startActivity(intent);
-    }
-
-    /*
-     * 带跳回的方法
-     */
-    protected void readyGoForResult(Class<?> clazz, int requestCode) {
-        Intent intent = new Intent(getActivity(), clazz);
-        startActivityForResult(intent, requestCode);
-    }
-
-    /*
-     * 带回跳的并且携带数据的跳转
-     */
-    protected void readyGoForResult(Class<?> clazz, int requestCode, Bundle bundle) {
-        Intent intent = new Intent(getActivity(), clazz);
-        if (null != bundle) {
-            intent.putExtras(bundle);
-        }
-        startActivityForResult(intent, requestCode);
     }
 
     public String toJson(Object o) {
