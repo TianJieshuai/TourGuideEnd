@@ -16,7 +16,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void init() {
-        addBodyView(R.layout.activity_main);
+        addBodyView(R.layout.activity_home);
     }
 
     @Override
