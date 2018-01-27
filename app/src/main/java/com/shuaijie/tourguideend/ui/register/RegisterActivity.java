@@ -21,6 +21,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void init() {
         addBodyView(R.layout.activity_register);
+        setClearStack(false);
     }
 
     @Override

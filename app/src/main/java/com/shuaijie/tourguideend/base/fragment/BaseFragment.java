@@ -50,17 +50,29 @@ public abstract class BaseFragment extends Fragment {
     private Map<Integer, View> bodyViewMap = new HashMap<>();
     //尾布局
     private View footerView;
+
+    //头布局
     private LinearLayout headerlayout;
-    private View header_body_interval;
-    private LinearLayout not_scroll_body_layout;
-    private LinearLayout scroll_body_layout;
-    private ScrollView scroll_body_view;
-    private LinearLayout refresh_body_layout;
-    private SwipeRefreshLayout refresh_body_view;
-    private RelativeLayout body_layout;
-    private View body_footer_interval;
+    //尾布局
     private LinearLayout footerlayout;
+    //不可滚动
+    private LinearLayout not_scroll_body_layout;
+    //可滚动
+    private LinearLayout scroll_body_layout;
+    //下拉刷新
+    private LinearLayout refresh_body_layout;
+    //身体布局
+    private RelativeLayout body_layout;
+    //间隙
+    private View header_body_interval;
+    private View body_footer_interval;
+    //滚动控件
+    private ScrollView scroll_body_view;
+    //下拉刷新控件
+    private SwipeRefreshLayout refresh_body_view;
+    //分段加载容器
     private LinearLayout base;
+    //悬浮容器
     private RelativeLayout dock;
 
 
@@ -101,21 +113,22 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    //身体布局加载模式
-    private int bodyShowModl = 1;
     //不可滚动
-    private final int NOTSCROLL = 1;
+    private final int BODY_MODE_NOTSCROLL = 1;
     //可滚动
-    private final int SCROLL = 2;
+    private final int BODY_MODE_SCROLL = 2;
     //下拉刷新
-    private final int REFRESH = 3;
+    private final int BODY_MODE_REFRESH = 3;
+    //身体布局加载模式
+    private int bodyShowModl = BODY_MODE_NOTSCROLL;
+
 
     //设置身体布局加载模式
     public void setBodyShowModl(int bodyShowModl) {
         switch (bodyShowModl) {
-            case NOTSCROLL:
-            case SCROLL:
-            case REFRESH:
+            case BODY_MODE_NOTSCROLL:
+            case BODY_MODE_SCROLL:
+            case BODY_MODE_REFRESH:
                 this.bodyShowModl = bodyShowModl;
                 break;
             default:
@@ -125,13 +138,13 @@ public abstract class BaseFragment extends Fragment {
 
     private final void checkShowBody() {
         switch (bodyShowModl) {
-            case NOTSCROLL:
+            case BODY_MODE_NOTSCROLL:
                 not_scroll_body_layout.setVisibility(View.VISIBLE);
                 break;
-            case SCROLL:
+            case BODY_MODE_SCROLL:
                 scroll_body_layout.setVisibility(View.VISIBLE);
                 break;
-            case REFRESH:
+            case BODY_MODE_REFRESH:
                 refresh_body_layout.setVisibility(View.VISIBLE);
                 break;
         }
@@ -150,13 +163,13 @@ public abstract class BaseFragment extends Fragment {
                 bodyViewMap.put(res, inflate(res));
             }
             switch (bodyShowModl) {
-                case NOTSCROLL:
+                case BODY_MODE_NOTSCROLL:
                     not_scroll_body_layout.addView(bodyViewMap.get(res));
                     break;
-                case SCROLL:
+                case BODY_MODE_SCROLL:
                     scroll_body_layout.addView(bodyViewMap.get(res));
                     break;
-                case REFRESH:
+                case BODY_MODE_REFRESH:
                     refresh_body_layout.addView(bodyViewMap.get(res));
                     break;
             }
