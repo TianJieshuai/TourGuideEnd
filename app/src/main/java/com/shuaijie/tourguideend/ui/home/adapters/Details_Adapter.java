@@ -1,7 +1,6 @@
 package com.shuaijie.tourguideend.ui.home.adapters;
 
 import android.content.Context;
-import android.content.pm.LabeledIntent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,6 @@ import android.widget.TextView;
 
 import com.shuaijie.tourguideend.R;
 import com.zhy.autolayout.utils.AutoUtils;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
