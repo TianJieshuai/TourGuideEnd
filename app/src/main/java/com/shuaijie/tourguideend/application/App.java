@@ -13,6 +13,7 @@ import com.umeng.message.PushAgent;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
+import com.zhy.autolayout.config.AutoLayoutConifg;
 
 /**
  * Created by 韩学文 on 2017/12/25.
@@ -45,6 +46,7 @@ public class App extends Application {
         super.attachBaseContext(base);
         MultiDex.install(base);
         context = this;
+        AutoLayoutConifg.getInstance().useDeviceSize();
     }
 
     @Override

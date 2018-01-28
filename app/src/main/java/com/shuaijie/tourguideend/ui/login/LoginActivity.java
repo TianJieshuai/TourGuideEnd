@@ -16,7 +16,7 @@ import com.shuaijie.tourguideend.base.activity.BaseActivity;
 import com.shuaijie.tourguideend.beans.BaseBean;
 import com.shuaijie.tourguideend.beans.login.LoginBean;
 import com.shuaijie.tourguideend.config.Concat;
-import com.shuaijie.tourguideend.event.DataEvent;
+import com.shuaijie.tourguideend.event.PostDataEvent;
 import com.shuaijie.tourguideend.http.httpapis.CallBack;
 import com.shuaijie.tourguideend.ui.home.HomeActivity;
 import com.shuaijie.tourguideend.ui.register.RegisterActivity;
@@ -105,7 +105,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         HashMap<String, String> pamares = new HashMap<>();
         pamares.put("tel", name);
         pamares.put("password", password);
-        EventBus.getDefault().post(new DataEvent(Concat.LOGIN_URL, pamares, new CallBack<BaseBean<LoginBean>>() {
+        EventBus.getDefault().post(new PostDataEvent(Concat.LOGIN_URL, pamares, new CallBack<BaseBean<LoginBean>>() {
             @Override
             public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
                 if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
@@ -118,6 +118,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
                         break;
                 }
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             }
 
             @Override

@@ -91,6 +91,13 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     //尾布局
     private View footerView;
 
+    public LinearLayout getHeaderlayout() {
+        return headerlayout;
+    }
+
+    public LinearLayout getFooterlayout() {
+        return footerlayout;
+    }
 
     public final View inflate(int res) {
         return View.inflate(this, res, null);

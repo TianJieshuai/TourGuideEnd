@@ -1,6 +1,7 @@
 package com.shuaijie.tourguideend.presenter;
 
-import com.shuaijie.tourguideend.event.DataEvent;
+import com.shuaijie.tourguideend.event.GetDataEvent;
+import com.shuaijie.tourguideend.event.PostDataEvent;
 import com.shuaijie.tourguideend.model.HttpModel;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -21,10 +22,21 @@ public class HttpPresenter {
     protected HttpModel model;
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void getData(DataEvent event) {
+    public void postData(PostDataEvent event) {
         /*
-         * 数据事件
+         * Post数据事件
          */
         model.sendPost(event.getUrl(), event.getMap(), event.getCallBack());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void getData(GetDataEvent event) {
+        /*
+         * Get数据事件
+         */
+        if (event.getMap() != null)
+            model.sendGet(event.getUrl(), event.getMap(), event.getCallBack());
+        else
+            model.sendGet(event.getUrl(), event.getCallBack());
     }
 }
