@@ -10,6 +10,7 @@ import com.shuaijie.tourguideend.base.activity.BaseActivity;
 import com.shuaijie.tourguideend.base.fragment.BaseFragment;
 import com.shuaijie.tourguideend.ui.home.adapters.HomePagerAdapter;
 import com.shuaijie.tourguideend.ui.home.fragments.HomeFragment;
+import com.shuaijie.tourguideend.ui.home.fragments.RouteFragment;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class HomeActivity extends BaseActivity {
         fragments = new ArrayList<>();
         names = new ArrayList<>();
         fragments.add(new HomeFragment());
-        fragments.add(new HomeFragment());
+        fragments.add(new RouteFragment());
         fragments.add(new HomeFragment());
         fragments.add(new HomeFragment());
         fragments.add(new HomeFragment());

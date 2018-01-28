@@ -26,7 +26,7 @@ public class HttpPresenter {
         /*
          * Post数据事件
          */
-        model.sendPost(event.getUrl(), event.getMap(), event.getCallBack());
+        model.sendPost(event.getUrl(), event.getMap(), event);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -35,8 +35,8 @@ public class HttpPresenter {
          * Get数据事件
          */
         if (event.getMap() != null)
-            model.sendGet(event.getUrl(), event.getMap(), event.getCallBack());
+            model.sendGet(event.getUrl(), event.getMap(), event);
         else
-            model.sendGet(event.getUrl(), event.getCallBack());
+            model.sendGet(event.getUrl(), event);
     }
 }

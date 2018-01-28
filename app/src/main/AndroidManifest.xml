@@ -144,7 +144,8 @@
             android:value="1334" />
         <!-- Android AutoLayout 设置原稿尺寸 -->
 
-        <activity android:name=".ui.re_password.RePasswordActivity"></activity>
+        <activity android:name=".ui.re_password.RePasswordActivity" />
+        <activity android:name=".ui.route_details.DetailsRoute"></activity>
     </application>
 
 </manifest>

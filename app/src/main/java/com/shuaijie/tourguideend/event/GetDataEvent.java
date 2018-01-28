@@ -30,20 +30,17 @@ import java.util.Map;
  * 电子邮箱：510889082@qq.com
  */
 
-public class GetDataEvent {
+public abstract class GetDataEvent<T> implements CallBack<T> {
     private String url;
     private Map<String, String> map;
-    private CallBack callBack;
 
-    public GetDataEvent(String url, CallBack callBack) {
+    public GetDataEvent(String url) {
         this.url = url;
-        this.callBack = callBack;
     }
 
-    public GetDataEvent(String url, Map<String, String> map, CallBack callBack) {
+    public GetDataEvent(String url, Map<String, String> map) {
         this.url = url;
         this.map = map;
-        this.callBack = callBack;
     }
 
     public String getUrl() {
@@ -52,9 +49,5 @@ public class GetDataEvent {
 
     public Map<String, String> getMap() {
         return map;
-    }
-
-    public CallBack getCallBack() {
-        return callBack;
     }
 }

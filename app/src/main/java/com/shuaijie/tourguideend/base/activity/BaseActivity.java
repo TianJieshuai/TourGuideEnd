@@ -130,21 +130,21 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         }
     }
 
-    //身体布局加载模式
-    private int bodyShowModl = 1;
     //不可滚动
-    private final int NOTSCROLL = 1;
+    protected final int BODY_MODE_NOTSCROLL = 1;
     //可滚动
-    private final int SCROLL = 2;
+    protected final int BODY_MODE_SCROLL = 2;
     //下拉刷新
-    private final int REFRESH = 3;
+    protected final int BODY_MODE_REFRESH = 3;
+    //身体布局加载模式
+    protected int bodyShowModl = BODY_MODE_NOTSCROLL;
 
     //设置身体布局加载模式
     public void setBodyShowModl(int bodyShowModl) {
         switch (bodyShowModl) {
-            case NOTSCROLL:
-            case SCROLL:
-            case REFRESH:
+            case BODY_MODE_NOTSCROLL:
+            case BODY_MODE_SCROLL:
+            case BODY_MODE_REFRESH:
                 this.bodyShowModl = bodyShowModl;
                 break;
             default:
@@ -154,14 +154,14 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     private final void checkShowBody() {
         switch (bodyShowModl) {
-            case NOTSCROLL:
+            case BODY_MODE_NOTSCROLL:
                 not_scroll_body_layout.setVisibility(View.VISIBLE);
                 break;
-            case SCROLL:
-                scroll_body_layout.setVisibility(View.VISIBLE);
+            case BODY_MODE_SCROLL:
+                scroll_body_view.setVisibility(View.VISIBLE);
                 break;
-            case REFRESH:
-                refresh_body_layout.setVisibility(View.VISIBLE);
+            case BODY_MODE_REFRESH:
+                refresh_body_view.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -179,13 +179,13 @@ public abstract class BaseActivity extends AutoLayoutActivity {
                 bodyViewMap.put(res, inflate(res));
             }
             switch (bodyShowModl) {
-                case NOTSCROLL:
+                case BODY_MODE_NOTSCROLL:
                     not_scroll_body_layout.addView(bodyViewMap.get(res));
                     break;
-                case SCROLL:
+                case BODY_MODE_SCROLL:
                     scroll_body_layout.addView(bodyViewMap.get(res));
                     break;
-                case REFRESH:
+                case BODY_MODE_REFRESH:
                     refresh_body_layout.addView(bodyViewMap.get(res));
                     break;
             }

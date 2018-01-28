@@ -34,12 +34,19 @@ import java.lang.reflect.Type;
 public class TypeUtils {
     //获取泛型
     public static Type getType(CallBack callBack) {
+        //获取CallBack父类
+        Type superType = callBack.getClass().getGenericSuperclass();
+        //获取父类泛型
+        return ((ParameterizedType) superType).getActualTypeArguments()[0];
+    }
+/*
+    //获取泛型
+    public static Type getType(CallBack callBack) {
         //获取CallBack实现的接口数组
         Type[] interfaces = callBack.getClass().getGenericInterfaces();
         //返回递归结果
         return forType(interfaces).getActualTypeArguments()[0];
     }
-
     //递归遍历 接口数组 所有接口  以及 接口继承 的所有接口
     private static ParameterizedType forType(Type[] types) {
         //循环外保留存储变量
@@ -72,5 +79,5 @@ public class TypeUtils {
         }
         //循环走完未找到CallBack返回空
         return retrunType;
-    }
+    }*/
 }
