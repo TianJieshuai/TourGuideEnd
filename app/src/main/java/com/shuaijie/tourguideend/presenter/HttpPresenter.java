@@ -1,7 +1,6 @@
 package com.shuaijie.tourguideend.presenter;
 
-import com.shuaijie.tourguideend.event.LoginEvent;
-import com.shuaijie.tourguideend.event.RegisterEvent;
+import com.shuaijie.tourguideend.event.DataEvent;
 import com.shuaijie.tourguideend.model.HttpModel;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -22,17 +21,9 @@ public class HttpPresenter {
     protected HttpModel model;
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void login(LoginEvent event) {
+    public void getData(DataEvent event) {
         /*
-         * 登录事件
-         */
-        model.sendPost(event.getUrl(), event.getMap(), event.getCallBack());
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void register(RegisterEvent event) {
-        /*
-         * 注册事件
+         * 数据事件
          */
         model.sendPost(event.getUrl(), event.getMap(), event.getCallBack());
     }
