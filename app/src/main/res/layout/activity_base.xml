@@ -9,6 +9,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <View
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="35px"
+            android:background="#ff0"
+            android:visibility="gone" />
         <!--头布局-->
         <LinearLayout
             android:id="@+id/headerlayout"

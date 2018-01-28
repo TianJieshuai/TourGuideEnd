@@ -46,7 +46,6 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     //两次back是否清栈
     private boolean clearStack = false;
-
     public boolean isClearStack() {
         return clearStack;
     }
@@ -60,44 +59,39 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     //按钮连续点击最低间隔时间
     public final static int CLICK_TIME = 500;
+
+    // 状态栏填充
+    protected View statusBar;
     //头布局
-    private LinearLayout headerlayout;
+    protected LinearLayout headerlayout;
     //尾布局
-    private LinearLayout footerlayout;
+    protected LinearLayout footerlayout;
     //不可滚动
-    private LinearLayout not_scroll_body_layout;
+    protected LinearLayout not_scroll_body_layout;
     //可滚动
-    private LinearLayout scroll_body_layout;
+    protected LinearLayout scroll_body_layout;
     //下拉刷新
-    private LinearLayout refresh_body_layout;
+    protected LinearLayout refresh_body_layout;
     //身体布局
-    private RelativeLayout body_layout;
+    protected RelativeLayout body_layout;
     //间隙
-    private View header_body_interval;
-    private View body_footer_interval;
+    protected View header_body_interval;
+    protected View body_footer_interval;
     //滚动控件
-    private ScrollView scroll_body_view;
+    protected ScrollView scroll_body_view;
     //下拉刷新控件
-    private SwipeRefreshLayout refresh_body_view;
+    protected SwipeRefreshLayout refresh_body_view;
     //分段加载容器
-    private LinearLayout base;
+    protected LinearLayout base;
     //悬浮容器
-    private RelativeLayout dock;
+    protected RelativeLayout dock;
 
     //setHeaderView设置的view作用加载头布局
-    private View headerView;
+    protected View headerView;
     //身体布局可同时存储多个
-    private Map<Integer, View> bodyViewMap = new HashMap<>();
+    protected Map<Integer, View> bodyViewMap = new HashMap<>();
     //尾布局
-    private View footerView;
-
-    public LinearLayout getHeaderlayout() {
-        return headerlayout;
-    }
-
-    public LinearLayout getFooterlayout() {
-        return footerlayout;
-    }
+    protected View footerView;
 
     public final View inflate(int res) {
         return View.inflate(this, res, null);
@@ -281,6 +275,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         body_footer_interval = findViewById(R.id.body_footer_interval);
         base = findViewById(R.id.base);
         dock = findViewById(R.id.dock);
+        statusBar = findViewById(R.id.statusBar);
     }
 
     protected void initView() {
