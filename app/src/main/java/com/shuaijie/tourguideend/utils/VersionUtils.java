@@ -9,7 +9,7 @@ import android.util.Log;
  * Created by shuaiJie on 2018/1/6.
  */
 
-public class Version {
+public class VersionUtils {
 
     private static Context mContext;
     public static String VERSION_NAME;

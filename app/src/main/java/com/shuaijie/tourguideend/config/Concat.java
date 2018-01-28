@@ -5,5 +5,6 @@ package com.shuaijie.tourguideend.config;
  */
 // TODO 主要存放常量字段
 public interface Concat {
+    String LOGIN_URL = "http://120.79.137.110:80/api/v1/auth/login";
     String FILE_NAME = "";
 }

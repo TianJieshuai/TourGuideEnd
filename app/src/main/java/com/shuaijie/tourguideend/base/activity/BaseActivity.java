@@ -16,7 +16,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.shuaijie.tourguideend.R;
-import com.shuaijie.tourguideend.utils.Gson;
+import com.shuaijie.tourguideend.utils.GsonUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.lang.reflect.Type;
@@ -375,10 +375,10 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     }
 
     public String toJson(Object o) {
-        return Gson.toJson(o);
+        return GsonUtils.toJson(o);
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
-        return Gson.fromJson(json, typeOfT);
+        return GsonUtils.fromJson(json, typeOfT);
     }
 }

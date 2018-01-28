@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
  * 认真的人到最后都是难过 2017/12/19.
  */
 
-public class MD5 {
+public class MD5Utils {
     public static void main(String[] args) {
 //        Md5("12312312312312");
         passwordMD5("hahahahha");

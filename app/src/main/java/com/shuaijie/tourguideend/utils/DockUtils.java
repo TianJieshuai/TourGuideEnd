@@ -10,7 +10,7 @@ import android.view.WindowManager;
  * Created by shuaiJie on 2017/12/2.
  */
 
-public class Dock {
+public class DockUtils {
     //窗口管理器
     private static WindowManager manager;
 

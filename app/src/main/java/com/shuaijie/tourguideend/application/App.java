@@ -5,7 +5,8 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
-import com.shuaijie.tourguideend.utils.Version;
+import com.shuaijie.tourguideend.event.EventRegister;
+import com.shuaijie.tourguideend.utils.VersionUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
@@ -29,6 +30,8 @@ public class App extends Application {
 
     //底下的放置里面  微信的 QQ的
     static {
+        //初始化事件总线
+        EventRegister.init();
         PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");
@@ -50,7 +53,7 @@ public class App extends Application {
         //登录注册
         UMShareAPI.get(this);
         Config.DEBUG = true;
-        Version.init(this);
+        VersionUtils.init(this);
         PushAgent mPushAgent = PushAgent.getInstance(this);
         //消息推送
         //注册推送服务，每次调用register方法都会回调该接口

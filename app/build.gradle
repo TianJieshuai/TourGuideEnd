@@ -64,6 +64,10 @@ dependencies {
     //    compile 'com.android.support:percent:27.0.2'
     // TODO 根据原稿尺寸经行屏幕自动百分化  https://github.com/hongyangAndroid/AndroidAutoLayout
     compile 'com.zhy:autolayout:1.4.5'
-
+    //EventBus 事件总线
+    compile 'org.greenrobot:eventbus:3.1.1'
+    // Dagger2
+    compile 'com.google.dagger:dagger:2.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
 }
 

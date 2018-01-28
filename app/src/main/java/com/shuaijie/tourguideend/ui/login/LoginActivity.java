@@ -3,15 +3,28 @@ package com.shuaijie.tourguideend.ui.login;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
+import com.shuaijie.tourguideend.beans.BaseBean;
+import com.shuaijie.tourguideend.beans.login.LoginBean;
+import com.shuaijie.tourguideend.config.Concat;
+import com.shuaijie.tourguideend.event.LoginEvent;
+import com.shuaijie.tourguideend.http.httpapis.CallBack;
 import com.shuaijie.tourguideend.ui.home.HomeActivity;
 import com.shuaijie.tourguideend.ui.register.RegisterActivity;
+import com.umeng.message.lib.BuildConfig;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.HashMap;
 
 /**
  * 登录ds
@@ -40,15 +53,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         et_password = (EditText) findViewById(R.id.et_password);
         mBt_register = (Button) findViewById(R.id.mBt_register);
         mBt_Login = (Button) findViewById(R.id.mBt_Login);
-
-        mBt_register.setOnClickListener(this);
-        mBt_Login.setOnClickListener(this);
         mCb_remember = (CheckBox) findViewById(R.id.mCb_remember);
-        mCb_remember.setOnClickListener(this);
         mCb_automatic_logon = (CheckBox) findViewById(R.id.mCb_automatic_logon);
+
+        mBt_Login.setOnClickListener(this);
+        mBt_register.setOnClickListener(this);
+        mCb_remember.setOnClickListener(this);
         mCb_automatic_logon.setOnClickListener(this);
-        sp = this.getSharedPreferences("userInfo",
-                Context.MODE_PRIVATE);
+        sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
         if (sp.getBoolean("ISCHECK", false)) {
             //设置默认是记录密码状态
             mCb_remember.setChecked(true);
@@ -83,38 +96,35 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void submit() {
-        // validate
         String name = et_name.getText().toString().trim();
         String password = et_password.getText().toString().trim();
-/*        if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, "请输入账号", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "帐号密码不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
+        HashMap<String, String> pamares = new HashMap<>();
+        pamares.put("tel", name);
+        pamares.put("password", password);
+        EventBus.getDefault().post(new LoginEvent(Concat.LOGIN_URL, pamares, new CallBack<BaseBean<LoginBean>>() {
+            @Override
+            public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
+                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
+                switch (loginBeanBaseBean.getErrcode()) {
+                    case "1":
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        finish();
+                        break;
+                    case "422":
+                        Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
 
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        //   SPUtils.get(LoginActivity.this, "name",1)
-        String name1 = String.valueOf(SPTools.get(LoginActivity.this, "name", "1"));
-        String pass1 = String.valueOf(SPTools.get(LoginActivity.this, "pass", "1"));
-        if (name.equals(name1) && password.equals(pass1)) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
-        } else if (!name.equals(name1)) {
-            Toast.makeText(this, "未注册账号", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "账号或密码不正确", Toast.LENGTH_SHORT).show();
-        }*/
-        if (mCb_remember.isChecked()) {
-            //记住用户名、密码、
-/*            SharedPreferences.Editor editor = sp.edit();
-            editor.putString("USER_NAME", name1);
-            editor.putString("PASSWORD", pass1);
-            editor.commit();*/
-            //跳转界面
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            finish();
-        }
+            @Override
+            public void onFailure(Throwable e) {
+                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+            }
+        }));
+
     }
 }

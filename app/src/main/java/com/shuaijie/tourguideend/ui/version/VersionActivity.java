@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.shuaijie.tourguideend.R;
 import com.shuaijie.tourguideend.base.activity.BaseActivity;
 import com.shuaijie.tourguideend.utils.SpeedDownload;
-import com.shuaijie.tourguideend.utils.Version;
+import com.shuaijie.tourguideend.utils.VersionUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -36,7 +36,7 @@ public class VersionActivity extends BaseActivity {
         //在页面上显示版本信息
         TextView tv_versionName = (TextView) findViewById(R.id.tv_versionName);
         try {
-            tv_versionName.setText("版本名：" + Version.VERSION_NAME);
+            tv_versionName.setText("版本名：" + VersionUtils.VERSION_NAME);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -3,7 +3,7 @@ package com.shuaijie.tourguideend.db.factor;
 import android.content.Context;
 
 import com.shuaijie.tourguideend.db.product.IOpenHelper;
-import com.shuaijie.tourguideend.http.products.HttpRequest;
+import com.shuaijie.tourguideend.http.httprequest.HttpRequest;
 
 /**
  * @author 农民伯伯
