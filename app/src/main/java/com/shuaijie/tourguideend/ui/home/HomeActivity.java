@@ -29,6 +29,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void init() {
+        setClearStack(true);
         setSteepStatusBar(true);
         addBodyView(R.layout.view_viewpager);
         setFooterView(R.layout.view_tablayout);

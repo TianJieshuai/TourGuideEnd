@@ -127,9 +127,11 @@ public abstract class BaseFragment extends Fragment {
     public void setBodyShowModl(int bodyShowModl) {
         switch (bodyShowModl) {
             case BODY_MODE_NOTSCROLL:
+                this.bodyShowModl = BODY_MODE_NOTSCROLL;
             case BODY_MODE_SCROLL:
+                this.bodyShowModl = BODY_MODE_NOTSCROLL;
             case BODY_MODE_REFRESH:
-                this.bodyShowModl = bodyShowModl;
+                this.bodyShowModl = BODY_MODE_REFRESH;
                 break;
             default:
                 throw new NullPointerException("未识别");
@@ -218,6 +220,8 @@ public abstract class BaseFragment extends Fragment {
         Iterator<Map.Entry<Integer, View>> iterator = bodyViewMap.entrySet().iterator();
         if (iterator.hasNext())
             loadBody(iterator.next().getKey());
+        // 初始化子类布局
+        initView();
         // 初始化数据
         onVisibleToUser();
 
@@ -225,6 +229,9 @@ public abstract class BaseFragment extends Fragment {
         mIsPrepare = true;
 
         return mRootView;
+    }
+
+    protected void initView() {
     }
 
     private void initViews() {
