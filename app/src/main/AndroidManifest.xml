@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shuaijie.tourguideend">
+    package="com.silent.fiveghost.guide">
 
     <!-- 第三方登录分享权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
