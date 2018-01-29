@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
-
-
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/back"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <ImageView
+        android:src="@mipmap/user2x"
+        android:layout_marginTop="660px"
+        android:layout_marginLeft="79px"
+        android:layout_width="36px"
+        android:layout_height="36px" />
+    <ImageView
+        android:src="@mipmap/account2x"
+        android:layout_marginTop="790px"
+        android:layout_marginLeft="79px"
+        android:layout_width="36px"
+        android:layout_height="36px" />
     <EditText
-        android:id="@+id/et_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:paddingLeft="90px"
+        android:id="@+id/mLogin_user"
+        android:hint="@string/login_user"
+        android:background="@color/login_user"
+        android:cursorVisible="false"
+        android:layout_marginTop="642px"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="137dp"
-        android:ems="10"
-        android:hint="请输入账号"
-        android:inputType="textPersonName" />
-
+        android:layout_width="650px"
+        android:layout_height="80px" />
     <EditText
-        android:id="@+id/et_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/et_name"
+        android:paddingLeft="90px"
+        android:layout_below="@id/mLogin_user"
+        android:background="@color/login_user"
+        android:id="@+id/mLogin_pwd"
+        android:cursorVisible="false"
+        android:hint="@string/login_password"
+        android:layout_marginTop="45px"
         android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
+        android:layout_width="650px"
+        android:layout_height="80px" />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/mLog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:layout_below="@id/mLogin_pwd"
+        android:layout_width="650px"
+        android:layout_height="wrap_content">
 
-    <CheckBox
-        android:id="@+id/mCb_remember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <Button
+            android:background="@color/login_btn"
+            android:id="@+id/mLogin"
+            android:layout_width="300px"
+            android:layout_height="80px"
+            android:text="@string/btn_login" />
+        <Button
+            android:background="@color/login_user"
+            android:id="@+id/mRegister"
+            android:text="@string/btn_register"
+            android:layout_alignParentRight="true"
+            android:layout_width="300px"
+            android:layout_height="80px" />
 
-        android:layout_alignLeft="@+id/et_password"
-        android:layout_alignStart="@+id/et_password"
-        android:layout_below="@+id/et_password"
-        android:text="记住密码" />
+        <TextView
+            android:id="@+id/find_pdw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/mRegister"
+            android:layout_marginTop="43px"
+            android:text="@string/btn_forget_the_password" />
+    </com.zhy.autolayout.AutoRelativeLayout>
 
-    <CheckBox
-        android:id="@+id/mCb_automatic_logon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_alignEnd="@+id/et_password"
-        android:layout_alignRight="@+id/et_password"
-        android:layout_below="@+id/et_password"
-        android:text="自动登录" />
-
-    <Button
-        android:id="@+id/mBt_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_alignLeft="@+id/mCb_remember"
-        android:layout_alignStart="@+id/mCb_remember"
-        android:layout_below="@+id/mCb_remember"
-        android:layout_marginTop="49dp"
-        android:text="注册" />
-
-    <Button
-        android:id="@+id/mBt_Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/mBt_register"
-        android:layout_alignBottom="@+id/mBt_register"
-        android:layout_alignLeft="@+id/mCb_automatic_logon"
-        android:layout_alignStart="@+id/mCb_automatic_logon"
-        android:text="登录" />
-</RelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

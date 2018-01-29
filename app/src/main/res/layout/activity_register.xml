@@ -1,48 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/mBt_Register_Enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/mEt_Register_password"
-        android:layout_below="@+id/mEt_Register_password"
-        android:layout_marginTop="102dp"
-        android:text="确定" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="127px"
+        android:background="#34393f"
+        android:paddingTop="70px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="注册"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/m_insert_name_icon"
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="252px"
+        android:src="@mipmap/ruser2x" />
+
+    <ImageView
+        android:id="@+id/m_insert_phone_icon"
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_below="@id/m_insert_name_icon"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="79px"
+        android:src="@mipmap/shoujihao2x" />
+
+    <ImageView
+        android:id="@+id/m_insert_yzm_icon"
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_below="@id/m_insert_phone_icon"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="79px"
+        android:src="@mipmap/yanzhenma2x" />
+
+    <ImageView
+        android:id="@+id/m_insert_pwd_icon"
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_below="@id/m_insert_yzm_icon"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="79px"
+        android:src="@mipmap/raccount2x" />
+
+    <ImageView
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_below="@id/m_insert_pwd_icon"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="79px"
+        android:src="@mipmap/yaoqingma2x" />
 
     <EditText
-        android:id="@+id/mEt_Register_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="139dp"
-        android:ems="10"
-        android:hint="请注册账号" />
+        android:id="@+id/mInsert_name"
+        android:layout_width="530px"
+        android:layout_height="80px"
+        android:layout_marginLeft="130px"
+        android:layout_marginTop="230px"
+        android:hint="@string/insert_name"
+        android:textSize="13sp" />
 
     <EditText
-        android:id="@+id/mEt_Register_password"
+        android:id="@+id/mInsert_phone"
+        android:layout_width="530px"
+        android:layout_height="80px"
+        android:layout_alignLeft="@+id/mInsert_yzm"
+        android:layout_alignStart="@+id/mInsert_yzm"
+        android:layout_below="@+id/mInsert_name"
+        android:layout_marginTop="35px"
+        android:hint="@string/insert_phone"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="22px"
+        android:layout_below="@+id/mInsert_name"
+        android:layout_marginLeft="505px"
+        android:layout_marginTop="60px"
+        android:background="#d3d3d3" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/mInsert_name"
+        android:layout_marginLeft="540px"
+        android:layout_marginTop="55px"
+        android:text="@string/getyzm"
+        android:textColor="#facf20" />
 
-        android:layout_below="@+id/mEt_Register_name"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/mInsert_yzm"
+        android:layout_width="530px"
+        android:layout_height="80px"
+        android:layout_below="@id/mInsert_phone"
+        android:layout_marginLeft="130px"
+        android:layout_marginTop="35px"
+        android:hint="@string/insert_yzm"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/mInsert_pwd"
+        android:layout_width="530px"
+        android:layout_height="80px"
+        android:layout_below="@id/mInsert_yzm"
+        android:layout_marginLeft="130px"
+        android:layout_marginTop="35px"
+        android:hint="@string/insert_pwd"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/mYqm"
+        android:layout_width="530px"
+        android:layout_height="80px"
+        android:layout_below="@id/mInsert_pwd"
+        android:layout_marginLeft="130px"
+        android:layout_marginTop="35px"
+        android:hint="@string/insert_yqm"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:id="@+id/mLinear_xieyi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mYqm"
+        android:layout_marginTop="35px"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/register_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="36px"
+            android:layout_marginRight="20px"
+            android:button="@drawable/regisert_xieyi"
+            android:checked="true"
+            android:text="@string/success" />
+
+        <TextView
+            android:id="@+id/mRegister_xieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xieyi" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/mBtn_Register_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/mBt_Register_Enter"
-        android:layout_alignBottom="@+id/mBt_Register_Enter"
-        android:layout_alignEnd="@+id/mEt_Register_password"
-        android:text="返回"
-        android:layout_alignRight="@+id/mEt_Register_password" />
-</RelativeLayout>
+        android:id="@+id/btn_register"
+        android:layout_width="650px"
+        android:layout_height="80px"
+        android:layout_below="@id/mLinear_xieyi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35px"
+        android:background="@color/login_btn"
+        android:text="@string/ljcz"
+        android:textColor="#fff" />
+</com.zhy.autolayout.AutoRelativeLayout>

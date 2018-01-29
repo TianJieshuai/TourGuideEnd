@@ -16,7 +16,7 @@
             android:layout_height="100dp"
             android:gravity="center_vertical">
 
-            <com.shuaijie.tourguideend.widget.dynamiceffect.view.RoundImageView
+            <com.silent.fiveghost.guide.widget.dynamiceffect.view.RoundImageView
                 android:id="@+id/riv_avatar"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
