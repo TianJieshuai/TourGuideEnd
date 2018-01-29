@@ -316,15 +316,15 @@ public abstract class BaseFragment extends Fragment {
      * 网络相关 ********************************************************************************
      * *****************************************************************************************
      */
-    public void sendPost(PostDataEvent event) {
+    protected void sendPost(PostDataEvent event) {
         sendHttp(event);
     }
 
-    public void sendGet(GetDataEvent event) {
+    protected void sendGet(GetDataEvent event) {
         sendHttp(event);
     }
 
-    public void sendHttp(DataEvent event) {
+    private void sendHttp(DataEvent event) {
         EventBus.getDefault().post(event);
     }
 }
