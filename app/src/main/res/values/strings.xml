@@ -13,5 +13,28 @@
     <string name="qq_header_completed">刷新成功</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--登录页面-->
+    <string name="login_user">请输入您的手机号</string>
+    <string name="login_password">请输入您的密码</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_forget_the_password">忘记密码？</string>
+    <!--注册界面-->
+    <string name="insert_name">请输入您的姓名</string>
+    <string name="insert_phone">请输入您的手机号</string>
+    <string name="insert_yzm">请输入验证码</string>
+    <string name="insert_pwd">请输入6-20位数字或字母密码</string>
+    <string name="insert_yqm">请输入邀请码（非必填）</string>
+    <string name="xieyi">我已阅读，并同意《用户注册协议》</string>
+    <string name="ljcz">立即注册</string>
+    <string name="getyzm">获取验证码</string>
+    <string name="insert_newpwd">请输入新密码</string>
+    <string name="submit">提交</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">首页</string>
+    <!--订单详情-->
+    <string name="scenery">  风景如画的石林，世外桃源的大理，古香古韵的丽江，感受昆明大理丽江古朴自然，欣赏西南风景石林和蝴蝶泉，品味各个民族文化特色，带上亲朋好友一起步入彩云之南之旅</string>
+    <string name="cheng">起/人（成人）</string>
+    <string name="child">起/人（儿童）</string>
 </resources>
