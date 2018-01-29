@@ -1,7 +1,5 @@
 package com.shuaijie.tourguideend.event;
 
-import com.shuaijie.tourguideend.http.httpapis.CallBack;
-
 import java.util.Map;
 
 /**
@@ -30,20 +28,9 @@ import java.util.Map;
  * 电子邮箱：510889082@qq.com
  */
 
-public abstract class PostDataEvent<T> implements CallBack<T> {
-    private String url;
-    private Map<String, String> map;
+public abstract class PostDataEvent<T> extends DataEvent<T> {
 
     public PostDataEvent(String url, Map<String, String> map) {
-        this.url = url;
-        this.map = map;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public Map<String, String> getMap() {
-        return map;
+        super(url, map);
     }
 }

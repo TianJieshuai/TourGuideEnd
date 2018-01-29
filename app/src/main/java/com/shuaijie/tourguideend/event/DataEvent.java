@@ -1,9 +1,11 @@
 package com.shuaijie.tourguideend.event;
 
+import com.shuaijie.tourguideend.http.httpapis.CallBack;
+
 import java.util.Map;
 
 /**
- * Created by shuaiJie on 2018/1/28.
+ * Created by shuaiJie on 2018/1/29.
  * .                       .::::.
  * .                    .::::::::.
  * .                   :::::::::::
@@ -24,18 +26,29 @@ import java.util.Map;
  * .                      '.:::::'                     ':'````..
  * .
  * 作    者：shuaiJie
- * 创建时间：2018/1/28 13:14
+ * 创建时间：2018/1/29 7:53
  * 电子邮箱：510889082@qq.com
  */
 
-public abstract class GetDataEvent<T> extends DataEvent<T>{
+public abstract class DataEvent<T> implements CallBack<T> {
+    protected String url;
+    protected Map<String, String> map;
 
-    public GetDataEvent(String url, Map<String, String> map) {
-        super(url, map);
+    public DataEvent(String url, Map<String, String> map) {
+        this.url = url;
+        this.map = map;
     }
 
-    public GetDataEvent(String url) {
-        super(url);
+    public DataEvent(String url) {
+        this(url, null);
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public Map<String, String> getMap() {
+        return map;
+    }
 }
+

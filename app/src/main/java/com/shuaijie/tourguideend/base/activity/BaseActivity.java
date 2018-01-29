@@ -16,8 +16,13 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.shuaijie.tourguideend.R;
+import com.shuaijie.tourguideend.event.DataEvent;
+import com.shuaijie.tourguideend.event.GetDataEvent;
+import com.shuaijie.tourguideend.event.PostDataEvent;
 import com.shuaijie.tourguideend.utils.GsonUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -46,6 +51,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     //两次back是否清栈
     private boolean clearStack = false;
+
     public boolean isClearStack() {
         return clearStack;
     }
@@ -376,11 +382,33 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    /**
+     * ***************************************************************************************
+     * Gson 相关 *******************************************************************************
+     * *****************************************************************************************
+     */
     public String toJson(Object o) {
         return GsonUtils.toJson(o);
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
         return GsonUtils.fromJson(json, typeOfT);
+    }
+
+    /**
+     * ***************************************************************************************
+     * 网络相关 ********************************************************************************
+     * *****************************************************************************************
+     */
+    public void sendPost(PostDataEvent event) {
+        sendHttp(event);
+    }
+
+    public void sendGet(GetDataEvent event) {
+        sendHttp(event);
+    }
+
+    public void sendHttp(DataEvent event) {
+        EventBus.getDefault().post(event);
     }
 }

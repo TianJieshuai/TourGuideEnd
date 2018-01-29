@@ -21,8 +21,6 @@ import com.shuaijie.tourguideend.ui.home.HomeActivity;
 import com.shuaijie.tourguideend.ui.register.RegisterActivity;
 import com.umeng.message.lib.BuildConfig;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.HashMap;
 
 /**
@@ -104,7 +102,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         HashMap<String, String> pamares = new HashMap<>();
         pamares.put("tel", name);
         pamares.put("password", password);
-        EventBus.getDefault().post(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
+        sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
             @Override
             public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
                 if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
