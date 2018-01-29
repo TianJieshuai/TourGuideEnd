@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="440px"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px"
+    android:layout_marginTop="27px"
+    android:background="@drawable/route"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="320px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aaa2"
+            android:background="@drawable/route"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="223px"
+            android:layout_height="55px"
+            android:layout_marginTop="35px"
+            android:background="#C95E78"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35px"
+            android:layout_marginStart="17dp"
+            android:text="¥"
+            android:textColor="#fff"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/Price_xml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_marginLeft="10px"
+            android:layout_toEndOf="@+id/textView5"
+            android:layout_toRightOf="@+id/textView5"
+            android:text="3000"
+            android:textColor="#fff"
+            android:textSize="37px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="10px"
+            android:layout_toEndOf="@+id/Price_xml"
+            android:layout_toRightOf="@+id/Price_xml"
+            android:text="起"
+            android:textColor="#fff"
+            android:textSize="30px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:layout_alignParentBottom="true"
+            android:background="#66A19E8F"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25px"
+                android:text="报名人数 :"
+                android:textColor="#fff"
+                android:textSize="25px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13px"
+                android:text="22"
+                android:textColor="#fff"
+                android:textSize="25px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人"
+                android:textColor="#fff"
+                android:textSize="25px" />
+
+            <ImageView
+                android:layout_width="210px"
+                android:layout_height="32px"
+                android:layout_marginLeft="240px"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22px"
+        android:layout_marginRight="22px"
+        android:layout_marginTop="22px"
+        android:text="[春节]>长沙-张家界-天门山-玻璃栈道-玻璃桥-凤凰古城高铁6日游>超高性价比"
+        android:textSize="25px" />
+
+
+
+</LinearLayout>

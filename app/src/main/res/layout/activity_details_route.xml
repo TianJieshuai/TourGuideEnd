@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.route_details.DetailsRoute">
+
+    <include layout="@layout/details_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="345px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aaa2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="245px"
+            android:layout_marginTop="330px"
+            android:background="@drawable/details"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32px"
+                    android:text="订单编号 ： "
+                    android:textSize="25px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="201704052365"
+                    android:textSize="25px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="165px"
+                    android:text="路线名称：云南5日游"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32px"
+                    android:text="游客姓名 ："
+                    android:textSize="25px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="王小花"
+
+                    android:textSize="25px" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32px"
+                    android:text="游客年龄段 ："
+                    android:textSize="25px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="青年团"
+
+                    android:textSize="25px" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32px"
+                    android:text="出行时间 ："
+                    android:textSize="25px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017/02/12"
+
+                    android:textSize="25px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="275px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="¥ "
+                        android:textColor="#FF9A53"
+                        android:textSize="20px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:text="2000"
+                        android:textColor="#FF9A53"
+                        android:textSize="35px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/人"
+                        android:textColor="#FF9A53"
+                        android:textSize="35px"
+
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20px"
+            android:layout_marginTop="580px"
+            android:background="#EAE9EE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="600px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="32px"
+                android:layout_height="32px"
+                android:layout_marginLeft="30px"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 路线行程"
+                android:textSize="30px" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vvvv"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginTop="700px"
+            android:background="#EAE9EE" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detailsRoute_recyxml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/vvvv"></android.support.v7.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
