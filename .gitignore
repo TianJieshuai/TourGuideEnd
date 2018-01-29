@@ -8,3 +8,4 @@ build
 /captures
 .externalNativeBuild
 *.puml
+/PushSDK/build/
