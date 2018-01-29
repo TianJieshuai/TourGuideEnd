@@ -1,25 +1,21 @@
 package com.silent.fiveghost.guide.ui.register;
 
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
+import com.silent.fiveghost.guide.ui.login.LoginActivity;
+import com.silent.fiveghost.guide.utils.Join;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
-
-    private ImageView m_insert_name_icon;
-    private ImageView m_insert_phone_icon;
-    private ImageView m_insert_yzm_icon;
-    private ImageView m_insert_pwd_icon;
     private EditText mInsert_name;
     private EditText mInsert_phone;
     private EditText mInsert_yzm;
@@ -27,8 +23,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText mYqm;
     private CheckBox register_agree;
     private TextView mRegister_xieyi;
-    private LinearLayout mLinear_xieyi;
+    private TextView find_getyzm;
     private Button btn_register;
+    private String name;
 
     @Override
     protected void init() {
@@ -44,30 +41,16 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initView() {
-        m_insert_name_icon = (ImageView) findViewById(R.id.m_insert_name_icon);
-        m_insert_name_icon.setOnClickListener(this);
-        m_insert_phone_icon = (ImageView) findViewById(R.id.m_insert_phone_icon);
-        m_insert_phone_icon.setOnClickListener(this);
-        m_insert_yzm_icon = (ImageView) findViewById(R.id.m_insert_yzm_icon);
-        m_insert_yzm_icon.setOnClickListener(this);
-        m_insert_pwd_icon = (ImageView) findViewById(R.id.m_insert_pwd_icon);
-        m_insert_pwd_icon.setOnClickListener(this);
         mInsert_name = (EditText) findViewById(R.id.mInsert_name);
-        mInsert_name.setOnClickListener(this);
         mInsert_phone = (EditText) findViewById(R.id.mInsert_phone);
-        mInsert_phone.setOnClickListener(this);
         mInsert_yzm = (EditText) findViewById(R.id.mInsert_yzm);
-        mInsert_yzm.setOnClickListener(this);
         mInsert_pwd = (EditText) findViewById(R.id.mInsert_pwd);
-        mInsert_pwd.setOnClickListener(this);
-        mYqm = (EditText) findViewById(R.id.mYqm);
-        mYqm.setOnClickListener(this);
+        find_getyzm = (TextView) findViewById(R.id.find_getyzm);
+        mYqm = (EditText)findViewById(R.id.mYqm);
+        find_getyzm.setOnClickListener(this);
         register_agree = (CheckBox) findViewById(R.id.register_agree);
-        register_agree.setOnClickListener(this);
         mRegister_xieyi = (TextView) findViewById(R.id.mRegister_xieyi);
         mRegister_xieyi.setOnClickListener(this);
-        mLinear_xieyi = (LinearLayout) findViewById(R.id.mLinear_xieyi);
-        mLinear_xieyi.setOnClickListener(this);
         btn_register = (Button) findViewById(R.id.btn_register);
         btn_register.setOnClickListener(this);
     }
@@ -76,6 +59,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_register:
+                submit();
+                break;
+            case R.id.find_getyzm:
+
+                break;
+            case R.id.mRegister_xieyi:
 
                 break;
         }
@@ -83,7 +72,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     private void submit() {
         // validate
-        String name = mInsert_name.getText().toString().trim();
+        name = mInsert_name.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
             Toast.makeText(this, "name不能为空", Toast.LENGTH_SHORT).show();
             return;
@@ -114,7 +103,16 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         }
 
         // TODO validate success, do something
+        if (Join.isMobile(phone) || Join.isPass(pwd)) {
+            Toast.makeText(this, "正确", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,LoginActivity.class));
+        } else {
+
+            Toast.makeText(this, "手机号或密码不正确", Toast.LENGTH_SHORT).show();
+        }
+
 
 
     }
+
 }

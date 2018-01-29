@@ -1,6 +1,5 @@
 package com.silent.fiveghost.guide.ui.re_password;
 
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
