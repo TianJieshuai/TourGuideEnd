@@ -7,5 +7,4 @@ gradle
 build
 /captures
 .externalNativeBuild
-*.puml
 /PushSDK/build/
