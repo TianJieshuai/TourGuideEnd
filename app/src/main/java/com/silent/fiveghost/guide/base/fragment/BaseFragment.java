@@ -231,7 +231,6 @@ public abstract class BaseFragment extends Fragment {
         // 初始化数据
         onVisibleToUser();
 
-
         mIsPrepare = true;
 
         return mRootView;
