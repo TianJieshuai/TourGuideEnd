@@ -8,3 +8,4 @@ build
 /captures
 .externalNativeBuild
 /PushSDK/build/
+/.idea/workspace.xml
