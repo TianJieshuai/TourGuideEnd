@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.silent.fiveghost.guide"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -24,8 +24,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // TODO 为解决64K问题
     compile 'com.android.support:multidex:1.0.2'
-    implementation 'com.android.support:support-v4:27.+'
-    implementation 'com.android.support:appcompat-v7:27.0.2'
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:support-v4:26.+'
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.+'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     // 友盟分享相关
     implementation files('libs/SocialSDK_QQ_Simplify.jar')

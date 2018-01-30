@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
                         break;
                 }
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
             }
 
             @Override

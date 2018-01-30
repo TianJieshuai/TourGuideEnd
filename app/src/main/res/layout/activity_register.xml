@@ -82,15 +82,16 @@
         android:layout_marginLeft="505px"
         android:layout_width="1px"
         android:layout_height="22px"/>
-   <TextView
-       android:id="@+id/find_getyzm"
-       android:layout_marginLeft="540px"
-       android:layout_below="@+id/mInsert_name"
-       android:layout_marginTop="55px"
-       android:textColor="#facf20"
-       android:text="@string/getyzm"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/find_getyzm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mInsert_phone"
+        android:layout_alignBottom="@+id/mInsert_phone"
+        android:layout_alignEnd="@+id/mInsert_phone"
+        android:text="@string/getyzm"
+        android:textColor="#facf20" />
 
     <EditText
         android:layout_below="@id/mInsert_phone"
