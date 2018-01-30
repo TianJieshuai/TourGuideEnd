@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
@@ -13,6 +14,7 @@ import com.silent.fiveghost.guide.ui.home.fragments.HomeFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.MyPageFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.RouteFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.robsingle.RobSingleFragment;
+import com.silent.fiveghost.guide.widget.ImageViewLogo;
 
 import java.util.ArrayList;
 
@@ -68,6 +70,9 @@ public class HomeActivity extends BaseActivity {
     protected void initView() {
         statusBar.setVisibility(View.VISIBLE);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
+        dock.addView(inflate(R.layout.home_dock));
         tablayout = (TabLayout) findViewById(R.id.tablayout);
+        ImageViewLogo center = findViewById(R.id.center);
+        Glide.with(this).load(R.drawable.xiamianshou).into(center);
     }
 }
