@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.silent.fiveghost.guide.BuildConfig;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.beans.BaseBean;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 /**
  * 登录ds
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener, View.OnLongClickListener {
 
     private EditText mLogin_user;
     private EditText mLogin_pwd;
@@ -45,6 +46,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         find_pdw = findViewById(R.id.find_pdw);
 
         mLogin.setOnClickListener(this);
+        mLogin.setOnLongClickListener(this);
         mRegister.setOnClickListener(this);
         find_pdw.setOnClickListener(this);
     }
@@ -63,6 +65,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                 break;
         }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (BuildConfig.DEBUG)
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        return false;
     }
 
     private void submit() {
