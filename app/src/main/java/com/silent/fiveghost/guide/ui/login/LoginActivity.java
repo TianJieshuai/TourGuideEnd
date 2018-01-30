@@ -62,7 +62,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 break;
             case R.id.find_pdw:
                 startActivity(new Intent(this, RePasswordActivity.class));
-
                 break;
         }
     }

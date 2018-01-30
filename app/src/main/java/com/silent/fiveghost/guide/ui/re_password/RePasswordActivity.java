@@ -67,7 +67,7 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
                     @Override
                     public void onTick(long millisUntilFinished) {
                         // TODO Auto-generated method stub
-                        repwd_getyzm.setText("还剩" + millisUntilFinished / 1000 + "秒");
+                        repwd_getyzm.setText(millisUntilFinished / 1000 + "秒后重新发送");
                         repwd_getyzm.setTextColor(Color.BLUE);
                         repwd_getyzm.setEnabled(false);
                     }

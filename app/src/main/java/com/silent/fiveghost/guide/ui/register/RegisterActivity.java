@@ -84,7 +84,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     @Override
                     public void onTick(long millisUntilFinished) {
                         // TODO Auto-generated method stub
-                        find_getyzm.setText("还剩" + millisUntilFinished / 1000 + "秒");
+                        find_getyzm.setText( millisUntilFinished / 1000 + "秒后重新发送");
                         find_getyzm.setTextColor(Color.BLUE);
                         find_getyzm.setEnabled(false);
                     }
@@ -171,6 +171,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
             }
         });
+
+        
 
 
     }

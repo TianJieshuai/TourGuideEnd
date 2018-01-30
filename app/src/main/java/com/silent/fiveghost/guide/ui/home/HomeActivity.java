@@ -13,6 +13,7 @@ import com.silent.fiveghost.guide.base.fragment.BaseFragment;
 import com.silent.fiveghost.guide.ui.home.adapters.HomePagerAdapter;
 import com.silent.fiveghost.guide.ui.home.fragments.HomeFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.MyPageFragment;
+import com.silent.fiveghost.guide.ui.home.fragments.OrderFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.RouteFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.robsingle.RobSingleFragment;
 import com.silent.fiveghost.guide.widget.ImageViewLogo;
@@ -50,7 +51,7 @@ public class HomeActivity extends BaseActivity {
         fragments.add(new HomeFragment());
         fragments.add(new RouteFragment());
         fragments.add(new RobSingleFragment());
-        fragments.add(new HomeFragment());
+        fragments.add(new OrderFragment());
         fragments.add(new MyPageFragment());
         names.add("首页");
         names.add("路线");

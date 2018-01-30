@@ -145,7 +145,8 @@
         <!-- Android AutoLayout 设置原稿尺寸 -->
 
         <activity android:name=".ui.re_password.RePasswordActivity" />
-        <activity android:name=".ui.route_details.DetailsRoute"></activity>
+        <activity android:name=".ui.route_details.DetailsRoute" />
+        <activity android:name=".ui.orderdetails.OrderDetailsActivity"></activity>
     </application>
 
 </manifest>

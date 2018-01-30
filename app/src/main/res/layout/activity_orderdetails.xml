@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85px"
+            android:background="#000">
+
+            <ImageView
+                android:layout_width="20px"
+                android:layout_height="35px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="订单详情"
+                android:textColor="#fff"
+                android:textSize="30px" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.youth.banner.Banner
+            android:layout_width="match_parent"
+            android:layout_height="330px"
+            android:background="#3cf"></com.youth.banner.Banner>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="700px"
+                    android:layout_height="120px"
+                    android:layout_marginLeft="25px"
+                    android:layout_marginTop="37px"
+                    android:text="@string/scenery" />
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginTop="37px"
+                        android:text="¥"
+                        android:textColor="#f58106"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37px"
+                        android:text="2000"
+                        android:textColor="#f58106"
+                        android:textSize="40px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37px"
+                        android:text="@string/cheng"
+                        android:textSize="28px" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginTop="37px"
+                        android:text="¥"
+                        android:textColor="#f58106"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37px"
+                        android:text="2000"
+                        android:textColor="#f58106"
+                        android:textSize="40px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37px"
+                        android:text="@string/child"
+                        android:textSize="28px" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55px">
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25px"
+                        android:text="山美水美人美 风景宜人 景色优美 游玩好去处 风景如画"
+                        android:textSize="28px" />
+
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="35px"
+                    android:background="#9a9a9a"></View>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="25px"
+                        android:text="团体超过10人"
+                        android:textSize="28px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15px"
+                        android:text="立减1000元"
+                        android:textSize="28px" />
+
+                    <ImageView
+                        android:layout_width="50px"
+                        android:layout_height="20px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="285px"
+                        android:src="@mipmap/ic_launcher"
+                        android:textSize="28px" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15px"
+                    android:layout_marginTop="35px"
+                    android:background="#9a9a9a"></View>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110px">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="555px"
+                        android:layout_height="60px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30px"></android.support.v7.widget.RecyclerView>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10px"
+                        android:background="#9a9a9a"></View>
+
+                    <TextView
+                        android:id="@+id/orderdetails_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="17px"
+                        android:layout_marginRight="17px"
+                        android:text="更多日期" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15px"
+                    android:layout_marginTop="35px"
+                    android:background="#9a9a9a"></View>
+
+                <ImageView
+                    android:layout_width="690px"
+                    android:layout_height="150px"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35px"
+                    android:src="@mipmap/ic_launcher" />
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px">
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_height="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30px"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_height="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="40px"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_height="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="40px"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_height="80px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="40px"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="40px"
+                        android:text="293人已报名" />
+
+                    <ImageView
+                        android:layout_width="20px"
+                        android:layout_height="20px"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15px"
+                        android:src="@mipmap/ic_launcher" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#9a9a9a"></View>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110px">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30px"
+                        android:text="活动评价" />
+
+                    <com.zhy.autolayout.AutoLinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="110px"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="430px"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="58px"
+                            android:textSize="38px"
+                            android:textColor="#ff2f00"
+                            android:text="5.0分" />
+
+                        <TextView
+                            android:textSize="25px"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="导游服务满分" />
+                    </com.zhy.autolayout.AutoLinearLayout>
+                </com.zhy.autolayout.AutoLinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#9a9a9a"></View>
+
+                <ListView
+                    android:id="@+id/order_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></ListView>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+        </android.support.v7.widget.CardView>
+    </com.zhy.autolayout.AutoLinearLayout>
+</ScrollView>
