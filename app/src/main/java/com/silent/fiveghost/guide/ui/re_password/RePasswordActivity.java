@@ -55,7 +55,7 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.find_commit:
-            submit();
+                submit();
                 break;
             case R.id.repwd_getyzm:
                 String phone = mInsert_phone.getText().toString().trim();
@@ -63,14 +63,15 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
                     Toast.makeText(this, "手机号不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                CountDownTimer timer = new CountDownTimer(60*1000, 1000) {
+                CountDownTimer timer = new CountDownTimer(60 * 1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         // TODO Auto-generated method stub
-                        repwd_getyzm.setText("还剩"+millisUntilFinished/1000+"秒");
+                        repwd_getyzm.setText("还剩" + millisUntilFinished / 1000 + "秒");
                         repwd_getyzm.setTextColor(Color.BLUE);
                         repwd_getyzm.setEnabled(false);
                     }
+
                     @Override
                     public void onFinish() {
                         repwd_getyzm.setText("获取验证码");
@@ -84,23 +85,15 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
                 pamares.put("imei", getPhoneIMEI(RePasswordActivity.this));
 
                 sendPost(new PostDataEvent<BaseBean<Boolean>>(Concat.YZM_URL, pamares) {
-                    @Override
-                    public void onSuccess(BaseBean<Boolean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                        switch (loginBeanBaseBean.getErrcode()) {
-                            case "1":
-                                Toast.makeText(RePasswordActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
-                                break;
-                            case "422":
-                                Toast.makeText(RePasswordActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-                                break;
-                        }
 
+                    @Override
+                    public void onSuccessOk(BaseBean<Boolean> booleanBaseBean) {
+                        Toast.makeText(RePasswordActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+
                     }
                 });
                 break;
@@ -131,33 +124,24 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
         HashMap<String, String> pamares = new HashMap<>();
         pamares.put("tel", mInsert_phone.getText().toString());
         pamares.put("password", mInsert_pwd.getText().toString());
-        pamares.put("code",mInsert_phone.getText().toString());
+        pamares.put("code", mInsert_phone.getText().toString());
 
         sendPost(new PostDataEvent<BaseBean<RePasswordBean>>(Concat.REPASSWORD_URL, pamares) {
+
             @Override
-            public void onSuccess(BaseBean<RePasswordBean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                switch (loginBeanBaseBean.getErrcode()) {
-                    case "1":
-                        startActivity(new Intent(RePasswordActivity.this, LoginActivity.class));
-                        break;
-                    case "422":
-                        Toast.makeText(RePasswordActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-
-                        break;
-                }
-
+            public void onSuccessOk(BaseBean<RePasswordBean> rePasswordBeanBaseBean) {
+                startActivity(new Intent(RePasswordActivity.this, LoginActivity.class));
             }
 
             @Override
             public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+
             }
         });
 
 
-
     }
+
     //获取IMEI
     public static String getPhoneIMEI(Context context) {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);

@@ -64,6 +64,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
         }
     }
+
     private void submit() {
         String name = mLogin_user.getText().toString().trim();
         String password = mLogin_pwd.getText().toString().trim();
@@ -75,20 +76,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         pamares.put("tel", name);
         pamares.put("password", password);
         sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
+
             @Override
-            public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
-                switch (loginBeanBaseBean.getErrcode()) {
-                    case "1":
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                        finish();
-                        break;
-                    case "422":
-                        Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onSuccessOk(BaseBean<LoginBean> loginBeanBaseBean) {
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                finish();
             }
+
             @Override
             public void onFailure(Throwable e) {
+
             }
         });
 

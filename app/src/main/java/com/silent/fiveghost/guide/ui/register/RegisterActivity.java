@@ -80,14 +80,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     Toast.makeText(this, "手机号不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                CountDownTimer timer = new CountDownTimer(60*1000, 1000) {
+                CountDownTimer timer = new CountDownTimer(60 * 1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         // TODO Auto-generated method stub
-                        find_getyzm.setText("还剩"+millisUntilFinished/1000+"秒");
+                        find_getyzm.setText("还剩" + millisUntilFinished / 1000 + "秒");
                         find_getyzm.setTextColor(Color.BLUE);
                         find_getyzm.setEnabled(false);
                     }
+
                     @Override
                     public void onFinish() {
                         find_getyzm.setText("获取验证码");
@@ -101,23 +102,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 pamares.put("imei", getPhoneIMEI(RegisterActivity.this));
 
                 sendPost(new PostDataEvent<BaseBean<Boolean>>(Concat.YZM_URL, pamares) {
-                    @Override
-                    public void onSuccess(BaseBean<Boolean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                        switch (loginBeanBaseBean.getErrcode()) {
-                            case "1":
-                                Toast.makeText(RegisterActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
-                                break;
-                            case "422":
-                                Toast.makeText(RegisterActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-                                break;
-                        }
 
+                    @Override
+                    public void onSuccessOk(BaseBean<Boolean> booleanBaseBean) {
+                        Toast.makeText(RegisterActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+
                     }
                 });
                 break;
@@ -167,24 +160,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         pamares.put("category", "1");
         pamares.put("code", mInsert_phone.getText().toString());
         sendPost(new PostDataEvent<BaseBean<RegisterSuccessBean>>(Concat.REGISTER_URL, pamares) {
+
             @Override
-            public void onSuccess(BaseBean<RegisterSuccessBean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                switch (loginBeanBaseBean.getErrcode()) {
-                    case "1":
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                        break;
-                    case "422":
-                        Toast.makeText(RegisterActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-
-                        break;
-                }
-
+            public void onSuccessOk(BaseBean<RegisterSuccessBean> registerSuccessBeanBaseBean) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
 
             @Override
             public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+
             }
         });
 
