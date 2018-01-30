@@ -3,64 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@mipmap/back"
     android:layout_height="match_parent"
+    android:background="@mipmap/back"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
+
     <ImageView
-        android:src="@mipmap/user2x"
+        android:layout_width="36px"
+        android:layout_height="36px"
+        android:layout_marginLeft="79px"
         android:layout_marginTop="660px"
-        android:layout_marginLeft="79px"
-        android:layout_width="36px"
-        android:layout_height="36px" />
+        android:src="@mipmap/user2x" />
+
     <ImageView
-        android:src="@mipmap/account2x"
-        android:layout_marginTop="790px"
-        android:layout_marginLeft="79px"
         android:layout_width="36px"
-        android:layout_height="36px" />
+        android:layout_height="36px"
+        android:layout_marginLeft="79px"
+        android:layout_marginTop="790px"
+        android:src="@mipmap/account2x" />
+
     <EditText
-        android:paddingLeft="90px"
         android:id="@+id/mLogin_user"
-        android:hint="@string/login_user"
+        android:layout_width="650px"
+        android:layout_height="80px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="642px"
         android:background="@color/login_user"
         android:cursorVisible="false"
-        android:layout_marginTop="642px"
-        android:layout_centerHorizontal="true"
-        android:layout_width="650px"
-        android:layout_height="80px" />
+        android:hint="@string/login_user"
+        android:paddingLeft="90px" />
+
     <EditText
-        android:paddingLeft="90px"
-        android:layout_below="@id/mLogin_user"
-        android:background="@color/login_user"
         android:id="@+id/mLogin_pwd"
+        android:layout_width="650px"
+        android:layout_height="80px"
+        android:layout_below="@id/mLogin_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45px"
+        android:background="@color/login_user"
         android:cursorVisible="false"
         android:hint="@string/login_password"
-        android:layout_marginTop="45px"
-        android:layout_centerHorizontal="true"
-        android:layout_width="650px"
-        android:layout_height="80px" />
+        android:inputType="textPassword"
+        android:paddingLeft="90px" />
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mLog"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40px"
-        android:layout_below="@id/mLogin_pwd"
         android:layout_width="650px"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mLogin_pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px">
 
         <Button
-            android:background="@color/login_btn"
             android:id="@+id/mLogin"
             android:layout_width="300px"
             android:layout_height="80px"
+            android:background="@color/login_btn"
             android:text="@string/btn_login" />
+
         <Button
-            android:background="@color/login_user"
             android:id="@+id/mRegister"
-            android:text="@string/btn_register"
-            android:layout_alignParentRight="true"
             android:layout_width="300px"
-            android:layout_height="80px" />
+            android:layout_height="80px"
+            android:layout_alignParentRight="true"
+            android:background="@color/login_user"
+            android:text="@string/btn_register" />
 
         <TextView
             android:id="@+id/find_pdw"
