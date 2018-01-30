@@ -107,7 +107,7 @@
         android:layout_below="@id/mInsert_yzm"
         android:id="@+id/mInsert_pwd"
         android:textSize="13sp"
-
+        android:inputType="textPassword"
         android:maxLength="16"
         android:layout_marginLeft="130px"
         android:hint="@string/insert_pwd"
