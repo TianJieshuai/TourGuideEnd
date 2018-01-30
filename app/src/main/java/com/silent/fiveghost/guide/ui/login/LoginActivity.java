@@ -17,6 +17,7 @@ import com.silent.fiveghost.guide.event.PostDataEvent;
 import com.silent.fiveghost.guide.ui.home.HomeActivity;
 import com.silent.fiveghost.guide.ui.re_password.RePasswordActivity;
 import com.silent.fiveghost.guide.ui.register.RegisterActivity;
+import com.silent.fiveghost.guide.ui.start.StartActivity;
 
 import java.util.HashMap;
 
@@ -53,7 +54,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.mLogin:
-                submit();
+                startActivity(new Intent(this,HomeActivity.class));
                 break;
             case R.id.mRegister:
                 startActivity(new Intent(this, RegisterActivity.class));
@@ -64,37 +65,5 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
         }
     }
-    private void submit() {
-        String name = mLogin_user.getText().toString().trim();
-        String password = mLogin_pwd.getText().toString().trim();
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "帐号密码不能为空", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        HashMap<String, String> pamares = new HashMap<>();
-        pamares.put("tel", name);
-        pamares.put("password", password);
-        sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
-            @Override
-            public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                switch (loginBeanBaseBean.getErrcode()) {
-                    case "1":
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                        finish();
-                        break;
-                    case "422":
-                        Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-                        break;
-                }
 
-            }
-
-            @Override
-            public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
-            }
-        });
-
-    }
 }
