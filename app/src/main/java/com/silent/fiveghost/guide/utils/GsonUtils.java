@@ -10,7 +10,7 @@ import java.lang.reflect.Type;
  * Created by shuaiJie on 2018/1/3.
  */
 
-public class GsonUtils {
+public class  GsonUtils {
     private static Gson gson;
 
     private GsonUtils() {

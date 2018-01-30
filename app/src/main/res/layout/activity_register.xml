@@ -97,6 +97,7 @@
         android:layout_below="@id/mInsert_phone"
         android:id="@+id/mInsert_yzm"
         android:textSize="13sp"
+        android:digits="1234567890"
         android:layout_marginLeft="130px"
         android:hint="@string/insert_yzm"
         android:layout_marginTop="35px"
@@ -106,6 +107,8 @@
         android:layout_below="@id/mInsert_yzm"
         android:id="@+id/mInsert_pwd"
         android:textSize="13sp"
+
+        android:maxLength="16"
         android:layout_marginLeft="130px"
         android:hint="@string/insert_pwd"
         android:layout_marginTop="35px"

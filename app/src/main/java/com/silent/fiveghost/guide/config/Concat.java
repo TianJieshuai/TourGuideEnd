@@ -11,5 +11,7 @@ public interface Concat {
 
     String REGISTER_URL = "http://120.79.137.110:80/api/v1/auth/signup";
 
+    String REPASSWORD_URL = "http://120.79.137.110:80/api/v1/auth/reset-password";
+
     String FILE_NAME = "";
 }

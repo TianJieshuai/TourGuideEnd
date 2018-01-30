@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -78,6 +80,21 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     Toast.makeText(this, "手机号不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                CountDownTimer timer = new CountDownTimer(60*1000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        // TODO Auto-generated method stub
+                        find_getyzm.setText("还剩"+millisUntilFinished/1000+"秒");
+                        find_getyzm.setTextColor(Color.BLUE);
+                        find_getyzm.setEnabled(false);
+                    }
+                    @Override
+                    public void onFinish() {
+                        find_getyzm.setText("获取验证码");
+                        find_getyzm.setEnabled(true);
+                        find_getyzm.setTextColor(0xfffacf20);
+                    }
+                }.start();
                 HashMap<String, String> pamares = new HashMap<>();
                 pamares.put("mobile", phone);
                 pamares.put("module", "1");
@@ -136,13 +153,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             Toast.makeText(this, "pwd不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        String mYqmString = mYqm.getText().toString().trim();
-        if (TextUtils.isEmpty(mYqmString)) {
-            Toast.makeText(this, "mYqmString不能为空", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         // TODO validate success, do something
         if (Join.isMobile(phone) || Join.isPass(pwd)) {
             Toast.makeText(this, "正确", Toast.LENGTH_SHORT).show();
