@@ -3,6 +3,7 @@ package com.silent.fiveghost.guide.ui.home;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
@@ -65,7 +66,7 @@ public class HomeActivity extends BaseActivity {
 
 
     protected void initView() {
-//        statusBar.setVisibility(View.VISIBLE);
+        statusBar.setVisibility(View.VISIBLE);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
         tablayout = (TabLayout) findViewById(R.id.tablayout);
     }
