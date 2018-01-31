@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:layout_marginLeft="30px"
     android:layout_marginRight="30px">
 
@@ -17,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20px"
         android:layout_marginTop="20px"
+        android:background="@drawable/route"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="VectorDrawableCompat" />
 

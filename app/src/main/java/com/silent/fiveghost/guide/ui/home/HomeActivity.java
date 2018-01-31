@@ -101,4 +101,6 @@ public class HomeActivity extends BaseActivity {
         ImageViewLogo center = findViewById(R.id.center);
         Glide.with(this).load(R.drawable.xiamianshou).into(center);
     }
+
+
 }

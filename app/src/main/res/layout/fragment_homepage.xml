@@ -51,7 +51,9 @@
             android:layout_height="320px"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="#ccc" />
+            android:background="@drawable/route"  >
+
+        </android.support.v4.view.ViewPager>
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"

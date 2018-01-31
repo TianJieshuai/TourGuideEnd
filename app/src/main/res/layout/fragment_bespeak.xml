@@ -17,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20px"
         android:layout_marginTop="20px"
+        android:background="@drawable/route"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:ignore="VectorDrawableCompat" />
 

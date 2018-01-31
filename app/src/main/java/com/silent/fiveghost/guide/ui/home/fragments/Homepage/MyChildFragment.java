@@ -3,7 +3,6 @@ package com.silent.fiveghost.guide.ui.home.fragments.Homepage;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,8 +45,5 @@ public class MyChildFragment extends BaseFragment {
         });
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
+
 }

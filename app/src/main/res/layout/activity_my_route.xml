@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eaebed">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="128px"
+        android:background="#34393f"
+        android:paddingTop="40px">
+
+        <ImageView
+            android:layout_width="20px"
+            android:layout_height="50px"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="30px"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="我的路线"
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_title"
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_alignParentEnd="true"
+            android:text="+"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:layout_marginRight="30px"
+            />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/mRoute_RelativeLayout"
+        android:background="@drawable/route"
+        android:layout_width="match_parent"
+        android:layout_height="440px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="27px">
+
+        <ImageView
+
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="320px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="223px"
+            android:layout_height="55px"
+            android:layout_marginTop="35px"
+            android:background="#C95E78"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35px"
+            android:layout_marginStart="17dp"
+            android:text="¥"
+            android:textColor="#fff"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/Price_xml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_marginLeft="10px"
+            android:layout_toEndOf="@+id/textView5"
+            android:layout_toRightOf="@+id/textView5"
+            android:text="3000"
+            android:textColor="#fff"
+            android:textSize="37px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_marginLeft="10px"
+            android:layout_toEndOf="@+id/Price_xml"
+            android:layout_toRightOf="@+id/Price_xml"
+            android:text="起"
+            android:textColor="#fff"
+            android:textSize="30px" />
+
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="115px"
+            android:layout_below="@id/imageView8"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20px"
+                android:layout_below="@+id/imageView8"
+                android:text="泰国五日游"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textView"
+                android:layout_below="@+id/textView"
+                android:text="时间.........." />
+
+            <Button
+                android:id="@+id/mBtn_Release"
+
+                android:layout_width="105px"
+                android:layout_height="60px"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#05c393"
+                android:text="发布"
+                android:textColor="#fff"
+                android:layout_marginEnd="29dp" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

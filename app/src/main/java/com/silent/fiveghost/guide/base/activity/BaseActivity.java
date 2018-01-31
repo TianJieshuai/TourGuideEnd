@@ -161,6 +161,8 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         }
     }
 
+
+
     private final void checkShowBody() {
         switch (bodyShowModl) {
             case BODY_MODE_NOTSCROLL:

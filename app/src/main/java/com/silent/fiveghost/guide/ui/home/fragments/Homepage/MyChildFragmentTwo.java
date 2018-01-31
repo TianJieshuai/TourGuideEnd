@@ -1,12 +1,16 @@
 package com.silent.fiveghost.guide.ui.home.fragments.Homepage;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
+import com.silent.fiveghost.guide.ui.home.TravelAgencyActivity;
 import com.silent.fiveghost.guide.ui.home.adapters.ListViewAdapter;
 
 /**
@@ -33,5 +37,11 @@ public class MyChildFragmentTwo extends BaseFragment {
         lv_home=(ListView) findViewById(R.id.lv_home);
         ListViewAdapter listViewAdapter = new ListViewAdapter(getActivity(),strs);
         lv_home.setAdapter(listViewAdapter);
+        lv_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                getContext().startActivity(new Intent(getActivity(),TravelAgencyActivity.class));
+            }
+        });
     }
 }

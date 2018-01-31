@@ -53,21 +53,22 @@ public class TouristReservationActivity extends BaseActivity implements View.OnC
             case R.id.agree_text:
                 agree_text.setTextColor(0xff00cd96);
                 bespeak_text.setTextColor(0xffffffff);
-                if(mBespeakFragment == null){
-                    mBespeakFragment = new BespeakFragment();
-                    transaction.add(R.id.mFrameLayout,mBespeakFragment);
-                }
-                transaction.show(mBespeakFragment);
-                transaction.commit();
-                break;
-            case R.id.bespeak_text:
-                bespeak_text.setTextColor(0xff00cd96);
-                agree_text.setTextColor(0xffffffff);
                 if(mAgressFragment == null){
                     mAgressFragment = new AgressFragment();
                     transaction.add(R.id.mFrameLayout,mAgressFragment);
                 }
                 transaction.show(mAgressFragment);
+                transaction.commit();
+                break;
+            case R.id.bespeak_text:
+                bespeak_text.setTextColor(0xff00cd96);
+                agree_text.setTextColor(0xffffffff);
+
+                if(mBespeakFragment == null){
+                    mBespeakFragment = new BespeakFragment();
+                    transaction.add(R.id.mFrameLayout,mBespeakFragment);
+                }
+                transaction.show(mBespeakFragment);
                 transaction.commit();
                 break;
         }

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="128px"
+        android:background="#34393f">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="安全设置"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="42px"
+            android:layout_height="32px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/relat"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20px"
+            android:layout_toEndOf="@+id/imageView2"
+            android:text="账号安全" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50px"
+            android:layout_height="25px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <ImageView
+
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageView4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_marginStart="20px"
+            android:layout_toEndOf="@+id/imageView4"
+            android:text="隐私设置" />
+
+        <ImageView
+            android:layout_width="50px"
+            android:layout_height="25px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <ImageView
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageView5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20px"
+            android:layout_toEndOf="@+id/imageView5"
+            android:text="用户注册协议" />
+
+        <ImageView
+            android:layout_width="50px"
+            android:layout_height="25px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <ImageView
+
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20px"
+            android:layout_toEndOf="@+id/imageView6"
+            android:text="清除缓存" />
+
+        <ImageView
+
+            android:layout_width="50px"
+            android:layout_height="25px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px">
+
+        <ImageView
+
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageView7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView7"
+            android:layout_marginStart="20px"
+            android:layout_toEndOf="@+id/imageView7"
+            android:text="意见建议" />
+
+        <ImageView
+
+            android:layout_width="50px"
+            android:layout_height="25px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1" />
+</com.zhy.autolayout.AutoLinearLayout>
+
