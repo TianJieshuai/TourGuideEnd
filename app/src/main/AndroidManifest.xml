@@ -147,6 +147,7 @@
         <activity android:name=".ui.re_password.RePasswordActivity" />
         <activity android:name=".ui.route_details.DetailsRoute" />
         <activity android:name=".ui.home.TouristReservationActivity"></activity>
+        <activity android:name=".ui.orderdetails.OrderDetailsActivity"></activity>
     </application>
 
 </manifest>

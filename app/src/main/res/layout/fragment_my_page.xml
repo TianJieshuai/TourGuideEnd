@@ -187,6 +187,7 @@
                         android:layout_width="36px"
                         android:layout_height="36px" />
                     <TextView
+                        android:id="@+id/my_route"
                         android:gravity="center"
                         android:text="我的路线"
                         android:layout_marginLeft="30px"
@@ -296,6 +297,7 @@
                         android:layout_width="36px"
                         android:layout_height="36px" />
                     <TextView
+                        android:id="@+id/my_SafetySetting"
                         android:gravity="center"
                         android:text="安全设置"
                         android:layout_marginLeft="30px"
