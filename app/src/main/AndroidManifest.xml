@@ -146,13 +146,18 @@
 
         <activity android:name=".ui.re_password.RePasswordActivity" />
         <activity android:name=".ui.route_details.DetailsRoute" />
+        <!-- Android 首页跳转游客预约订单 -->
         <activity android:name=".ui.home.TouristReservationActivity" />
+        <!-- Android 首页跳转旅行社预约订单预约订单 -->
         <activity android:name=".ui.home.TravelAgencyActivity" />
-        <activity android:name=".ui.home.MyRouteActivity" />
-        <activity android:name=".ui.home.MySettingActivity" />
-        <activity android:name=".ui.home.MyRouteDetailsActivity" />
-        <activity android:name=".ui.home.ReleaseRouteActivity" />
-        <activity android:name=".ui.orderdetails.OrderDetailsActivity" />
+        <!-- Android 我的路线 -->
+        <activity android:name=".ui.personalcenter.MyRouteActivity" />
+        <!-- Android 安全设置 -->
+        <activity android:name=".ui.personalcenter.MySettingActivity" />
+        <!-- Android 发布路线 -->
+        <activity android:name=".ui.personalcenter.MyRouteDetailsActivity" />
+        <!-- Android 路线详情 -->
+        <activity android:name=".ui.personalcenter.ReleaseRouteActivity"></activity>
     </application>
 
 </manifest>

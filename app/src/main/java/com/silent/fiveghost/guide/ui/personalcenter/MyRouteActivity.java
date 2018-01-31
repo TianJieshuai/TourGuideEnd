@@ -1,4 +1,4 @@
-package com.silent.fiveghost.guide.ui.home;
+package com.silent.fiveghost.guide.ui.personalcenter;
 
 import android.content.Intent;
 import android.view.View;

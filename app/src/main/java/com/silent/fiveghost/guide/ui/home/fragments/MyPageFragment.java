@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
-import com.silent.fiveghost.guide.ui.home.MyRouteActivity;
-import com.silent.fiveghost.guide.ui.home.MySettingActivity;
+import com.silent.fiveghost.guide.ui.personalcenter.MyRouteActivity;
+import com.silent.fiveghost.guide.ui.personalcenter.MySettingActivity;
 import com.silent.fiveghost.guide.ui.home.adapters.PersonalAdapter;
 
 /**
