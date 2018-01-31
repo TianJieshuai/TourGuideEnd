@@ -68,6 +68,26 @@ public class HomeActivity extends BaseActivity {
         tablayout.getTabAt(3).setIcon(R.mipmap.ic_launcher);
         tablayout.getTabAt(4).setIcon(R.mipmap.ic_launcher);
 
+        viewpager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                fragments.get(position).onResume();
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                for (int x = 0; x < fragments.size(); x++) {
+                    fragments.get(x).onStop();
+                }
+                super.onPageScrollStateChanged(state);
+            }
+        });
     }
 
 
@@ -80,37 +100,5 @@ public class HomeActivity extends BaseActivity {
         tablayout = (TabLayout) findViewById(R.id.tablayout);
         ImageViewLogo center = findViewById(R.id.center);
         Glide.with(this).load(R.drawable.xiamianshou).into(center);
-    }
-
-    @Override
-    protected void onResume() {
-        for (int x = 0; x < fragments.size(); x++) {
-            fragments.get(x).onResume();
-        }
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        for (int x = 0; x < fragments.size(); x++) {
-            fragments.get(x).onStop();
-        }
-        super.onStop();
-    }
-
-    @Override
-    protected void onPause() {
-        for (int x = 0; x < fragments.size(); x++) {
-            fragments.get(x).onPause();
-        }
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        for (int x = 0; x < fragments.size(); x++) {
-            fragments.get(x).onDestroy();
-        }
-        super.onDestroy();
     }
 }
