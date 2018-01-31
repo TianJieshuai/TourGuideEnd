@@ -13,7 +13,7 @@
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="588px"
-                android:background="#D2D2D2">
+                android:background="@mipmap/persinai">
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/autoRelativeLayout"
                     android:layout_width="match_parent"
@@ -22,6 +22,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:textColor="#fff"
                         android:text="个人中心" />
                     <ImageView
                         android:layout_width="60px"

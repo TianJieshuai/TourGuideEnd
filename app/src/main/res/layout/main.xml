@@ -9,7 +9,7 @@
     android:layout_marginLeft="30px"
     android:layout_marginRight="30px">
 
-    <ImageView
+    <com.silent.fiveghost.guide.utils.CircularImageView
         android:id="@+id/iv_image"
         android:layout_width="210px"
         android:layout_height="210px"
@@ -18,9 +18,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20px"
         android:layout_marginTop="20px"
-        android:background="@drawable/route"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="VectorDrawableCompat" />
+        android:src="@mipmap/ic_launcher"
+      />
 
     <TextView
         android:id="@+id/tv_cityname"
