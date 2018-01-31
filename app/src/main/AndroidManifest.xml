@@ -151,7 +151,8 @@
         <activity android:name=".ui.home.MyRouteActivity" />
         <activity android:name=".ui.home.MySettingActivity" />
         <activity android:name=".ui.home.MyRouteDetailsActivity" />
-        <activity android:name=".ui.home.ReleaseRouteActivity"></activity>
+        <activity android:name=".ui.home.ReleaseRouteActivity" />
+        <activity android:name=".ui.orderdetails.OrderDetailsActivity" />
     </application>
 
 </manifest>
