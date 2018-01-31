@@ -24,6 +24,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 单元测试依赖
     testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     // TODO 为解决64K问题
@@ -79,6 +80,7 @@ dependencies {
     // glide 4.0.0
     compile 'com.github.bumptech.glide:glide:4.0.0'
     //cardview
+    //noinspection GradleCompatible
     compile 'com.android.support:cardview-v7:21.0.+'
     //轮播图
     compile 'com.youth.banner:banner:1.4.9'

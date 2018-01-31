@@ -60,6 +60,7 @@ public class HomeActivity extends BaseActivity {
         names.add("我的");
         homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager(), fragments, names);
         viewpager.setAdapter(homePagerAdapter);
+        viewpager.setOffscreenPageLimit(fragments.size());
         tablayout.setupWithViewPager(viewpager);
         tablayout.getTabAt(0).setIcon(R.mipmap.ic_launcher);
         tablayout.getTabAt(1).setIcon(R.mipmap.ic_launcher);
@@ -79,5 +80,37 @@ public class HomeActivity extends BaseActivity {
         tablayout = (TabLayout) findViewById(R.id.tablayout);
         ImageViewLogo center = findViewById(R.id.center);
         Glide.with(this).load(R.drawable.xiamianshou).into(center);
+    }
+
+    @Override
+    protected void onResume() {
+        for (int x = 0; x < fragments.size(); x++) {
+            fragments.get(x).onResume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        for (int x = 0; x < fragments.size(); x++) {
+            fragments.get(x).onStop();
+        }
+        super.onStop();
+    }
+
+    @Override
+    protected void onPause() {
+        for (int x = 0; x < fragments.size(); x++) {
+            fragments.get(x).onPause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        for (int x = 0; x < fragments.size(); x++) {
+            fragments.get(x).onDestroy();
+        }
+        super.onDestroy();
     }
 }
