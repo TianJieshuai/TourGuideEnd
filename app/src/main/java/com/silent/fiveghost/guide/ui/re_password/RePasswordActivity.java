@@ -2,7 +2,6 @@ package com.silent.fiveghost.guide.ui.re_password;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.CountDownTimer;
@@ -21,7 +20,6 @@ import com.silent.fiveghost.guide.beans.BaseBean;
 import com.silent.fiveghost.guide.beans.repassword.RePasswordBean;
 import com.silent.fiveghost.guide.config.Concat;
 import com.silent.fiveghost.guide.event.PostDataEvent;
-import com.silent.fiveghost.guide.ui.login.LoginActivity;
 
 import java.util.HashMap;
 
@@ -130,7 +128,8 @@ public class RePasswordActivity extends BaseActivity implements View.OnClickList
 
             @Override
             public void onSuccessOk(BaseBean<RePasswordBean> rePasswordBeanBaseBean) {
-                startActivity(new Intent(RePasswordActivity.this, LoginActivity.class));
+//                startActivity(new Intent(RePasswordActivity.this, LoginActivity.class));
+                finish();
             }
 
             @Override

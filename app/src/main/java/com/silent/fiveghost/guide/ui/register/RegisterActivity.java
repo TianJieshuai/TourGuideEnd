@@ -163,12 +163,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
             @Override
             public void onSuccessOk(BaseBean<RegisterSuccessBean> registerSuccessBeanBaseBean) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+//                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish();
             }
 
             @Override
             public void onFailure(Throwable e) {
-
+                Toast.makeText(RegisterActivity.this, "网络故障", Toast.LENGTH_SHORT).show();
             }
         });
 
