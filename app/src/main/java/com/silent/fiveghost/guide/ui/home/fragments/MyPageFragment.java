@@ -36,11 +36,11 @@ public class MyPageFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     protected void initView() {
-        mSetting  =  (com.zhy.autolayout.AutoRelativeLayout)findViewById(R.id.mSetting);
-        mRoute  = (com.zhy.autolayout.AutoRelativeLayout)findViewById(R.id.mRoute);
-        mPersion_recyc =(RecyclerView) findViewById(R.id.mPersion_recyc);
+        mSetting = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.mSetting);
+        mRoute = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.mRoute);
+        mPersion_recyc = (RecyclerView) findViewById(R.id.mPersion_recyc);
         mRoute.setOnClickListener(this);
-mSetting.setOnClickListener(this);
+        mSetting.setOnClickListener(this);
         mPersion_recyc.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
         PersonalAdapter adapter = new PersonalAdapter(getActivity());
         mPersion_recyc.setAdapter(adapter);
@@ -54,7 +54,7 @@ mSetting.setOnClickListener(this);
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.mSetting:
                 getContext().startActivity(new Intent(getActivity(), MySettingActivity.class));
                 break;

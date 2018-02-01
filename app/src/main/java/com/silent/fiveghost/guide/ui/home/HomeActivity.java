@@ -59,7 +59,6 @@ public class HomeActivity extends BaseActivity {
         homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager(), fragments, names);
         viewpager.setAdapter(homePagerAdapter);
         viewpager.setCurrentItem(0);
-        viewpager.setOffscreenPageLimit(fragments.size());
         tablayout.setupWithViewPager(viewpager, false);
         tablayout.getTabAt(0).setIcon(R.drawable.home_selector);
         tablayout.getTabAt(1).setIcon(R.drawable.luxian_selector);
