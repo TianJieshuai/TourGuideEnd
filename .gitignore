@@ -4,7 +4,7 @@ gradle/
 /local.properties
 /.idea/
 .DS_Store
-build/
+build
 /captures/
 .externalNativeBuild
 /PushSDK/build/
