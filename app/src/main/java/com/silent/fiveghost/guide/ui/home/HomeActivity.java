@@ -92,7 +92,7 @@ public class HomeActivity extends BaseActivity {
 
 
     protected void initView() {
-        statusBar.setVisibility(View.VISIBLE);
+//        statusBar.setVisibility(View.VISIBLE);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
         View view = LayoutInflater.from(this).inflate(R.layout.home_dock, null, false);
         AutoUtils.autoSize(view);

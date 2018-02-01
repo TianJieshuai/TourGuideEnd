@@ -44,7 +44,7 @@ import java.util.Stack;
 public abstract class BaseActivity extends AutoLayoutActivity {
 
     //是否状态栏透明
-    protected boolean isSetStatusBar = false;
+    protected boolean isSetStatusBar = true;
     //是否允许全屏
     protected boolean mAllowFullScreen = false;
     //是否禁止屏幕旋转
@@ -160,7 +160,6 @@ public abstract class BaseActivity extends AutoLayoutActivity {
                 throw new NullPointerException("未识别");
         }
     }
-
 
 
     private final void checkShowBody() {
