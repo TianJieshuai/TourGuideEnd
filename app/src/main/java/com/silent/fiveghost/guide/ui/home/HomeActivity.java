@@ -5,8 +5,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RadioGroup;
 
-import com.bumptech.glide.Glide;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
@@ -16,7 +16,6 @@ import com.silent.fiveghost.guide.ui.home.fragments.MyPageFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.OrderFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.RouteFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.robsingle.RobSingleFragment;
-import com.silent.fiveghost.guide.widget.ImageViewLogo;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
@@ -40,8 +39,7 @@ public class HomeActivity extends BaseActivity {
     protected void init() {
         setClearStack(true);
         setSteepStatusBar(true);
-        addBodyView(R.layout.view_viewpager);
-        setFooterView(R.layout.view_tablayout);
+        addBodyView(R.layout.activity_home);
     }
 
     @Override
@@ -94,12 +92,11 @@ public class HomeActivity extends BaseActivity {
     protected void initView() {
 //        statusBar.setVisibility(View.VISIBLE);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
-        View view = LayoutInflater.from(this).inflate(R.layout.home_dock, null, false);
+        View view = LayoutInflater.from(this).inflate(R.layout.home_dock, base, false);
         AutoUtils.autoSize(view);
+        RadioGroup reaio = view.findViewById(R.id.reaio);
         dock.addView(view);
         tablayout = (TabLayout) findViewById(R.id.tablayout);
-        ImageViewLogo center = findViewById(R.id.center);
-        Glide.with(this).load(R.drawable.xiamianshou).into(center);
     }
 
 

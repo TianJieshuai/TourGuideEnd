@@ -90,7 +90,7 @@ public class Radio extends RadioButton {
             int index = typedArray.getIndex(x);
             switch (index) {
                 case R.styleable.Radio_circleDiameter:
-                    circleDiameter = typedArray.getDimensionPixelSize(index, -1);
+                    circleDiameter = typedArray.getDimensionPixelSize(index, -1) / 2;
                     break;
                 case R.styleable.Radio_circleIcon:
                     Drawable drawable = context.getDrawable(typedArray.getResourceId(index, 0));
@@ -157,7 +157,6 @@ public class Radio extends RadioButton {
         mPath.lineTo(p3.x, p3.y);
         if (isCircle) {
             mPath.arcTo(new RectF(bitmapRect), 0, 180);
-            canvas.drawBitmap(bitmapDrawable, null, bitmapRect, mPaint);
         } else {
             mPath.lineTo(p2.x, p2.y);
         }
@@ -166,7 +165,10 @@ public class Radio extends RadioButton {
         mPath.lineTo(p5.x, p5.y);
         mPath.lineTo(p4.x, p4.y);
         canvas.drawPath(mPath, mPaint);
-
+        if (isCircle) {
+            mPaint.setColor(0xffffffff);
+            canvas.drawBitmap(bitmapDrawable, null, bitmapRect, mPaint);
+        }
         // 设置下方字体画笔样式
         mPaint.reset();
         mPaint.setColor(Color.RED);

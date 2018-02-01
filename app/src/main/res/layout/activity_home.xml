@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100px" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        app:tabIndicatorHeight="0px"
+        app:tabSelectedTextColor="#00d48c"
+        app:tabTextColor="#989898" />
+
+    <RadioGroup
+        android:id="@+id/reaio"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.silent.fiveghost.guide.widget.Radio
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textSize="30px"
+            app:circleDiameter="100px"
+            app:circleIcon="@drawable/xiamianshou"
+            app:isCircle="false" />
+
+        <com.silent.fiveghost.guide.widget.Radio
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textSize="30px"
+            app:circleDiameter="100px"
+            app:circleIcon="@drawable/xiamianshou"
+            app:isCircle="false" />
+
+        <com.silent.fiveghost.guide.widget.Radio
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textSize="30px"
+            app:circleDiameter="100px"
+            app:circleIcon="@drawable/xiamianshou"
+            app:isCircle="true" />
+
+        <com.silent.fiveghost.guide.widget.Radio
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textSize="30px"
+            app:circleDiameter="100px"
+            app:circleIcon="@drawable/xiamianshou"
+            app:isCircle="false" />
+
+        <com.silent.fiveghost.guide.widget.Radio
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textSize="30px"
+            app:circleDiameter="100px"
+            app:circleIcon="@drawable/xiamianshou"
+            app:isCircle="false" />
+    </RadioGroup>
+</RelativeLayout>
