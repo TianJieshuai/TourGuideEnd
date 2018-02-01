@@ -3,29 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/autoRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="128px">
         <TextView
+            android:id="@+id/tvtv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="340px"
-            android:layout_marginTop="25px"
-            android:text="订单"
+            android:layout_centerInParent="true"
+            android:paddingTop="40px"
             android:textColor="#fff"
-            android:textSize="30px" />
-
+            android:text="订单" />
         <ImageView
             android:id="@+id/order_message"
-            android:layout_width="40px"
-            android:layout_height="30px"
-            android:layout_marginLeft="260px"
-            android:layout_marginTop="25px"
-            android:src="@mipmap/ic_launcher" />
-    </com.zhy.autolayout.AutoLinearLayout>
+            android:layout_width="50px"
+            android:layout_height="45px"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/xiaoxi2x"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/tvtv"
+            />
+        <TextView
+            android:layout_marginTop="50px"
+            android:layout_width="23px"
+            android:layout_height="23px"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25px"
+
+            android:background="@drawable/xiaoxinum_shape"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="#000"
+            android:textSize="10px" />
+    </com.zhy.autolayout.AutoRelativeLayout>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
