@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
 
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
 
@@ -63,5 +64,10 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
             return names.get(position);
         }
         return "";
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+    //    super.destroyItem(container, position, object);
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.silent.fiveghost.guide.R;
@@ -91,6 +92,7 @@ public class HomeActivity extends BaseActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
+
     }
 
 
@@ -101,6 +103,26 @@ public class HomeActivity extends BaseActivity {
         AutoUtils.autoSize(view);
         dock.addView(view);
         tablayout = (TabLayout) findViewById(R.id.tablayout);
+
+        viewpager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+        viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int arg0) {
+            }
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                viewpager.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+            }
+        });
     }
 
 
