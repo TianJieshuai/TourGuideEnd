@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-  >
+    android:orientation="vertical">
 
 
     <com.zhy.autolayout.AutoRelativeLayout
+
         android:layout_width="match_parent"
-        android:layout_height="88px"
-        android:background="#34393f"
-        >
+        android:layout_height="128px"
+        android:background="#34393f">
 
         <ImageView
             android:layout_width="20px"
             android:layout_height="50px"
+            android:layout_alignBottom="@id/tv_title"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30px"
@@ -26,8 +26,8 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:paddingTop="40px"
             android:text="发布路线"
             android:textColor="#fff" />
 
@@ -42,13 +42,16 @@
             android:text="完成"
             android:textColor="#fff" />
     </com.zhy.autolayout.AutoRelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="187px"
@@ -120,32 +123,35 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25px"
                     android:text="01/26周六" />
+
                 <TextView
-                    android:layout_marginLeft="38px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="38px"
                     android:layout_marginTop="25px"
                     android:text="01/26周六" />
+
                 <TextView
-                    android:layout_marginLeft="38px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="38px"
                     android:layout_marginTop="25px"
                     android:text="01/26周六" />
+
                 <View
-                    android:layout_marginLeft="38px"
-                    android:background="#ccc"
                     android:layout_width="1px"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15px"
                     android:layout_marginBottom="15px"
-                    />
+                    android:layout_marginLeft="38px"
+                    android:layout_marginTop="15px"
+                    android:background="#ccc" />
+
                 <TextView
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="60px"
                     android:layout_height="wrap_content"
-                    android:text="更多日期"/>
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="60px"
+                    android:text="更多日期" />
             </com.zhy.autolayout.AutoLinearLayout>
 
             <View

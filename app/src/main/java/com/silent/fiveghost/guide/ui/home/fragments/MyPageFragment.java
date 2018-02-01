@@ -40,7 +40,7 @@ public class MyPageFragment extends BaseFragment implements View.OnClickListener
         mRoute  = (com.zhy.autolayout.AutoRelativeLayout)findViewById(R.id.mRoute);
         mPersion_recyc =(RecyclerView) findViewById(R.id.mPersion_recyc);
         mRoute.setOnClickListener(this);
-
+mSetting.setOnClickListener(this);
         mPersion_recyc.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL));
         PersonalAdapter adapter = new PersonalAdapter(getActivity());
         mPersion_recyc.setAdapter(adapter);

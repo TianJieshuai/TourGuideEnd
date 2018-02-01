@@ -9,35 +9,40 @@
         android:layout_width="match_parent"
         android:layout_height="128px"
         android:background="#34393f"
-        android:paddingTop="40px">
+        >
 
         <ImageView
             android:layout_width="20px"
             android:layout_height="50px"
             android:layout_gravity="center|left"
             android:layout_marginLeft="30px"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageView9" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+           android:layout_centerInParent="true"
+            android:paddingTop="40px"
             android:text="我的路线"
             android:textColor="#fff" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_title"
+
             android:layout_alignBottom="@+id/tv_title"
             android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/imageView9"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30px"
             android:text="+"
             android:textColor="#fff"
-            android:textSize="30dp"
-            android:layout_marginRight="30px"
-            />
+            android:textSize="25dp" />
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mRoute_RelativeLayout"

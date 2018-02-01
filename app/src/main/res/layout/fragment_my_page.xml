@@ -17,28 +17,32 @@
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/autoRelativeLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="88px">
+                    android:layout_height="128px">
                     <TextView
+                        android:id="@+id/tvtv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:paddingTop="40px"
                         android:textColor="#fff"
                         android:text="个人中心" />
                     <ImageView
-                        android:layout_width="60px"
-                        android:layout_height="60px"
+                        android:layout_width="50px"
+                        android:layout_height="45px"
                         android:layout_marginRight="30px"
                         android:src="@mipmap/xiaoxi2x"
                         android:layout_centerInParent="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_alignBottom="@+id/tvtv"
                         />
                     <TextView
-                        android:layout_marginTop="5px"
+                        android:layout_marginTop="50px"
                         android:layout_width="23px"
                         android:layout_height="23px"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="25px"
+
                         android:background="@drawable/xiaoxinum_shape"
                         android:gravity="center"
                         android:text="12"

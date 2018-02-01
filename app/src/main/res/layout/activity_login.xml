@@ -7,26 +7,31 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <ImageView
+    <com.zhy.autolayout.AutoFrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/back" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="147px"
-        android:layout_height="147px"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="183px"
-        android:src="@mipmap/ic_launcher" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/back" />
 
-    <TextView
-        android:layout_width="560px"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="410px"
-        android:text="与您一起同行，留一段美好回忆"
-        android:textColor="#fff"
-        android:textSize="38px" />
+        <ImageView
+            android:layout_width="147px"
+            android:layout_height="147px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="183px"
+            android:src="@mipmap/login" />
+
+        <TextView
+            android:layout_width="560px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="410px"
+            android:textSize="35px"
+            android:textColor="#fff"
+            android:text="与您一起同行，留一段美好回忆" />
+    </com.zhy.autolayout.AutoFrameLayout>
 
     <ImageView
         android:layout_width="36px"
@@ -46,13 +51,13 @@
         android:id="@+id/mLogin_user"
         android:layout_width="650px"
         android:layout_height="80px"
+        android:textColorHint="#fff"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="642px"
         android:background="@color/login_user"
         android:cursorVisible="false"
         android:hint="@string/login_user"
-        android:paddingLeft="90px"
-        android:textColorHint="#fff" />
+        android:paddingLeft="90px" />
 
     <EditText
         android:id="@+id/mLogin_pwd"
@@ -61,12 +66,12 @@
         android:layout_below="@id/mLogin_user"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45px"
+        android:textColorHint="#fff"
         android:background="@color/login_user"
         android:cursorVisible="false"
         android:hint="@string/login_password"
         android:inputType="textPassword"
-        android:paddingLeft="90px"
-        android:textColorHint="#fff" />
+        android:paddingLeft="90px" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mLog"
@@ -80,28 +85,28 @@
             android:id="@+id/mLogin"
             android:layout_width="300px"
             android:layout_height="80px"
+            android:textColor="#fff"
             android:background="@color/login_btn"
-            android:text="@string/btn_login"
-            android:textColor="#fff" />
+            android:text="@string/btn_login" />
 
         <Button
             android:id="@+id/mRegister"
             android:layout_width="300px"
+            android:textColor="#fff"
             android:layout_height="80px"
             android:layout_alignParentRight="true"
             android:background="@color/login_user"
-            android:text="@string/btn_register"
-            android:textColor="#fff" />
+            android:text="@string/btn_register" />
 
         <TextView
             android:id="@+id/find_pdw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:layout_alignParentRight="true"
             android:layout_below="@id/mRegister"
             android:layout_marginTop="43px"
-            android:text="@string/btn_forget_the_password"
-            android:textColor="#fff" />
+            android:text="@string/btn_forget_the_password" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>

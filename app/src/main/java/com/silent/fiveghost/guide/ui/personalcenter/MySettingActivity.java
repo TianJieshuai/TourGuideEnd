@@ -1,15 +1,20 @@
 package com.silent.fiveghost.guide.ui.personalcenter;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.base.activity.BaseActivity;
 
-public class MySettingActivity extends AppCompatActivity {
+public class MySettingActivity extends BaseActivity {
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_setting);
+    protected void init() {
+        addBodyView(R.layout.activity_my_setting);
+        setSteepStatusBar(true);
+    }
+
+    @Override
+    protected void run() {
+
     }
 }

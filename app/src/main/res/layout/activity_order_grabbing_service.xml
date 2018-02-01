@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="#34393f"
+        android:layout_width="match_parent"
+        android:layout_height="125px">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="27px"
+            android:src="@mipmap/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的抢单服务"
+            android:textColor="#fff" />
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:background="#232730"
+        app:tabSelectedTextColor="#00c899"
+        app:tabIndicatorColor="#232730"
+        android:layout_height="100px">
+
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+</com.zhy.autolayout.AutoLinearLayout>

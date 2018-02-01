@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
-import com.silent.fiveghost.guide.ui.orderdetails.OrderDetailsActivity;
+import com.silent.fiveghost.guide.ui.order.OrderDetailsActivity;
 
 /**
  * A simple {@link Fragment} subclass.

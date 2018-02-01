@@ -17,6 +17,7 @@ public class MyRouteActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void init() {
         addBodyView(R.layout.activity_my_route);
+        setSteepStatusBar(true);
     }
 
     @Override
