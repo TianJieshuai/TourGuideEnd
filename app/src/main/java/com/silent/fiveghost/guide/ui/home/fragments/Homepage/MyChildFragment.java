@@ -25,6 +25,7 @@ public class MyChildFragment extends BaseFragment {
     @Override
     protected void initData(Bundle arguments) {
         addBodyView(R.layout.fragment_my_child);
+
     }
 
     @Override

@@ -1,15 +1,18 @@
 package com.silent.fiveghost.guide.ui.home;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.base.activity.BaseActivity;
 
-public class TravelAgencyActivity extends AppCompatActivity {
+public class TravelAgencyActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_travel_agency);
+    protected void init() {
+        addBodyView(R.layout.activity_travel_agency);
+        setSteepStatusBar(true);
+    }
+
+    @Override
+    protected void run() {
+
     }
 }

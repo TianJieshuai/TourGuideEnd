@@ -1,15 +1,20 @@
 package com.silent.fiveghost.guide.ui.personalcenter;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.base.activity.BaseActivity;
 
-public class MyRouteDetailsActivity extends AppCompatActivity {
+public class MyRouteDetailsActivity extends BaseActivity {
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_route_details);
+    protected void init() {
+        addBodyView(R.layout.activity_my_route_details);
+        setSteepStatusBar(true);
+    }
+
+    @Override
+    protected void run() {
+
     }
 }

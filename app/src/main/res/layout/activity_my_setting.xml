@@ -8,7 +8,7 @@
 
 
     <com.zhy.autolayout.AutoRelativeLayout
-
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="128px"
         android:background="#34393f">
@@ -17,8 +17,8 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:paddingTop="40px"
             android:text="安全设置"
             android:textColor="#fff" />
 
@@ -26,8 +26,9 @@
             android:id="@+id/imageView"
             android:layout_width="42px"
             android:layout_height="32px"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@id/tv_title"
             android:layout_marginLeft="30px"
             app:srcCompat="@mipmap/ic_launcher" />
     </com.zhy.autolayout.AutoRelativeLayout>
