@@ -1,11 +1,10 @@
 *.iml
-.gradle
-gradle
+.gradle/
+gradle/
 /local.properties
-/.idea
+/.idea/
 .DS_Store
-build
-/captures
+build/
+/captures/
 .externalNativeBuild
 /PushSDK/build/
-/.idea/workspace.xml
