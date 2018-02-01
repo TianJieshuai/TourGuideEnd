@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
+    <!--    android:fitsSystemWindows="true"-->
     <com.zhy.autolayout.AutoFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -28,9 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="410px"
-            android:textSize="35px"
+            android:text="与您一起同行，留一段美好回忆"
             android:textColor="#fff"
-            android:text="与您一起同行，留一段美好回忆" />
+            android:textSize="35px" />
     </com.zhy.autolayout.AutoFrameLayout>
 
     <ImageView
@@ -51,13 +51,13 @@
         android:id="@+id/mLogin_user"
         android:layout_width="650px"
         android:layout_height="80px"
-        android:textColorHint="#fff"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="642px"
         android:background="@color/login_user"
         android:cursorVisible="false"
         android:hint="@string/login_user"
-        android:paddingLeft="90px" />
+        android:paddingLeft="90px"
+        android:textColorHint="#fff" />
 
     <EditText
         android:id="@+id/mLogin_pwd"
@@ -66,12 +66,12 @@
         android:layout_below="@id/mLogin_user"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45px"
-        android:textColorHint="#fff"
         android:background="@color/login_user"
         android:cursorVisible="false"
         android:hint="@string/login_password"
         android:inputType="textPassword"
-        android:paddingLeft="90px" />
+        android:paddingLeft="90px"
+        android:textColorHint="#fff" />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mLog"
@@ -85,28 +85,28 @@
             android:id="@+id/mLogin"
             android:layout_width="300px"
             android:layout_height="80px"
-            android:textColor="#fff"
             android:background="@color/login_btn"
-            android:text="@string/btn_login" />
+            android:text="@string/btn_login"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/mRegister"
             android:layout_width="300px"
-            android:textColor="#fff"
             android:layout_height="80px"
             android:layout_alignParentRight="true"
             android:background="@color/login_user"
-            android:text="@string/btn_register" />
+            android:text="@string/btn_register"
+            android:textColor="#fff" />
 
         <TextView
             android:id="@+id/find_pdw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
             android:layout_alignParentRight="true"
             android:layout_below="@id/mRegister"
             android:layout_marginTop="43px"
-            android:text="@string/btn_forget_the_password" />
+            android:text="@string/btn_forget_the_password"
+            android:textColor="#fff" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>
