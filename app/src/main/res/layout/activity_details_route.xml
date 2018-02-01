@@ -18,11 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+
+            <com.youth.banner.Banner
+                android:id="@+id/details_banner"
+                app:indicator_drawable_selected="@drawable/bannerbg"
+                app:indicator_drawable_unselected="@drawable/bannerbg2"
                 android:layout_width="match_parent"
-                android:layout_height="345px"
-                android:scaleType="centerCrop"
-                android:src="@drawable/aaa2" />
+                android:layout_height="345px" />
 
             <LinearLayout
                 android:layout_width="match_parent"

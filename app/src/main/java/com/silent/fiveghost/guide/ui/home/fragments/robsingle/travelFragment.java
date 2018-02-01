@@ -64,6 +64,5 @@ public class travelFragment extends BaseFragment {
 //        return inflate;
 //    }
 
-
 }
 
