@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:layout_alignParentBottom="true"
+        android:isScrollContainer="true"
         app:tabIndicatorHeight="0px"
         app:tabSelectedTextColor="#00d48c"
         app:tabTextAppearance="@style/TabLayoutTextStyle"

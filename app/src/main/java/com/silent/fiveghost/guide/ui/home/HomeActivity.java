@@ -57,14 +57,20 @@ public class HomeActivity extends BaseActivity {
         names.add("我的");
         homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager(), fragments, names);
         viewpager.setAdapter(homePagerAdapter);
+        viewpager.setCurrentItem(0);
         viewpager.setOffscreenPageLimit(fragments.size());
-        tablayout.setupWithViewPager(viewpager);
+        tablayout.setupWithViewPager(viewpager, false);
         tablayout.getTabAt(0).setIcon(R.drawable.home_selector);
         tablayout.getTabAt(1).setIcon(R.drawable.luxian_selector);
         tablayout.getTabAt(2).setIcon(R.drawable.qiangdian);
         tablayout.getTabAt(3).setIcon(R.drawable.dingdan_selector);
         tablayout.getTabAt(4).setIcon(R.drawable.me_selector);
-
+        tablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager){
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewpager.setCurrentItem(tab.getPosition(), false);
+            }
+        });
         viewpager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
