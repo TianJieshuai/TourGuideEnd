@@ -5,7 +5,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RadioGroup;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
@@ -94,7 +93,6 @@ public class HomeActivity extends BaseActivity {
         viewpager = (ViewPager) findViewById(R.id.viewpager);
         View view = LayoutInflater.from(this).inflate(R.layout.home_dock, base, false);
         AutoUtils.autoSize(view);
-        RadioGroup reaio = view.findViewById(R.id.reaio);
         dock.addView(view);
         tablayout = (TabLayout) findViewById(R.id.tablayout);
     }

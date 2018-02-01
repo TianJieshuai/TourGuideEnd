@@ -20,61 +20,16 @@
         app:tabSelectedTextColor="#00d48c"
         app:tabTextColor="#989898" />
 
-    <RadioGroup
-        android:id="@+id/reaio"
-        android:layout_width="match_parent"
-        android:layout_height="200px"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="50px">
 
-        <com.silent.fiveghost.guide.widget.Radio
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="首页"
-            android:textSize="30px"
-            app:circleDiameter="100px"
-            app:circleIcon="@drawable/xiamianshou"
-            app:isCircle="false" />
-
-        <com.silent.fiveghost.guide.widget.Radio
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="首页"
-            android:textSize="30px"
-            app:circleDiameter="100px"
-            app:circleIcon="@drawable/xiamianshou"
-            app:isCircle="false" />
-
-        <com.silent.fiveghost.guide.widget.Radio
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="首页"
-            android:textSize="30px"
-            app:circleDiameter="100px"
-            app:circleIcon="@drawable/xiamianshou"
-            app:isCircle="true" />
-
-        <com.silent.fiveghost.guide.widget.Radio
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="首页"
-            android:textSize="30px"
-            app:circleDiameter="100px"
-            app:circleIcon="@drawable/xiamianshou"
-            app:isCircle="false" />
-
-        <com.silent.fiveghost.guide.widget.Radio
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="首页"
-            android:textSize="30px"
-            app:circleDiameter="100px"
-            app:circleIcon="@drawable/xiamianshou"
-            app:isCircle="false" />
-    </RadioGroup>
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:background="@drawable/xiamianshou" />
+    </RelativeLayout>
 </RelativeLayout>
