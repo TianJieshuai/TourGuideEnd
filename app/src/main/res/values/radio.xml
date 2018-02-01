@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Radio">
+        <attr name="circleDiameter" format="dimension" />
+        <attr name="circleIcon" format="reference" />
+        <attr name="isCircle" format="boolean" />
+    </declare-styleable>
+</resources>
