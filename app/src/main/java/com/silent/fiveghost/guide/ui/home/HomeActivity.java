@@ -59,11 +59,11 @@ public class HomeActivity extends BaseActivity {
         viewpager.setAdapter(homePagerAdapter);
         viewpager.setOffscreenPageLimit(fragments.size());
         tablayout.setupWithViewPager(viewpager);
-        tablayout.getTabAt(0).setIcon(R.mipmap.ic_launcher);
-        tablayout.getTabAt(1).setIcon(R.mipmap.ic_launcher);
-        tablayout.getTabAt(2).setIcon(R.mipmap.ic_launcher);
-        tablayout.getTabAt(3).setIcon(R.mipmap.ic_launcher);
-        tablayout.getTabAt(4).setIcon(R.mipmap.ic_launcher);
+        tablayout.getTabAt(0).setIcon(R.drawable.home_selector);
+        tablayout.getTabAt(1).setIcon(R.drawable.luxian_selector);
+        tablayout.getTabAt(2).setIcon(R.drawable.qiangdian);
+        tablayout.getTabAt(3).setIcon(R.drawable.dingdan_selector);
+        tablayout.getTabAt(4).setIcon(R.drawable.me_selector);
 
         viewpager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override

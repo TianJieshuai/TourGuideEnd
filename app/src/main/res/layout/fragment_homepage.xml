@@ -10,17 +10,17 @@
 
 
     <com.zhy.autolayout.AutoRelativeLayout
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="128px"
-        android:background="#34393f">
+        android:background="#34393f"
+        android:fitsSystemWindows="true">
 
         <TextView
             android:id="@+id/tv_title"
-            android:paddingTop="40px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:paddingTop="40px"
             android:text="首页"
             android:textColor="#fff" />
 
@@ -50,7 +50,7 @@
             android:layout_height="320px"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/route"  >
+            android:background="@drawable/route">
 
         </android.support.v4.view.ViewPager>
 
@@ -91,12 +91,14 @@
                     android:text="旅行社预约订单" />
 
             </com.zhy.autolayout.AutoLinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="#d2d2d2"/>
+                android:background="#d2d2d2" />
+
             <FrameLayout
- android:id="@+id/mFragment"
+                android:id="@+id/mFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/linearLayout"></FrameLayout>
