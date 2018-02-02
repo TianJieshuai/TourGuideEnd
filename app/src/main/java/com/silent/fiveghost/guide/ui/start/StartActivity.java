@@ -1,7 +1,6 @@
 package com.silent.fiveghost.guide.ui.start;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.util.Log;
 import android.widget.RelativeLayout;
 
@@ -13,7 +12,6 @@ import com.silent.fiveghost.guide.ui.welcom.WelcomActivity;
 import com.silent.fiveghost.guide.utils.PrefUtils;
 
 public class StartActivity extends BaseActivity {
-    private Handler handler = new Handler();
     private RelativeLayout rlSplash;
 
     @Override
@@ -43,11 +41,10 @@ public class StartActivity extends BaseActivity {
                 if (!guideShowed) {
                     // 跳转到功能引导页
                     startActivity(new Intent(StartActivity.this, WelcomActivity.class));
-                    finish();
                 } else {
                     startActivity(new Intent(StartActivity.this, LoginActivity.class));
-                    finish();
                 }
+                finish();
             }
         }, 2000);
 
