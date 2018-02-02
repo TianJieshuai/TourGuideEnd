@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130px"
     android:background="#34393F"
     >
+    <ImageView
+        android:layout_width="35px"
+        android:layout_height="35px"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="70px"
+        android:id="@+id/finish_toolbar"
+        android:layout_marginLeft="30px"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="路线详情"
         android:textColor="#fff"
-    android:layout_centerInParent="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70px"
+        android:layout_marginLeft="260px"
         android:textSize="30px"
         />
 
-    <ImageView
-        android:layout_width="30px"
-        android:layout_height="30px"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="30px"
-        />
 
-</RelativeLayout>
+</LinearLayout>

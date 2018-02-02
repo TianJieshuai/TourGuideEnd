@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.silent.fiveghost.guide.BuildConfig;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.beans.BaseBean;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 /**
  * 登录ds
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener, View.OnLongClickListener {
 
     private EditText mLogin_user;
     private EditText mLogin_pwd;
@@ -45,6 +46,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         find_pdw = findViewById(R.id.find_pdw);
 
         mLogin.setOnClickListener(this);
+        mLogin.setOnLongClickListener(this);
         mRegister.setOnClickListener(this);
         find_pdw.setOnClickListener(this);
     }
@@ -60,10 +62,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.find_pdw:
                 startActivity(new Intent(this, RePasswordActivity.class));
-
                 break;
         }
     }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (BuildConfig.DEBUG)
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        return false;
+    }
+
     private void submit() {
         String name = mLogin_user.getText().toString().trim();
         String password = mLogin_pwd.getText().toString().trim();
@@ -75,24 +84,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         pamares.put("tel", name);
         pamares.put("password", password);
         sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
+
             @Override
-            public void onSuccess(BaseBean<LoginBean> loginBeanBaseBean) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", loginBeanBaseBean.toString());
-                switch (loginBeanBaseBean.getErrcode()) {
-                    case "1":
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                        finish();
-                        break;
-                    case "422":
-                        Toast.makeText(LoginActivity.this, loginBeanBaseBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            public void onSuccessOk(BaseBean<LoginBean> loginBeanBaseBean) {
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                finish();
             }
 
             @Override
             public void onFailure(Throwable e) {
-//                if (BuildConfig.DEBUG) Log.d("LoginActivity", e.toString());
+
             }
         });
 

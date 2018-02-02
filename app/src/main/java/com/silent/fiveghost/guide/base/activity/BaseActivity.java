@@ -6,15 +6,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.silent.fiveghost.guide.BuildConfig;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.event.DataEvent;
 import com.silent.fiveghost.guide.event.GetDataEvent;
@@ -41,7 +44,7 @@ import java.util.Stack;
 public abstract class BaseActivity extends AutoLayoutActivity {
 
     //是否状态栏透明
-    protected boolean isSetStatusBar = false;
+    protected boolean isSetStatusBar = true;
     //是否允许全屏
     protected boolean mAllowFullScreen = false;
     //是否禁止屏幕旋转
@@ -67,7 +70,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     public final static int CLICK_TIME = 500;
 
     // 状态栏填充
-    protected View statusBar;
+    protected ImageView statusBar;
     //头布局
     protected LinearLayout headerlayout;
     //尾布局
@@ -158,6 +161,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         }
     }
 
+
     private final void checkShowBody() {
         switch (bodyShowModl) {
             case BODY_MODE_NOTSCROLL:
@@ -225,11 +229,11 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.setContentView(R.layout.activity_base);
         // 将activity推入栈中
         activityList.push(this);
-        // 初始化布局,记得要在这个方法里面setContentView()
-        init();
         // 初始化基础控件
         initViews();
 
+        // 初始化布局,记得要在这个方法里面setContentView()
+        init();
         //检测加载头布局
         checkLoadHeader();
         //检测加载身体布局
@@ -282,6 +286,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         base = findViewById(R.id.base);
         dock = findViewById(R.id.dock);
         statusBar = findViewById(R.id.statusBar);
+        statusBar.setMinimumHeight(getStatesBarHeight());
     }
 
     protected void initView() {
@@ -339,6 +344,21 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      */
     public void setSteepStatusBar(boolean isSetStatusBar) {
         this.isSetStatusBar = isSetStatusBar;
+    }
+
+    /**
+     * 获取状态栏高度
+     */
+    public int getStatesBarHeight() {
+        int statusBarHeight = -1;
+        //获取status_bar_height资源的ID
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        if (BuildConfig.DEBUG) Log.d("BaseActivity", "statusBarHeight:" + statusBarHeight);
+        return statusBarHeight;
     }
 
     /**

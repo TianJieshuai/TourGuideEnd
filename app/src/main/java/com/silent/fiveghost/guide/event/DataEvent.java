@@ -1,5 +1,9 @@
 package com.silent.fiveghost.guide.event;
 
+import android.widget.Toast;
+
+import com.silent.fiveghost.guide.application.App;
+import com.silent.fiveghost.guide.beans.BaseBean;
 import com.silent.fiveghost.guide.http.httpapis.CallBack;
 
 import java.util.Map;
@@ -50,5 +54,21 @@ public abstract class DataEvent<T> implements CallBack<T> {
     public Map<String, String> getMap() {
         return map;
     }
+
+    @Override
+    public void onSuccess(T t) {
+        if (t instanceof BaseBean) {
+            switch (((BaseBean) t).getErrcode()) {
+                case "1":
+                    onSuccessOk(t);
+                    break;
+                default:
+                    Toast.makeText(App.getContext(), ((BaseBean) t).getErrmsg(), Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    }
+
+    public abstract void onSuccessOk(T t);
 }
 

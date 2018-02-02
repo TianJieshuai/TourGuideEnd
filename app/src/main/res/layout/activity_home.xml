@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.silent.fiveghost.guide.widget.ViewPagerTouch
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100px" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:isScrollContainer="true"
+        app:tabIndicatorHeight="0px"
+        app:tabSelectedTextColor="#00d48c"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="#989898" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="50px">
+
+        <ImageView
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:background="@drawable/xiamianshou" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,10 +1,11 @@
 *.iml
-.gradle
-gradle
+.gradle/
+gradle/
 /local.properties
-/.idea
+/.idea/
 .DS_Store
 build
-/captures
+/captures/
 .externalNativeBuild
 /PushSDK/build/
+/guide-key-store.jks

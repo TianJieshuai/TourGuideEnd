@@ -40,7 +40,8 @@ public class Route_Adapter extends RecyclerView.Adapter<Route_Adapter.ViewHolder
 
         holder.vv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {context.startActivity(new Intent(context, DetailsRoute.class));
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, DetailsRoute.class));
 
 
             }

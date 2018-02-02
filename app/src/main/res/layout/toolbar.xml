@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="128px"
+   >
+        <!--<ImageView
+            android:id="@+id/left_icon"
+            android:layout_marginLeft="40px"
+            android:layout_alignParentBottom="true"
+            android:layout_width="19px"
+            android:layout_marginBottom="25px"
+            android:layout_height="36px" />
+        <TextView
+            android:id="@+id/mTitle"
+            android:layout_alignParentBottom="true"
+            android:textColor="#fff"
+            android:layout_centerHorizontal="true"
+            android:text="忘记密码"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="25px"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/mMessage"
+            android:layout_marginBottom="27px"
+            android:layout_marginRight="43px"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/btn_top_message"
+            android:layout_width="40px"
+            android:layout_height="32px" />-->
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/mleft_return"
+            android:layout_width="80px"
+            android:layout_height="128px">
+               <RelativeLayout
+                   android:gravity="center_vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                       <ImageView
+                           android:layout_marginTop="40px"
+                           android:layout_centerVertical="true"
+                           android:id="@+id/left_icon"
+                           android:layout_marginLeft="40px"
+                           android:layout_alignParentBottom="true"
+                           android:layout_width="19px"
+                           android:layout_marginBottom="25px"
+                           android:layout_height="36px" />
+               </RelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <TextView
+            android:layout_marginTop="40px"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:text="订单"
+            android:id="@+id/mTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/mMessage"
+            android:layout_marginTop="70px"
+            android:layout_marginRight="44px"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/xiaoxi2x"
+            android:layout_width="40px"
+            android:layout_height="40px" />
+
+        <TextView
+            android:layout_marginTop="40px"
+            android:id="@+id/xiaoxitv_num"
+            android:layout_width="23px"
+            android:layout_height="23px"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="36px"
+            android:background="@drawable/xiaoxinum_shape"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="#000"
+            android:textSize="10px" />
+</com.zhy.autolayout.AutoRelativeLayout>

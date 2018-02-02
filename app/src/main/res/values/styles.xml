@@ -1,5 +1,8 @@
 <resources>
 
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">30px</item>
+    </style>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -13,11 +16,13 @@
         <item name="android:textSize">@dimen/text_title_size</item>
         <item name="android:gravity">center</item>
     </style>
+
     <style name="TextSmallTheme">
         <item name="android:textColor">@color/common_text</item>
         <item name="android:textSize">@dimen/text_title_small_size</item>
         <item name="android:gravity">center</item>
     </style>
+
     <style name="NumberProgressBar_Default">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -30,6 +35,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Passing_Green">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -42,6 +48,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Beauty_Red">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -54,6 +61,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Warning_Red">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -66,6 +74,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Relax_Blue">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -78,6 +87,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Grace_Yellow">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -90,6 +100,7 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Funny_Orange">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -102,16 +113,17 @@
         <item name="progress_reached_bar_height">1.5dp</item>
         <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
+
     <style name="NumberProgressBar_Twinkle_Night">
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_width">match_parent</item>
-    <item name="progress_max">100</item>
-    <item name="progress_current">0</item>
-    <item name="progress_unreached_color">#CCCCCC</item>
-    <item name="progress_reached_color">#ECF0F1</item>
-    <item name="progress_text_size">10sp</item>
-    <item name="progress_text_color">#ECF0F1</item>
-    <item name="progress_reached_bar_height">1.5dp</item>
-    <item name="progress_unreached_bar_height">0.75dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="progress_max">100</item>
+        <item name="progress_current">0</item>
+        <item name="progress_unreached_color">#CCCCCC</item>
+        <item name="progress_reached_color">#ECF0F1</item>
+        <item name="progress_text_size">10sp</item>
+        <item name="progress_text_color">#ECF0F1</item>
+        <item name="progress_reached_bar_height">1.5dp</item>
+        <item name="progress_unreached_bar_height">0.75dp</item>
     </style>
 </resources>

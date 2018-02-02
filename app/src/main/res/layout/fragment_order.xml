@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/autoRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="128px">
+        <TextView
+            android:id="@+id/tvtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="40px"
+            android:textColor="#fff"
+            android:text="订单" />
+        <ImageView
+            android:id="@+id/order_message"
+            android:layout_width="50px"
+            android:layout_height="45px"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/xiaoxi2x"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/tvtv"
+            />
+        <TextView
+            android:layout_marginTop="50px"
+            android:layout_width="23px"
+            android:layout_height="23px"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25px"
+
+            android:background="@drawable/xiaoxinum_shape"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="#000"
+            android:textSize="10px" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250px">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/order_grab_single"
+                android:layout_width="690px"
+                android:layout_height="130px"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="45px"
+                android:background="@drawable/shape1"
+                android:text="我的抢单服务"
+                android:textColor="#fff"
+                android:textSize="30px" />
+
+
+            <Button
+                android:id="@+id/order_Orderbooking"
+                android:layout_width="690px"
+                android:layout_height="130px"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="45px"
+                android:background="@drawable/shape2"
+                android:text="预约订单服务"
+                android:textColor="#fff"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/order_MyRoute"
+                android:layout_width="690px"
+                android:layout_height="130px"
+                android:text="我的路线服务"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="45px"
+                android:background="@drawable/shape3"
+                android:textColor="#fff"
+                android:textSize="30px" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+    </android.support.v7.widget.CardView>
+
+</com.zhy.autolayout.AutoLinearLayout>

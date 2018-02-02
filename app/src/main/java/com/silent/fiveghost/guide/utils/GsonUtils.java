@@ -1,5 +1,7 @@
 package com.silent.fiveghost.guide.utils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
@@ -8,7 +10,7 @@ import java.lang.reflect.Type;
  * Created by shuaiJie on 2018/1/3.
  */
 
-public class GsonUtils {
+public class  GsonUtils {
     private static Gson gson;
 
     private GsonUtils() {
@@ -26,6 +28,7 @@ public class GsonUtils {
     }
 
     public static <T> T fromJson(String json, Type typeOfT) {
+        Log.e("json",json+"");
         return getGson().fromJson(json, typeOfT);
     }
 }

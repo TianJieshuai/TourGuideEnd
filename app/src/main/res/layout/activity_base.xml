@@ -9,18 +9,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/statusBar"
-            android:layout_width="match_parent"
-            android:layout_height="35px"
-            android:background="#ff0"
-            android:visibility="gone" />
-        <!--头布局-->
-        <LinearLayout
-            android:id="@+id/headerlayout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:visibility="gone" />
+            <!--头布局-->
+            <LinearLayout
+                android:id="@+id/headerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </RelativeLayout>
+
 
         <!--头布局和身体布局之间的间隙-->
         <View

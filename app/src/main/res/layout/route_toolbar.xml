@@ -9,21 +9,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+
         android:text="路线"
         android:textSize="35px"
         android:textColor="#fff"
         android:id="@+id/title_xml"
-        android:layout_gravity="center_vertical"
+        android:layout_marginTop="70px"
         android:layout_marginLeft="340px"
         />
 
     <ImageView
         android:layout_width="44px"
         android:layout_height="35px"
-        android:layout_gravity="center_vertical"
         android:src="@mipmap/ic_launcher"
         android:scaleType="centerCrop"
         android:layout_marginLeft="255px"
+        android:layout_marginTop="70px"
         />
 </LinearLayout>

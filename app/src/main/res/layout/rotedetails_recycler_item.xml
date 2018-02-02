@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingLeft="33px"
+    android:paddingRight="33px"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_alignParentTop="true"
+        android:id="@+id/flag5"
+        android:layout_marginLeft="2px"
+        android:layout_marginRight="2px"
+        android:layout_width="match_parent"
+        android:background="#d3d3d3"
+        android:layout_height="1px"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_marginTop="28px"
+        android:layout_marginBottom="28px"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_below="@id/flag5"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingBottom="18px"
+            android:text="第一天：北京-昆明"
+            android:id="@+id/dyt"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingBottom="18px"
+            android:textSize="12sp"
+            android:text="景点：石林"
+            android:id="@+id/jd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="住宿：香格里拉大酒店"
+            android:textSize="12sp"
+            android:paddingBottom="18px"
+            android:id="@+id/zs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="餐饮：手抓饭 手抓饭、傣家泡鲁达"
+            android:textSize="12sp"
+            android:id="@+id/cy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

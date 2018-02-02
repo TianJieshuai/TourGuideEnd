@@ -46,4 +46,5 @@ public class RouteFragment extends BaseFragment {
         Routerecycler_xml.setLayoutManager(linearLayoutManager);
         Routerecycler_xml.setAdapter(new Route_Adapter(getActivity(), list));
     }
+
 }
