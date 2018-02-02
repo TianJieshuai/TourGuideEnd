@@ -2,6 +2,7 @@ package com.silent.fiveghost.guide.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
@@ -24,15 +25,18 @@ import com.zhy.autolayout.config.AutoLayoutConifg;
 public class App extends Application {
 
     private static App context;
+    private Handler handler = new Handler();
 
     public static App getContext() {
         return context;
     }
 
+    public Handler getHandler() {
+        return handler;
+    }
+
     //底下的放置里面  微信的 QQ的
     static {
-        //初始化事件总线
-        EventRegister.init();
         PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");
@@ -52,28 +56,37 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //登录注册
-        UMShareAPI.get(this);
-        Config.DEBUG = true;
-        VersionUtils.init(this);
-        PushAgent mPushAgent = PushAgent.getInstance(this);
-        //消息推送
-        //注册推送服务，每次调用register方法都会回调该接口
-        mPushAgent.register(new IUmengRegisterCallback() {
 
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onSuccess(String deviceToken) {
-                //注册成功会返回device token
-                Log.e("TAG", deviceToken);
+            public void run() {
+
+                //初始化事件总线
+                EventRegister.init();
+
+                //登录注册
+                UMShareAPI.get(App.this);
+                Config.DEBUG = true;
+                VersionUtils.init(App.this);
+                PushAgent mPushAgent = PushAgent.getInstance(App.this);
+                //消息推送
+                //注册推送服务，每次调用register方法都会回调该接口
+                mPushAgent.register(new IUmengRegisterCallback() {
+
+                    @Override
+                    public void onSuccess(String deviceToken) {
+                        //注册成功会返回device token
+                        Log.e("TAG", deviceToken);
+                    }
+
+                    @Override
+                    public void onFailure(String s, String s1) {
+
+                    }
+                });
+                //Bug收集
+                CrashReport.initCrashReport(getApplicationContext(), "d7bf6471ca", false);
             }
-
-            @Override
-            public void onFailure(String s, String s1) {
-
-            }
-        });
-        //Bug收集
-        CrashReport.initCrashReport(getApplicationContext(), "d7bf6471ca", false);
-
+        }, 1000);
     }
 }
