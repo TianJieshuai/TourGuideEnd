@@ -87,7 +87,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         tv_travel.setBackgroundColor(0xffffffff);
         tv_travel.setTextColor(0xff424242);
     }
-
+//
     private void initPassenger() {
         tv_travel.setBackgroundColor(0xff232730);
         tv_travel.setTextColor(0xff00cd96);
