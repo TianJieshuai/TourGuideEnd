@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        guide {
+            keyAlias 'guide'
+            keyPassword 'guide123'
+            storeFile file('C:/guide-key-store.jks')
+            storePassword 'guidekey'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.silent.fiveghost.guide"
@@ -16,6 +24,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.guide
+        }
+        debug {
+            signingConfig signingConfigs.guide
         }
     }
     buildToolsVersion '27.0.3'
@@ -117,6 +129,7 @@ dependencies {
     //轮播图
     compile 'com.youth.banner:banner:1.4.9'
     implementation files('libs/BaiduLBS_Android.jar')
+
     //圆形图片
     compile 'com.github.thinkcool:circletextimageview:1.0.20151218'
 }

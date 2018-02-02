@@ -229,11 +229,11 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.setContentView(R.layout.activity_base);
         // 将activity推入栈中
         activityList.push(this);
-        // 初始化布局,记得要在这个方法里面setContentView()
-        init();
         // 初始化基础控件
         initViews();
 
+        // 初始化布局,记得要在这个方法里面setContentView()
+        init();
         //检测加载头布局
         checkLoadHeader();
         //检测加载身体布局

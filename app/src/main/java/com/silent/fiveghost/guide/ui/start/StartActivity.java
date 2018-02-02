@@ -1,5 +1,6 @@
 package com.silent.fiveghost.guide.ui.start;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RelativeLayout;
@@ -14,8 +15,10 @@ import com.silent.fiveghost.guide.utils.PrefUtils;
 public class StartActivity extends BaseActivity {
     private RelativeLayout rlSplash;
 
+    @SuppressLint("NewApi")
     @Override
     protected void init() {
+        base.setBackground(getDrawable(R.mipmap.back));
         addBodyView(R.layout.activity_splash);
         jumpNextPage();
     }
