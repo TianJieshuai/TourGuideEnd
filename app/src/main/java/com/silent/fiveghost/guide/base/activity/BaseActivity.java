@@ -45,6 +45,30 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     //是否状态栏透明
     protected boolean isSetStatusBar = true;
+
+    // 2018年2月2日 16:37:04 焦帅杰 添加状态栏和虚拟机是否隐藏
+    // 是否隐藏状态栏
+    protected boolean isHideStatusBar = false;
+    // 是否隐藏虚拟键
+    protected boolean isHideVirtualKey = false;
+
+    public boolean isHideStatusBar() {
+        return isHideStatusBar;
+    }
+
+    public void setHideStatusBar(boolean hideStatusBar) {
+        isHideStatusBar = hideStatusBar;
+    }
+
+    public boolean isHideVirtualKey() {
+        return isHideVirtualKey;
+    }
+
+    public void setHideVirtualKey(boolean hideVirtualKey) {
+        isHideVirtualKey = hideVirtualKey;
+    }
+    // 2018年2月2日 16:37:04 焦帅杰 添加状态栏和虚拟机是否隐藏
+
     //是否允许全屏
     protected boolean mAllowFullScreen = false;
     //是否禁止屏幕旋转
@@ -256,6 +280,14 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         //状态栏透明的(沉浸式状态栏)
         if (isSetStatusBar) {
             steepStatusBar();
+        }
+        if (isHideStatusBar()) {
+            //隐藏状态栏
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        if (isHideVirtualKey()) {
+            //隐藏虚拟按键
+            getWindow().getAttributes().systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         }
         //如果为false就禁止屏幕旋转
         if (!isAllowScreenRoate) {
