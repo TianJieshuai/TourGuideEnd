@@ -53,10 +53,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 switch (position) {
                     case 0:
                         mViewPager.setCurrentItem(0);
-                        initPassenger();
+                        initTravel();
                         break;
                     case 1:
-                        initTravel();
+                        initPassenger();
+                        mViewPager.setCurrentItem(1);
                         break;
                 }
             }
@@ -71,17 +72,19 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.tv_passenger:
-               initPassenger();
+                initTravel();
+                mViewPager.setCurrentItem(0);
                              break;
             case R.id.tv_travel:
-               initTravel();
 
+                initPassenger();
+                mViewPager.setCurrentItem(1);
                 break;
         }
 
     }
     private void initTravel() {
-        mViewPager.setCurrentItem(1);
+
         tv_passenger.setBackgroundColor(0xff232730);
         tv_passenger.setTextColor(0xff00cd96);
         tv_travel.setBackgroundColor(0xffffffff);
