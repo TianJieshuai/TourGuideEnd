@@ -16,6 +16,9 @@ import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * Created by 韩学文 on 2017/12/25.
  * 花自飘零水自流。一种相思，两处闲愁。
@@ -25,14 +28,20 @@ import com.zhy.autolayout.config.AutoLayoutConifg;
 public class App extends Application {
 
     private static App context;
-    private Handler handler = new Handler();
+    private static Handler handler = new Handler();
+    private static ExecutorService threadPool = Executors.newCachedThreadPool();
+    ;
 
     public static App getContext() {
         return context;
     }
 
-    public Handler getHandler() {
+    public static Handler getHandler() {
         return handler;
+    }
+
+    public static ExecutorService getThreadPool() {
+        return threadPool;
     }
 
     //底下的放置里面  微信的 QQ的
