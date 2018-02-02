@@ -30,9 +30,12 @@ import org.greenrobot.eventbus.EventBus;
  * 电子邮箱：510889082@qq.com
  */
 
-public class EventRegister {
+public class EventMainfest {
     // 事件清单
     public static void init() {
+        // 注册网络桥梁
         EventBus.getDefault().register(new HttpPresenter());
+        // 注册数据存储桥梁
+        // EventBus.getDefault().register(null);
     }
 }

@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
-import com.silent.fiveghost.guide.event.EventRegister;
+import com.silent.fiveghost.guide.event.EventMainfest;
 import com.silent.fiveghost.guide.utils.VersionUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.message.IUmengRegisterCallback;
@@ -71,7 +71,7 @@ public class App extends Application {
             public void run() {
 
                 //初始化事件总线
-                EventRegister.init();
+                EventMainfest.init();
 
                 //登录注册
                 UMShareAPI.get(App.this);

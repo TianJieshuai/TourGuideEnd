@@ -38,12 +38,12 @@ public abstract class DataEvent<T> implements CallBack<T> {
     protected String url;
     protected Map<String, String> map;
 
-    public DataEvent(String url, Map<String, String> map) {
+    DataEvent(String url, Map<String, String> map) {
         this.url = url;
         this.map = map;
     }
 
-    public DataEvent(String url) {
+    DataEvent(String url) {
         this(url, null);
     }
 
