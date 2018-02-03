@@ -45,9 +45,9 @@
     <application
         android:name=".application.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/back"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/back"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
