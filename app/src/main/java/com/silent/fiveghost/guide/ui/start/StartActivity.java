@@ -1,7 +1,6 @@
 package com.silent.fiveghost.guide.ui.start;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.RelativeLayout;
 
@@ -43,9 +42,9 @@ public class StartActivity extends BaseActivity {
                 // 如果没有展示过功能引导页
                 if (!guideShowed) {
                     // 跳转到功能引导页
-                    startActivity(new Intent(StartActivity.this, WelcomActivity.class));
+                    startActivity(WelcomActivity.class);
                 } else {
-                    startActivity(new Intent(StartActivity.this, LoginActivity.class));
+                    startActivity(LoginActivity.class);
                 }
                 finish();
             }

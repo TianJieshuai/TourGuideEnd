@@ -469,13 +469,15 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      * ***************************************************************************************
      * 页面跳转 ********************************************************************************
      * *****************************************************************************************
+     *
+     * @param clz
      */
-    public void startActivity(Class<BaseActivity> clz) {
+    public <T extends BaseActivity> void startActivity(Class<T> clz) {
         // 单跳转
         super.startActivity(new Intent(this, clz));
     }
 
-    public void startActivityForResult(Class<BaseActivity> clz, int requestCode) {
+    public <T extends BaseActivity> void startActivityForResult(Class<T> clz, int requestCode) {
         // 带回传跳转
         super.startActivityForResult(new Intent(this, clz), requestCode);
     }
