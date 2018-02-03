@@ -1,6 +1,7 @@
 package com.silent.fiveghost.guide.base.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -462,5 +463,20 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     private void sendHttp(DataEvent event) {
         EventBus.getDefault().post(event);
+    }
+
+    /**
+     * ***************************************************************************************
+     * 页面跳转 ********************************************************************************
+     * *****************************************************************************************
+     */
+    public void startActivity(Class<BaseActivity> clz) {
+        // 单跳转
+        super.startActivity(new Intent(this, clz));
+    }
+
+    public void startActivityForResult(Class<BaseActivity> clz, int requestCode) {
+        // 带回传跳转
+        super.startActivityForResult(new Intent(this, clz), requestCode);
     }
 }
