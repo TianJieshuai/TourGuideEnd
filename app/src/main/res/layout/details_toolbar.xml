@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="路线详情"
         android:textColor="#fff"
+        android:id="@+id/robbing_toolbar"
         android:layout_centerInParent="true"
         android:layout_marginTop="70px"
         android:layout_marginLeft="260px"

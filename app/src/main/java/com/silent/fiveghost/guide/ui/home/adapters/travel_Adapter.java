@@ -1,6 +1,7 @@
 package com.silent.fiveghost.guide.ui.home.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.ui.details_robbing.Details_Robbing;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
@@ -35,6 +37,13 @@ public class travel_Adapter extends RecyclerView.Adapter<travel_Adapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
                 holder.time.setText(list.get(position));
+                holder.vv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.startActivity(new Intent(context, Details_Robbing.class));
+                    }
+                });
+
     }
 
     @Override
@@ -45,11 +54,14 @@ public class travel_Adapter extends RecyclerView.Adapter<travel_Adapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private  TextView time;
+        private  View vv;
 
         public ViewHolder(View itemView) {
 
             super(itemView);
             AutoUtils.autoSize(itemView);
+            vv = itemView;
+
             time = itemView.findViewById(R.id.tv_time);
         }
     }

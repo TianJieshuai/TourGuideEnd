@@ -83,7 +83,7 @@ dependencies {
     //rxjava
     compile 'io.reactivex.rxjava2:rxjava:2.1.6'
 
-    //rxandroid
+    //rxandroid 
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
 
     //design资源包

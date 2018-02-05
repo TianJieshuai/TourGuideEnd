@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.silent.fiveghost.guide.ui.details_robbing.Details_Robbing">
+
+    <include layout="@layout/details_toolbar" />
+
+    <ScrollView
+        android:id="@+id/scroll_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="128px"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.youth.banner.Banner
+                android:id="@+id/detailsrobbing_banner"
+                app:indicator_drawable_selected="@drawable/bannerbg"
+                app:indicator_drawable_unselected="@drawable/bannerbg2"
+                android:layout_width="match_parent"
+                android:layout_height="345px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="245px"
+                android:layout_marginTop="330px"
+                android:background="@drawable/details"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32px"
+                        android:text="订单编号 ： "
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="201704052365"
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="165px"
+                        android:text="路线名称：云南5日游"
+                        android:textSize="25px" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32px"
+                        android:text="游客姓名 ："
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="王小花"
+
+                        android:textSize="25px" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32px"
+                        android:text="游客年龄段 ："
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="青年团"
+
+                        android:textSize="25px" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32px"
+                        android:text="出行时间 ："
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2017/02/12"
+
+                        android:textSize="25px" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="380px">
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:text="4"
+                            android:textColor="#FF9A53"
+                            android:textSize="35px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人"
+                            android:textColor="#FF9A53"
+                            android:textSize="35px"
+
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20px"
+                android:layout_marginTop="580px"
+                android:background="#EAE9EE" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="30px"
+                android:layout_marginTop="635px"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="产品定位 : "
+                    android:textSize="25px"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="奢侈团。此行程为秋冬高端休闲度假产品"
+                    android:textSize="25px"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="30px"
+                android:layout_marginTop="680px"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒店提升 : "
+                    android:textSize="25px"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全称入住云南指定的特色酒店"
+                    android:textSize="25px"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="30px"
+                android:layout_marginTop="725px"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="景点升级 : "
+                    android:textSize="25px"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="赠送《冰川大索道》 《丽江千古情》"
+                    android:textSize="25px"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="免费赠送旅游保险"
+                android:paddingLeft="30px"
+                android:layout_marginTop="765px"
+                android:textSize="25px"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:src="@drawable/sijiahao1"
+                android:layout_marginTop="860px"
+                android:scaleType="centerCrop"
+
+                />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提前订购梗实惠"
+        android:layout_centerHorizontal="true"
+        android:textColor="#BB9F3B"
+        android:textSize="28px"
+        android:layout_marginTop="1000px"
+
+        />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可以自由添加西双版纳、香格里拉、泸沽湖"
+                android:layout_centerHorizontal="true"
+                android:textColor="#BB9F3B"
+                android:textSize="28px"
+                android:layout_marginTop="1035px"
+
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="440px"
+                android:layout_marginTop="1465px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:src="@drawable/sijiahao2"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:layout_width="660px"
+                android:layout_height="440px"
+                android:layout_marginTop="1105px"
+                android:layout_marginLeft="45px"
+                android:layout_marginRight="45px"
+                android:src="@drawable/sijiahao2"
+                android:scaleType="centerCrop"
+                />
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:background="#00C899"
+            android:text="抢单"
+            android:textSize="30px"
+            android:layout_alignParentBottom="true"
+            />
+</RelativeLayout>
