@@ -44,15 +44,16 @@
             android:background="#34393f"
             android:orientation="horizontal" />
 
-        <android.support.v4.view.ViewPager
+        <com.youth.banner.Banner
             android:id="@+id/vp_banner"
             android:layout_width="690px"
             android:layout_height="320px"
+
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/route">
 
-        </android.support.v4.view.ViewPager>
+        </com.youth.banner.Banner>
 
         <LinearLayout
             android:id="@+id/ll_main_dot"

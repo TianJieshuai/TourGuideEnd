@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.silent.fiveghost.guide.ui.home.fragments.Homepage.MyChildFragment">
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
         android:id="@+id/lv_home"

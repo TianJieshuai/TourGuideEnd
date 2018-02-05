@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.silent.fiveghost.guide.ui.message.MessageActivity">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="128px"
+        android:background="#34393f"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="40px"
+            android:text="消息"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/message_return"
+            android:layout_width="42px"
+            android:layout_height="32px"
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_marginLeft="30px"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <TextView
+        android:id="@+id/message_xitong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35px"
+        android:layout_marginTop="35px"
+        android:text="系统通知" />
+
+    <View
+        android:layout_width="690px"
+        android:layout_height="1px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35px"
+        android:background="#999"></View>
+
+    <TextView
+        android:id="@+id/message_Grab_a_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35px"
+        android:layout_marginTop="35px"
+        android:text="已抢单通知" />
+
+    <View
+        android:layout_width="690px"
+        android:layout_height="1px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35px"
+        android:background="#999"></View>
+
+    <TextView
+        android:id="@+id/message_Book_an_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35px"
+        android:layout_marginTop="35px"
+        android:text="预约订单通知" />
+
+    <View
+        android:layout_width="690px"
+        android:layout_height="1px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35px"
+        android:background="#999"></View>
+
+</com.zhy.autolayout.AutoLinearLayout>

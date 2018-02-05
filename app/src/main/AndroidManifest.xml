@@ -41,6 +41,7 @@
     <!-- 用于申请获取蓝牙信息进行室内定位 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <!--  -->
     <application
         android:name=".application.App"
@@ -195,7 +196,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="iEm7okYAfGSd5Ve5Y0jZSOOqmc0h7FEQ" />
 
-        <activity android:name=".ui.order.OrderGrabbingServiceActivity"></activity>
+        <activity android:name=".ui.order.OrderGrabbingServiceActivity" />
+        <activity android:name=".ui.message.MessageActivity"></activity>
     </application>
 
 </manifest>
