@@ -6,6 +6,10 @@ import android.widget.TextView;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 
+/**
+ * 消息
+ */
+
 public class MessageActivity extends BaseActivity {
 
     private ImageView message_return;
