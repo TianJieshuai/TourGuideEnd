@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.silent.fiveghost.guide.ui.details_robbing.Details_Robbing">
+    android:orientation="vertical"
+    tools:context="com.silent.fiveghost.guide.ui.details_robbing.Details_RobbingActivity">
 
     <include layout="@layout/details_toolbar" />
 
     <ScrollView
         android:id="@+id/scroll_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="128px"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -22,10 +22,10 @@
 
             <com.youth.banner.Banner
                 android:id="@+id/detailsrobbing_banner"
-                app:indicator_drawable_selected="@drawable/bannerbg"
-                app:indicator_drawable_unselected="@drawable/bannerbg2"
                 android:layout_width="match_parent"
-                android:layout_height="345px" />
+                android:layout_height="345px"
+                app:indicator_drawable_selected="@drawable/bannerbg"
+                app:indicator_drawable_unselected="@drawable/bannerbg2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,7 +132,6 @@
                         android:layout_marginLeft="380px">
 
 
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -159,148 +158,171 @@
                 android:layout_height="20px"
                 android:layout_marginTop="580px"
                 android:background="#EAE9EE" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="635px"
                 android:orientation="horizontal"
                 android:paddingLeft="30px"
-                android:layout_marginTop="635px"
 
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="产品定位 : "
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="奢侈团。此行程为秋冬高端休闲度假产品"
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="30px"
                 android:layout_marginTop="680px"
-                >
+                android:orientation="horizontal"
+                android:paddingLeft="30px">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="酒店提升 : "
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="全称入住云南指定的特色酒店"
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
 
             </LinearLayout>
-
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="30px"
                 android:layout_marginTop="725px"
-                >
+                android:orientation="horizontal"
+                android:paddingLeft="30px">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="景点升级 : "
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="赠送《冰川大索道》 《丽江千古情》"
-                    android:textSize="25px"
-                    />
+                    android:textSize="25px" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="免费赠送旅游保险"
-                android:paddingLeft="30px"
                 android:layout_marginTop="765px"
-                android:textSize="25px"
-                />
+                android:paddingLeft="30px"
+                android:text="免费赠送旅游保险"
+                android:textSize="25px" />
 
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="120px"
-                android:src="@drawable/sijiahao1"
                 android:layout_marginTop="860px"
                 android:scaleType="centerCrop"
+                android:src="@drawable/sijiahao1"
 
                 />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提前订购梗实惠"
-        android:layout_centerHorizontal="true"
-        android:textColor="#BB9F3B"
-        android:textSize="28px"
-        android:layout_marginTop="1000px"
-
-        />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="可以自由添加西双版纳、香格里拉、泸沽湖"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="1000px"
+                android:text="提前订购梗实惠"
                 android:textColor="#BB9F3B"
                 android:textSize="28px"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="1035px"
+                android:text="可以自由添加西双版纳、香格里拉、泸沽湖"
+                android:textColor="#BB9F3B"
+                android:textSize="28px"
 
                 />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="440px"
-                android:layout_marginTop="1465px"
                 android:layout_marginLeft="30px"
                 android:layout_marginRight="30px"
-                android:src="@drawable/sijiahao2"
+                android:layout_marginTop="1465px"
                 android:scaleType="centerCrop"
-                />
+                android:src="@drawable/sijiahao2" />
 
             <ImageView
                 android:layout_width="660px"
                 android:layout_height="440px"
-                android:layout_marginTop="1105px"
                 android:layout_marginLeft="45px"
                 android:layout_marginRight="45px"
-                android:src="@drawable/sijiahao2"
+                android:layout_marginTop="1105px"
                 android:scaleType="centerCrop"
-                />
-
-
-
+                android:src="@drawable/sijiahao2" />
 
 
         </RelativeLayout>
     </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+
         <Button
+            android:id="@+id/submit"
             android:layout_width="match_parent"
-            android:layout_height="100px"
+            android:layout_height="match_parent"
             android:background="#00C899"
             android:text="抢单"
-            android:textSize="30px"
-            android:layout_alignParentBottom="true"
-            />
-</RelativeLayout>
+            android:textSize="30px" />
+
+        <LinearLayout
+            android:id="@+id/isTheme"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/accept"
+                android:layout_width="0dp"
+                android:layout_height="100px"
+                android:layout_weight="1"
+                android:background="#00C899"
+                android:text="接受"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/refuse"
+                android:layout_width="0dp"
+                android:layout_height="100px"
+                android:layout_weight="1"
+                android:background="#00C899"
+                android:text="拒绝"
+                android:textSize="30px" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 import com.silent.fiveghost.guide.R;
-import com.silent.fiveghost.guide.ui.details_robbing.Details_Robbing;
+import com.silent.fiveghost.guide.ui.details_robbing.Details_RobbingActivity;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
@@ -39,7 +39,7 @@ public class Rou_Adapter extends   RecyclerView.Adapter<Rou_Adapter.ViewHolder> 
             holder.vv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    context.startActivity(new Intent(context, Details_Robbing.class));
+                    context.startActivity(new Intent(context, Details_RobbingActivity.class));
                 }
             });
 

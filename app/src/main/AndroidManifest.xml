@@ -171,7 +171,7 @@
         <!-- 重置密码 -->
         <activity android:name=".ui.re_password.RePasswordActivity" />
         <!-- 路线详情 -->
-        <activity android:name=".ui.route_details.DetailsRoute" />
+        <activity android:name=".ui.route_details.DetailsRouteActivity" />
         <!-- 订单详情 -->
         <activity android:name=".ui.order.OrderDetailsActivity" />
         <!-- Android 首页跳转游客预约订单 -->
@@ -197,7 +197,7 @@
             android:value="iEm7okYAfGSd5Ve5Y0jZSOOqmc0h7FEQ" />
 
         <activity android:name=".ui.order.OrderGrabbingServiceActivity" />
-        <activity android:name=".ui.details_robbing.Details_Robbing"></activity>
+        <activity android:name=".ui.details_robbing.Details_RobbingActivity"></activity>
     </application>
 
 </manifest>

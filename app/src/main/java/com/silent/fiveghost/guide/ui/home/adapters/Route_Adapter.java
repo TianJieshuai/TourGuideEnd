@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.silent.fiveghost.guide.R;
-import com.silent.fiveghost.guide.ui.route_details.DetailsRoute;
+import com.silent.fiveghost.guide.ui.route_details.DetailsRouteActivity;
 import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class Route_Adapter extends RecyclerView.Adapter<Route_Adapter.ViewHolder
         holder.vv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, DetailsRoute.class));
+                context.startActivity(new Intent(context, DetailsRouteActivity.class));
 
 
             }

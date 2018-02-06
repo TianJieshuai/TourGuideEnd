@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
+import com.silent.fiveghost.guide.ui.details_robbing.Details_RobbingActivity;
 import com.silent.fiveghost.guide.ui.order.OrderDetailsActivity;
 
 /**
@@ -46,7 +47,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener 
                 startActivity(new Intent(getActivity(), OrderDetailsActivity.class));
                 break;
             case R.id.order_Orderbooking:
-
+                startActivity(new Intent(getContext(), Details_RobbingActivity.class).putExtra("IsThere", true));
                 break;
             case R.id.order_MyRoute:
 
