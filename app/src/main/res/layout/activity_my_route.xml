@@ -28,10 +28,11 @@
             android:layout_height="wrap_content"
            android:layout_centerInParent="true"
             android:paddingTop="40px"
-            android:text="我的路线"
+            android:text="路线模板"
             android:textColor="#fff" />
 
         <TextView
+            android:id="@+id/add_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 

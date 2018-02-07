@@ -214,8 +214,7 @@ public abstract class BaseFragment extends Fragment {
         // 初始化基础控件
         initViews();
         initData(getArguments());
-
-
+        
         //检测加载头布局
         checkLoadHeader();
         //检测加载身体布局

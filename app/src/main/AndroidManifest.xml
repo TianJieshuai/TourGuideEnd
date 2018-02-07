@@ -46,9 +46,9 @@
     <application
         android:name=".application.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/back"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/back"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -171,7 +171,7 @@
         <!-- 重置密码 -->
         <activity android:name=".ui.re_password.RePasswordActivity" />
         <!-- 路线详情 -->
-        <activity android:name=".ui.route_details.DetailsRouteActivity" />
+        <activity android:name=".ui.route_details.DetailsRoute" />
         <!-- 订单详情 -->
         <activity android:name=".ui.order.OrderDetailsActivity" />
         <!-- Android 首页跳转游客预约订单 -->
@@ -186,7 +186,24 @@
         <activity android:name=".ui.personalcenter.MyRouteDetailsActivity" />
         <!-- Android 路线详情 -->
         <activity android:name=".ui.personalcenter.ReleaseRouteActivity" />
-
+        <!-- Android 帮助中心 -->
+        <activity android:name=".ui.personalcenter.Help_CenterActivity" />
+        <!-- Android 财务流水 -->
+        <activity android:name=".ui.personalcenter.CaiWuLiuShuiActivity" />
+        <!-- Android 修改路线 -->
+        <activity android:name=".ui.personalcenter.XiuGaiActivity" />
+        <!-- Android 删除路线 -->
+        <activity android:name=".ui.personalcenter.DeletActivity" />
+        <!-- Android 发布路线 -->
+        <activity android:name=".ui.personalcenter.FaBuActivity" />
+        <!-- Android 添加路线 -->
+        <activity android:name=".ui.personalcenter.AddActivity" />
+        <!-- Android 账户安全 -->
+        <activity android:name=".ui.personalcenter.ZhangHuActivity" />
+        <!-- Android 修改手机号 -->
+        <activity android:name=".ui.personalcenter.ShouJiHaoActivity" />
+        <!-- Android 修改密码 -->
+        <activity android:name=".ui.personalcenter.XgMiMaActivity"></activity>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -197,7 +214,7 @@
             android:value="iEm7okYAfGSd5Ve5Y0jZSOOqmc0h7FEQ" />
 
         <activity android:name=".ui.order.OrderGrabbingServiceActivity" />
-        <activity android:name=".ui.details_robbing.Details_RobbingActivity"></activity>
+
     </application>
 
 </manifest>

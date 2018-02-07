@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+  >
+    <com.zhy.autolayout.AutoLinearLayout
+        android:background="#34393f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            layout="@layout/toolbar"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/shoujihao"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="100px">
+        <ImageView
+            android:layout_marginLeft="45px"
+            android:src="@mipmap/shoujihao2x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="25px"
+            android:text="手机号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginRight="30px"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/btn_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+    <View
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/xiugaimima"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="100px">
+        <ImageView
+            android:layout_marginLeft="45px"
+            android:src="@mipmap/raccount2x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="25px"
+            android:text="修改密码"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginRight="30px"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/btn_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+    <View
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="#d1d1d1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+</com.zhy.autolayout.AutoLinearLayout>

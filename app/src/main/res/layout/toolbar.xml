@@ -51,7 +51,7 @@
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <TextView
-            android:layout_marginTop="40px"
+            android:layout_marginTop="50px"
             android:layout_centerHorizontal="true"
             android:textColor="#fff"
             android:text="订单"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content" />
         <ImageView
             android:id="@+id/mMessage"
-            android:layout_marginTop="70px"
+            android:layout_marginTop="50px"
             android:layout_marginRight="44px"
             android:layout_alignParentRight="true"
             android:src="@mipmap/xiaoxi2x"

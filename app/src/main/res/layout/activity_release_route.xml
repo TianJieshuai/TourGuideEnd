@@ -175,12 +175,14 @@
         android:layout_alignParentBottom="true">
 
         <com.zhy.autolayout.AutoLinearLayout
+
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center">
 
             <TextView
+                android:id="@+id/xiugai"
                 android:layout_width="120px"
                 android:layout_height="60px"
                 android:background="@drawable/shape_route_yello"
@@ -189,12 +191,14 @@
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
+
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center">
 
             <TextView
+                android:id="@+id/delet"
                 android:layout_width="120px"
                 android:layout_height="60px"
                 android:background="@drawable/shape_route_yello"
@@ -203,12 +207,14 @@
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
+
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center">
 
             <TextView
+                android:id="@+id/add"
                 android:layout_width="120px"
                 android:layout_height="60px"
                 android:background="@drawable/shape_route_yello"

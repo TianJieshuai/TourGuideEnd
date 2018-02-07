@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    >
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="128px"
+        android:background="#34393f"
+        >
+
+        <ImageView
+            android:layout_width="20px"
+            android:layout_height="40px"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_marginLeft="30px"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="40px"
+            android:text="发布路线"
+            android:textColor="#fff" />
+        <TextView
+
+
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/imageView9"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30px"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="40px"
+            android:text="发布"
+            android:textColor="#fff" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:background="#eaebed"
+            android:layout_width="match_parent"
+            android:layout_height="185px">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:background="#fff"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:background="#eaebed"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="185px">
+                    <ImageView
+                        android:layout_marginLeft="35px"
+                        android:id="@+id/iv_add_image_one"
+                        android:background="@mipmap/ic_launcher"
+                        android:layout_width="120px"
+                        android:layout_height="120px" />
+                    <ImageView
+                        android:layout_marginLeft="30px"
+                        android:id="@+id/iv_add_image_two"
+                        android:background="@mipmap/ic_launcher"
+                        android:layout_width="120px"
+                        android:layout_height="120px" />
+                </com.zhy.autolayout.AutoLinearLayout>
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_marginTop="15px"
+                    android:layout_marginLeft="35px"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="路线名称："
+                        android:layout_width="wrap_content"
+                        android:layout_height="80px" />
+                    <EditText
+                        android:hint="请输入路线名称"
+                        android:background="#fff"
+                        android:layout_width="match_parent"
+                        android:layout_height="80px" />
+                </com.zhy.autolayout.AutoLinearLayout>
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px">
+                    <com.zhy.autolayout.AutoLinearLayout
+                        android:layout_marginLeft="35px"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80px">
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:text="成人价格："
+                            android:layout_width="wrap_content"
+                            android:layout_height="80px" />
+                        <EditText
+                            android:textSize="15sp"
+                            android:hint="请输入价格"
+                            android:background="#fff"
+                            android:layout_width="200px"
+                            android:layout_height="80px" />
+                    </com.zhy.autolayout.AutoLinearLayout>
+                    <com.zhy.autolayout.AutoLinearLayout
+                        android:layout_marginLeft="35px"
+                        android:layout_width="match_parent"
+                        android:layout_height="80px">
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:text="儿童价格："
+                            android:layout_width="wrap_content"
+                            android:layout_height="80px" />
+                        <EditText
+                            android:textSize="15sp"
+                            android:hint="请输入价格"
+                            android:background="#fff"
+                            android:layout_width="260px"
+                            android:layout_height="80px" />
+                    </com.zhy.autolayout.AutoLinearLayout>
+                </com.zhy.autolayout.AutoLinearLayout>
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_marginLeft="35px"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="出行日期："
+                        android:layout_width="wrap_content"
+                        android:layout_height="80px" />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_marginBottom="15px"
+                    android:layout_marginLeft="35px"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:text="游玩天数："
+                        android:layout_width="wrap_content"
+                        android:layout_height="80px" />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
+                <View
+                    android:background="@color/fengexian"
+                    android:layout_width="match_parent"
+                    android:layout_height="10px"/>
+                <TextView
+                    android:layout_marginLeft="33px"
+                    android:layout_marginTop="35px"
+                    android:text="路线描述"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="top"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="30px"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="35px"
+                    android:background="#fff"
+                    android:hint="请描述你的路线"
+                    android:layout_width="match_parent"
+                    android:layout_height="170px" />
+                <include
+                    layout="@layout/segmentinglineview"/>
+                <TextView
+                    android:layout_marginLeft="33px"
+                    android:layout_marginTop="35px"
+                    android:text="报名须知"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="top"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="30px"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="35px"
+                    android:background="#fff"
+                    android:hint="提示信息....."
+                    android:layout_width="match_parent"
+                    android:layout_height="170px" />
+                <include
+                    layout="@layout/segmentinglineview"/>
+
+                <TextView
+                    android:layout_marginLeft="33px"
+                    android:layout_marginTop="35px"
+                    android:text="温馨提示"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="top"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="30px"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="35px"
+                    android:background="#fff"
+                    android:hint="提示信息...."
+                    android:layout_width="match_parent"
+                    android:layout_height="170px" />
+                <include
+                    layout="@layout/segmentinglineview"/>
+
+                <TextView
+                    android:layout_marginLeft="33px"
+                    android:layout_marginTop="35px"
+                    android:text="注意事项"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="top"
+                    android:layout_marginRight="30px"
+                    android:layout_marginTop="30px"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="35px"
+                    android:background="#fff"
+                    android:hint="请描述你的路线"
+                    android:layout_width="match_parent"
+                    android:layout_height="170px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </ScrollView>
+
+</com.zhy.autolayout.AutoLinearLayout>

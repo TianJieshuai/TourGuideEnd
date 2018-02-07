@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+  >
+    <com.zhy.autolayout.AutoLinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.zhy.autolayout.AutoLinearLayout
+        android:background="@color/toolbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="128px"
+            android:background="#34393f"
+            >
+
+            <ImageView
+                android:layout_width="20px"
+                android:layout_height="40px"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignBottom="@+id/tv_title"
+                android:layout_marginLeft="30px"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingTop="40px"
+                android:text="修改模板"
+                android:textColor="#fff" />
+            <TextView
+
+
+                android:layout_alignBottom="@+id/tv_title"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/imageView9"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="30px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="40px"
+                android:text="保存"
+                android:textColor="#fff" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+        <RelativeLayout
+            android:background="#eaebed"
+            android:layout_width="match_parent"
+            android:layout_height="186px">
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_add_image_one"
+                    android:background="@mipmap/ic_launcher"
+                    android:layout_width="120px"
+                    android:layout_height="120px" />
+                <ImageView
+                    android:layout_marginLeft="30px"
+                    android:id="@+id/iv_add_image_two"
+                    android:background="@mipmap/ic_launcher"
+                    android:layout_width="120px"
+                    android:layout_height="120px" /></LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="189px">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_marginLeft="30px"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#000"
+                        android:text="路线名称  :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        android:background="@null"
+                        android:id="@+id/et_luxianmingcheng"
+                        android:hint="请输入路线名称"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_marginLeft="30px"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#000"
+                        android:text="游玩天数  :"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <Spinner
+                        android:background="@null"
+                        android:id="@+id/et_youwantianshu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <TextView
+                    android:layout_marginRight="29px"
+                    android:layout_centerVertical="true"
+                    android:text="▼"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20px"
+            android:background="#ddd"
+            />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="270px">
+                <TextView
+                    android:layout_marginTop="35px"
+                    android:textColor="#000"
+                    android:text="路线描述"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:layout_marginTop="30px"
+                    android:background="@null"
+                    android:id="@+id/et_luxianmiaoshu"
+                    android:hint="请详细描述你的路线..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"
+                />
+            <LinearLayout
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="270px">
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:textColor="#000"
+                    android:text="报名须知"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:layout_marginTop="30px"
+                    android:background="@null"
+                    android:id="@+id/et_baomingxuzhi"
+                    android:hint="提示信息..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"
+                />
+            <LinearLayout
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="270px">
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:textColor="#000"
+                    android:text="温馨提示"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:background="@null"
+                    android:layout_marginTop="30px"
+                    android:id="@+id/et_wenxintishi"
+                    android:hint="提示信息..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"
+                />
+            <LinearLayout
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="270px">
+                <TextView
+                    android:layout_marginTop="40px"
+                    android:textColor="#000"
+                    android:text="注意事项"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:background="@null"
+                    android:layout_marginTop="30px"
+                    android:id="@+id/et_zhyishixiang"
+                    android:hint="提示信息..."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+</ScrollView>

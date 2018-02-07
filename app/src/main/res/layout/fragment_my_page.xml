@@ -354,6 +354,7 @@
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/cwls"
                 android:layout_width="match_parent"
                 android:layout_height="90px">
                 <com.zhy.autolayout.AutoLinearLayout
@@ -389,6 +390,7 @@
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/help_center"
                 android:layout_width="match_parent"
                 android:layout_height="90px">
 

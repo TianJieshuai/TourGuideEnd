@@ -12,5 +12,8 @@
     <color name="login_btn">#770cc091</color>
     <color name="regisert_btn">#00c899</color>
     <color name="yzm">#facf20</color>
-
+    <color name="nocheck">#9a9a9a</color>
+    <color name="view_background">#d1d1d1</color>
+    <color name="toolbar_background">#34393f</color>
+    <color name="fengexian">#d3d3d3</color>
 </resources>
