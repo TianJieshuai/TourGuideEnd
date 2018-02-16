@@ -9,14 +9,46 @@ import java.util.Map;
 
 public class SPTools {
 
+    private static SharedPreferences sp;
+    private static SharedPreferences spDefault;
+
+    /**
+     * 初始化SharedPreferences
+     */
+    public static void init(Context context) {
+        spDefault = context.getSharedPreferences(Concat.SPDefault, Context.MODE_PRIVATE);
+    }
+
+    /**
+     * 使用指定名称的SharedPreferences
+     *
+     * @param context
+     * @param spName
+     */
+    public static void initSp(Context context, String spName) {
+        sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE);
+    }
+
+    /**
+     * 取消使用指定名称的SharedPreferences
+     */
+    public static void camenlSp() {
+        sp = null;
+    }
+
+    private static SharedPreferences.Editor getEdit() {
+        if (sp != null) {
+            return sp.edit();
+        } else {
+            return spDefault.edit();
+        }
+    }
 
     /**
      * 保存数据
      */
-    public static void put(Context context, String key, Object obj) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
+    public static void put(String key, Object obj) {
+        SharedPreferences.Editor editor = getEdit();
         if (obj instanceof Boolean) {
             editor.putBoolean(key, (Boolean) obj);
         } else if (obj instanceof Float) {
@@ -25,8 +57,10 @@ public class SPTools {
             editor.putInt(key, (Integer) obj);
         } else if (obj instanceof Long) {
             editor.putLong(key, (Long) obj);
-        } else {
+        } else if (obj instanceof String) {
             editor.putString(key, (String) obj);
+        } else {
+            editor.putString(key, GsonUtils.toJson(obj));
         }
         editor.commit();
     }
@@ -34,19 +68,31 @@ public class SPTools {
     /**
      * 获取指定数据
      */
-    public static Object get(Context context, String key, Object defaultObj) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        if (defaultObj instanceof Boolean) {
-            return sp.getBoolean(key, (Boolean) defaultObj);
-        } else if (defaultObj instanceof Float) {
-            return sp.getFloat(key, (Float) defaultObj);
-        } else if (defaultObj instanceof Integer) {
-            return sp.getInt(key, (Integer) defaultObj);
-        } else if (defaultObj instanceof Long) {
-            return sp.getLong(key, (Long) defaultObj);
-        } else if (defaultObj instanceof String) {
-            return sp.getString(key, (String) defaultObj);
+    public static Object get(String key, Object defaultObj) {
+        if (sp != null) {
+            if (defaultObj instanceof Boolean) {
+                return sp.getBoolean(key, (Boolean) defaultObj);
+            } else if (defaultObj instanceof Float) {
+                return sp.getFloat(key, (Float) defaultObj);
+            } else if (defaultObj instanceof Integer) {
+                return sp.getInt(key, (Integer) defaultObj);
+            } else if (defaultObj instanceof Long) {
+                return sp.getLong(key, (Long) defaultObj);
+            } else if (defaultObj instanceof String) {
+                return sp.getString(key, (String) defaultObj);
+            }
+        } else {
+            if (defaultObj instanceof Boolean) {
+                return spDefault.getBoolean(key, (Boolean) defaultObj);
+            } else if (defaultObj instanceof Float) {
+                return spDefault.getFloat(key, (Float) defaultObj);
+            } else if (defaultObj instanceof Integer) {
+                return spDefault.getInt(key, (Integer) defaultObj);
+            } else if (defaultObj instanceof Long) {
+                return spDefault.getLong(key, (Long) defaultObj);
+            } else if (defaultObj instanceof String) {
+                return spDefault.getString(key, (String) defaultObj);
+            }
         }
         return null;
     }
@@ -54,41 +100,36 @@ public class SPTools {
     /**
      * 删除指定数据
      */
-    public static void remove(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.remove(key);
-        editor.commit();
+    public static void remove(String key) {
+        getEdit().remove(key);
     }
 
     /**
      * 返回所有键值对
      */
-    public static Map<String, ?> getAll(Context context) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        Map<String, ?> map = sp.getAll();
-        return map;
+    public static Map<String, ?> getAll() {
+        if (sp != null) {
+            return sp.getAll();
+        } else {
+            return spDefault.getAll();
+        }
     }
 
     /**
      * 删除所有数据
      */
-    public static void clear(Context context) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.clear();
-        editor.commit();
+    public static void clear() {
+        getEdit().clear().commit();
     }
 
     /**
      * 检查key对应的数据是否存在
      */
-    public static boolean contains(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(Concat.FILE_NAME,
-                context.MODE_PRIVATE);
-        return sp.contains(key);
+    public static boolean contains(String key) {
+        if (sp != null) {
+            return sp.contains(key);
+        } else {
+            return spDefault.contains(key);
+        }
     }
 }

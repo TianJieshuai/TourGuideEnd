@@ -28,7 +28,7 @@ import java.util.Map;
  * 电子邮箱：510889082@qq.com
  */
 
-public abstract class GetDataEvent<T> extends DataEvent<T>{
+public abstract class GetDataEvent<T> extends DataEvent<T> {
 
     public GetDataEvent(String url, Map<String, String> map) {
         super(url, map);
@@ -38,4 +38,7 @@ public abstract class GetDataEvent<T> extends DataEvent<T>{
         super(url);
     }
 
+    public GetDataEvent(String url, Map<String, String> map, boolean isPreserve) {
+        super(url, map, isPreserve);
+    }
 }

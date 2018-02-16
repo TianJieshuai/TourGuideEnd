@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.silent.fiveghost.guide.event.EventMainfest;
+import com.silent.fiveghost.guide.utils.SPTools;
 import com.silent.fiveghost.guide.utils.VersionUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.message.IUmengRegisterCallback;
@@ -28,8 +29,8 @@ import java.util.concurrent.Executors;
 public class App extends Application {
 
     private static App context;
-    private static Handler handler = new Handler();
-    private static ExecutorService threadPool = Executors.newCachedThreadPool();
+    private static Handler handler;
+    private static ExecutorService threadPool;
     ;
 
     public static App getContext() {
@@ -69,7 +70,12 @@ public class App extends Application {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                // handler
+                handler = new Handler();
+                // 线程池
+                threadPool = Executors.newCachedThreadPool();
+                //初始化SharedPreferences
+                SPTools.init(context);
                 //初始化事件总线
                 EventMainfest.init();
 
@@ -96,6 +102,6 @@ public class App extends Application {
                 //Bug收集
                 CrashReport.initCrashReport(getApplicationContext(), "d7bf6471ca", false);
             }
-        }, 1000);
+        }, 100);
     }
 }

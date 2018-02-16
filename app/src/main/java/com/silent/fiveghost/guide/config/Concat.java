@@ -14,4 +14,6 @@ public interface Concat {
     String REPASSWORD_URL = "http://120.79.137.110:80/api/v1/auth/reset-password";
 
     String FILE_NAME = "";
+
+    String SPDefault = "default";
 }

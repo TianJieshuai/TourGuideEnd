@@ -33,4 +33,8 @@ public abstract class PostDataEvent<T> extends DataEvent<T> {
     public PostDataEvent(String url, Map<String, String> map) {
         super(url, map);
     }
+
+    public PostDataEvent(String url, Map<String, String> map, boolean isPreserve) {
+        super(url, map, isPreserve);
+    }
 }

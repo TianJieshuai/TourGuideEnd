@@ -5,6 +5,7 @@ import android.widget.Toast;
 import com.silent.fiveghost.guide.application.App;
 import com.silent.fiveghost.guide.beans.BaseBean;
 import com.silent.fiveghost.guide.http.httpapis.CallBack;
+import com.silent.fiveghost.guide.utils.SPTools;
 
 import java.util.Map;
 
@@ -37,10 +38,16 @@ import java.util.Map;
 public abstract class DataEvent<T> implements CallBack<T> {
     protected String url;
     protected Map<String, String> map;
+    protected boolean isPreserve;
 
-    DataEvent(String url, Map<String, String> map) {
+    DataEvent(String url, Map<String, String> map, boolean isPreserve) {
         this.url = url;
         this.map = map;
+        this.isPreserve = isPreserve;
+    }
+
+    DataEvent(String url, Map<String, String> map) {
+        this(url, map, false);
     }
 
     DataEvent(String url) {
@@ -60,6 +67,9 @@ public abstract class DataEvent<T> implements CallBack<T> {
         if (t instanceof BaseBean) {
             switch (((BaseBean) t).getErrcode()) {
                 case "1":
+                    // 请求成功是否保存数据
+                    if (isPreserve)
+                        SPTools.put(t.getClass().getName(), t);
                     onSuccessOk(t);
                     break;
                 default:
