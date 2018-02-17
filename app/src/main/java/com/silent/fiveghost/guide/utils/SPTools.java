@@ -3,6 +3,8 @@ package com.silent.fiveghost.guide.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.reflect.TypeToken;
+import com.silent.fiveghost.guide.beans.BaseBean;
 import com.silent.fiveghost.guide.config.Concat;
 
 import java.util.Map;
@@ -67,34 +69,51 @@ public class SPTools {
 
     /**
      * 获取指定数据
+     * 2018年2月17日 09:11:23 焦帅杰 修改返回值 和 默认值 添加json解析BaseBean对象
+     * 布尔         默认false
+     * float        默认0.0
+     * int          默认0
+     * long         默认0
+     * String       默认null
+     * BaseBean     默认null
+     * 其它类型     默认 "未识别类型"
      */
-    public static Object get(String key, Object defaultObj) {
+    public static <T> T get(String key, T type) {
         if (sp != null) {
-            if (defaultObj instanceof Boolean) {
-                return sp.getBoolean(key, (Boolean) defaultObj);
-            } else if (defaultObj instanceof Float) {
-                return sp.getFloat(key, (Float) defaultObj);
-            } else if (defaultObj instanceof Integer) {
-                return sp.getInt(key, (Integer) defaultObj);
-            } else if (defaultObj instanceof Long) {
-                return sp.getLong(key, (Long) defaultObj);
-            } else if (defaultObj instanceof String) {
-                return sp.getString(key, (String) defaultObj);
+            if (type instanceof Boolean) {
+                return (T) (Boolean) sp.getBoolean(key, false);
+            } else if (type instanceof Float) {
+                return (T) (Float) sp.getFloat(key, 0.0F);
+            } else if (type instanceof Integer) {
+                return (T) (Integer) sp.getInt(key, 0);
+            } else if (type instanceof Long) {
+                return (T) (Long) sp.getLong(key, 0L);
+            } else if (type instanceof String) {
+                return (T) sp.getString(key, null);
+            } else if (type instanceof BaseBean) {
+                return GsonUtils.fromJson(sp.getString(key, null), new TypeToken<T>() {
+                }.getType());
+            } else {
+                return (T) "未识别类型";
             }
         } else {
-            if (defaultObj instanceof Boolean) {
-                return spDefault.getBoolean(key, (Boolean) defaultObj);
-            } else if (defaultObj instanceof Float) {
-                return spDefault.getFloat(key, (Float) defaultObj);
-            } else if (defaultObj instanceof Integer) {
-                return spDefault.getInt(key, (Integer) defaultObj);
-            } else if (defaultObj instanceof Long) {
-                return spDefault.getLong(key, (Long) defaultObj);
-            } else if (defaultObj instanceof String) {
-                return spDefault.getString(key, (String) defaultObj);
+            if (type instanceof Boolean) {
+                return (T) (Boolean) spDefault.getBoolean(key, false);
+            } else if (type instanceof Float) {
+                return (T) (Float) spDefault.getFloat(key, 0.0F);
+            } else if (type instanceof Integer) {
+                return (T) (Integer) spDefault.getInt(key, 0);
+            } else if (type instanceof Long) {
+                return (T) (Long) spDefault.getLong(key, 0L);
+            } else if (type instanceof String) {
+                return (T) spDefault.getString(key, null);
+            } else if (type instanceof BaseBean) {
+                return GsonUtils.fromJson(spDefault.getString(key, null), new TypeToken<T>() {
+                }.getType());
+            } else {
+                return (T) "未识别类型";
             }
         }
-        return null;
     }
 
     /**
