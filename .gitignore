@@ -9,3 +9,4 @@ build
 .externalNativeBuild
 /PushSDK/build/
 /guide-key-store.jks
+/projectFilesBackup1/.idea/workspace.xml
