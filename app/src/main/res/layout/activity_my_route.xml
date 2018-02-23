@@ -2,31 +2,30 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#eaebed">
+    android:background="#eaebed"
+    android:orientation="vertical">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="128px"
-        android:background="#34393f"
-        >
+        android:background="#34393f">
 
         <ImageView
+            android:id="@+id/imageView9"
             android:layout_width="20px"
             android:layout_height="50px"
-            android:layout_gravity="center|left"
-            android:layout_marginLeft="30px"
-            android:layout_centerInParent="true"
             android:layout_alignBottom="@+id/tv_title"
             android:layout_alignParentStart="true"
-            android:src="@mipmap/ic_launcher"
-            android:id="@+id/imageView9" />
+            android:layout_centerInParent="true"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="30px"
+            android:src="@drawable/left" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_centerInParent="true"
+            android:layout_centerInParent="true"
             android:paddingTop="40px"
             android:text="路线模板"
             android:textColor="#fff" />
@@ -45,14 +44,15 @@
             android:textColor="#fff"
             android:textSize="25dp" />
     </com.zhy.autolayout.AutoRelativeLayout>
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mRoute_RelativeLayout"
-        android:background="@drawable/route"
         android:layout_width="match_parent"
         android:layout_height="440px"
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
-        android:layout_marginTop="27px">
+        android:layout_marginTop="27px"
+        android:background="@drawable/route">
 
         <ImageView
 
@@ -112,18 +112,18 @@
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
             android:layout_height="115px"
             android:layout_below="@id/imageView8"
-            android:background="#fff">
+            android:background="#fff"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="20px"
                 android:layout_below="@+id/imageView8"
+                android:layout_marginLeft="20px"
                 android:text="泰国五日游"
                 android:textSize="20dp" />
 
@@ -141,10 +141,10 @@
                 android:layout_height="60px"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:layout_marginEnd="29dp"
                 android:background="#05c393"
                 android:text="发布"
-                android:textColor="#fff"
-                android:layout_marginEnd="29dp" />
+                android:textColor="#fff" />
         </com.zhy.autolayout.AutoRelativeLayout>
     </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoLinearLayout>
