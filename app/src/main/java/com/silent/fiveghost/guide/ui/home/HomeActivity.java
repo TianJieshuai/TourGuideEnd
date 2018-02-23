@@ -100,9 +100,10 @@ public class HomeActivity extends BaseActivity {
             public void run() {
                 for (int x = 0; x < 1000; x++) {
                     try {
-                        Thread.sleep(2000);
+                        Thread.sleep(500);
                     } catch (InterruptedException e) {
                     }
+                    EventBus.getDefault().removeAllStickyEvents();
                     EventBus.getDefault().postSticky(new MessageEvent(x));
                 }
             }
