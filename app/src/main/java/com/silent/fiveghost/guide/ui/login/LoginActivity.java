@@ -83,7 +83,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         HashMap<String, String> pamares = new HashMap<>();
         pamares.put("tel", name);
         pamares.put("password", password);
-        sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares) {
+        sendPost(new PostDataEvent<BaseBean<LoginBean>>(Concat.LOGIN_URL, pamares, true) {
 
             @Override
             public void onSuccessOk(BaseBean<LoginBean> loginBeanBaseBean) {

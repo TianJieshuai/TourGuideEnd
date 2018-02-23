@@ -95,6 +95,8 @@ public class HomeActivity extends BaseActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
+
+
         App.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {

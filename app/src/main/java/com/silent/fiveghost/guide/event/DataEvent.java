@@ -69,7 +69,7 @@ public abstract class DataEvent<T> implements CallBack<T> {
                 case "1":
                     // 请求成功是否保存数据
                     if (isPreserve)
-                        SPTools.put(t.getClass().getName(), t);
+                        SPTools.put(((BaseBean) t).getData().getClass().getName(), t);
                     onSuccessOk(t);
                     break;
                 default:

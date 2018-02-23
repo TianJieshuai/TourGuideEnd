@@ -78,40 +78,36 @@ public class SPTools {
      * BaseBean     默认null
      * 其它类型     默认 "未识别类型"
      */
-    public static <T> T get(String key, T type) {
+    public static <T> Object get(String key, T type) {
         if (sp != null) {
             if (type instanceof Boolean) {
-                return (T) (Boolean) sp.getBoolean(key, false);
+                return (Boolean) sp.getBoolean(key, false);
             } else if (type instanceof Float) {
-                return (T) (Float) sp.getFloat(key, 0.0F);
+                return (Float) sp.getFloat(key, 0.0F);
             } else if (type instanceof Integer) {
-                return (T) (Integer) sp.getInt(key, 0);
+                return (Integer) sp.getInt(key, 0);
             } else if (type instanceof Long) {
-                return (T) (Long) sp.getLong(key, 0L);
+                return (Long) sp.getLong(key, 0L);
             } else if (type instanceof String) {
-                return (T) sp.getString(key, null);
-            } else if (type instanceof BaseBean) {
-                return GsonUtils.fromJson(sp.getString(key, null), new TypeToken<T>() {
-                }.getType());
+                return sp.getString(key, null);
             } else {
-                return (T) "未识别类型";
+                return GsonUtils.fromJson(sp.getString(key, null), new TypeToken<BaseBean<T>>() {
+                }.getType());
             }
         } else {
             if (type instanceof Boolean) {
-                return (T) (Boolean) spDefault.getBoolean(key, false);
+                return (Boolean) spDefault.getBoolean(key, false);
             } else if (type instanceof Float) {
-                return (T) (Float) spDefault.getFloat(key, 0.0F);
+                return (Float) spDefault.getFloat(key, 0.0F);
             } else if (type instanceof Integer) {
-                return (T) (Integer) spDefault.getInt(key, 0);
+                return (Integer) spDefault.getInt(key, 0);
             } else if (type instanceof Long) {
-                return (T) (Long) spDefault.getLong(key, 0L);
+                return (Long) spDefault.getLong(key, 0L);
             } else if (type instanceof String) {
-                return (T) spDefault.getString(key, null);
-            } else if (type instanceof BaseBean) {
-                return GsonUtils.fromJson(spDefault.getString(key, null), new TypeToken<T>() {
-                }.getType());
+                return spDefault.getString(key, null);
             } else {
-                return (T) "未识别类型";
+                return GsonUtils.fromJson(spDefault.getString(key, null), new TypeToken<BaseBean<T>>() {
+                }.getType());
             }
         }
     }
