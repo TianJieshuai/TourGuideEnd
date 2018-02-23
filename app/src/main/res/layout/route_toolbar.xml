@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130px"
     android:background="#34393F">
@@ -14,11 +14,10 @@
         android:textColor="#fff"
         android:textSize="35px" />
 
-    <ImageView
-        android:layout_width="44px"
-        android:layout_height="35px"
-        android:layout_marginLeft="255px"
-        android:layout_marginTop="70px"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
-</LinearLayout>
+    <com.silent.fiveghost.guide.widget.MessageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="58px" />
+</RelativeLayout>

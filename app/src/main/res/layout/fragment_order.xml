@@ -19,29 +19,12 @@
             android:text="订单"
             android:textColor="#fff" />
 
-        <ImageView
-            android:id="@+id/order_message"
-            android:layout_width="50px"
-            android:layout_height="45px"
-            android:layout_alignBottom="@+id/tvtv"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="30px"
-            android:src="@mipmap/xiaoxi2x" />
-
-        <TextView
-            android:layout_width="23px"
-            android:layout_height="23px"
-            android:layout_alignParentEnd="true"
+        <com.silent.fiveghost.guide.widget.MessageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="25px"
-            android:layout_marginTop="50px"
-
-            android:background="@drawable/xiaoxinum_shape"
-            android:gravity="center"
-            android:text="12"
-            android:textColor="#000"
-            android:textSize="10px" />
+            android:layout_marginRight="30px"
+            android:layout_marginTop="58px" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <android.support.v7.widget.CardView

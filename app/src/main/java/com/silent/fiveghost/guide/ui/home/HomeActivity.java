@@ -8,8 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.application.App;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.base.fragment.BaseFragment;
+import com.silent.fiveghost.guide.event.MessageEvent;
 import com.silent.fiveghost.guide.ui.home.adapters.HomePagerAdapter;
 import com.silent.fiveghost.guide.ui.home.fragments.HomeFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.MyPageFragment;
@@ -17,6 +19,8 @@ import com.silent.fiveghost.guide.ui.home.fragments.OrderFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.RouteFragment;
 import com.silent.fiveghost.guide.ui.home.fragments.robsingle.RobSingleFragment;
 import com.zhy.autolayout.utils.AutoUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
@@ -65,7 +69,7 @@ public class HomeActivity extends BaseActivity {
         tablayout.getTabAt(2).setIcon(R.drawable.qiangdian);
         tablayout.getTabAt(3).setIcon(R.drawable.dingdan_selector);
         tablayout.getTabAt(4).setIcon(R.drawable.me_selector);
-        tablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager){
+        tablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager) {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewpager.setCurrentItem(tab.getPosition(), false);
@@ -91,7 +95,18 @@ public class HomeActivity extends BaseActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
-
+        App.getThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+                for (int x = 0; x < 1000; x++) {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                    }
+                    EventBus.getDefault().postSticky(new MessageEvent(x));
+                }
+            }
+        });
     }
 
 
@@ -114,10 +129,12 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onPageSelected(int arg0) {
             }
+
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
                 viewpager.getParent().requestDisallowInterceptTouchEvent(true);
             }
+
             @Override
             public void onPageScrollStateChanged(int arg0) {
             }

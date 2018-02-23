@@ -3,10 +3,12 @@ package com.silent.fiveghost.guide.widget;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.silent.fiveghost.guide.BuildConfig;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.event.MessageEvent;
 
@@ -59,8 +61,9 @@ public class MessageView extends RelativeLayout {
         EventBus.getDefault().register(this);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void sendMessage(MessageEvent event) {
+        if (BuildConfig.DEBUG) Log.d("接收到消息数量", event.toString());
         messageCount.setText(event.messageCount + "");
     }
 }

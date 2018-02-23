@@ -24,14 +24,12 @@
             android:textColor="#fff"
             android:textSize="35px" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="42px"
-            android:layout_height="32px"
-            android:layout_alignBottom="@+id/tv_title"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30px"
-            app:srcCompat="@mipmap/ic_launcher" />
+        <com.silent.fiveghost.guide.widget.MessageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="58px" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout

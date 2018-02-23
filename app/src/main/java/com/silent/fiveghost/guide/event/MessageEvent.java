@@ -26,5 +26,16 @@ package com.silent.fiveghost.guide.event;
  */
 
 public class MessageEvent {
+    public MessageEvent(int messageCount) {
+        this.messageCount = messageCount;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageEvent{" +
+                "messageCount=" + messageCount +
+                '}';
+    }
+
     public int messageCount;
 }
