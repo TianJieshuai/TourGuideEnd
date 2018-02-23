@@ -66,12 +66,13 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        // handler
+        handler = new Handler();
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // handler
-                handler = new Handler();
+
                 // 线程池
                 threadPool = Executors.newCachedThreadPool();
                 //初始化SharedPreferences
