@@ -3,45 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="588px"
                 android:background="@mipmap/persinai">
+
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/autoRelativeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="128px">
+
                     <TextView
                         android:id="@+id/tvtv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:paddingTop="40px"
-                        android:textColor="#fff"
-                        android:text="个人中心" />
+                        android:text="个人中心"
+                        android:textColor="#fff" />
+
                     <ImageView
                         android:layout_width="50px"
                         android:layout_height="45px"
-                        android:layout_marginRight="30px"
-                        android:src="@mipmap/xiaoxi2x"
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentEnd="true"
                         android:layout_alignBottom="@+id/tvtv"
-                        />
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="30px"
+                        android:src="@mipmap/xiaoxi2x" />
+
                     <TextView
-                        android:layout_marginTop="50px"
                         android:layout_width="23px"
                         android:layout_height="23px"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="25px"
+                        android:layout_marginTop="50px"
 
                         android:background="@drawable/xiaoxinum_shape"
                         android:gravity="center"
@@ -49,6 +55,7 @@
                         android:textColor="#000"
                         android:textSize="10px" />
                 </com.zhy.autolayout.AutoRelativeLayout>
+
                 <com.silent.fiveghost.guide.utils.CircularImageView
                     android:id="@+id/user_icon"
                     android:layout_width="136px"
@@ -60,6 +67,7 @@
                     app:civ_border="true"
                     app:civ_borderColor="#777d7670"
                     app:civ_borderWidth="9px" />
+
                 <TextView
                     android:id="@+id/user_name"
                     android:layout_width="wrap_content"
@@ -69,6 +77,7 @@
                     android:layout_marginTop="65px"
                     android:text="我想静静"
                     android:textColor="#fff" />
+
                 <TextView
                     android:id="@+id/user_sex"
                     android:layout_width="wrap_content"
@@ -78,6 +87,7 @@
                     android:layout_marginTop="36px"
                     android:text="女"
                     android:textColor="#fff" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,6 +97,7 @@
                     android:layout_toRightOf="@id/user_sex"
                     android:text="27岁"
                     android:textColor="#fff" />
+
                 <View
                     android:id="@+id/flag8"
                     android:layout_width="match_parent"
@@ -96,13 +107,15 @@
                     android:layout_marginRight="30px"
                     android:layout_marginTop="37px"
                     android:background="#6c6e6b" />
+
                 <ImageView
                     android:layout_width="36px"
                     android:layout_height="36px"
                     android:layout_below="@id/flag8"
                     android:layout_marginLeft="40px"
                     android:layout_marginTop="45px"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/chexing" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,6 +124,7 @@
                     android:layout_marginTop="45px"
                     android:text="车&#12288;&#12288;型"
                     android:textColor="#fff" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,13 +133,15 @@
                     android:layout_marginTop="45px"
                     android:text="SUV"
                     android:textColor="#fff" />
+
                 <ImageView
                     android:layout_width="36px"
                     android:layout_height="36px"
                     android:layout_below="@id/flag8"
                     android:layout_marginLeft="440px"
                     android:layout_marginTop="45px"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/chengshi" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -134,6 +150,7 @@
                     android:layout_marginTop="45px"
                     android:text="接单城市"
                     android:textColor="#fff" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,12 +159,14 @@
                     android:layout_marginTop="45px"
                     android:text="云南"
                     android:textColor="#fff" />
+
                 <ImageView
                     android:layout_width="36px"
                     android:layout_height="36px"
                     android:layout_marginLeft="40px"
                     android:layout_marginTop="450px"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/pianhao" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -155,23 +174,19 @@
                     android:layout_marginTop="450px"
                     android:text="带团偏好"
                     android:textColor="#fff" />
+
                 <com.silent.fiveghost.guide.utils.FlowLayout
                     android:layout_width="400px"
                     android:layout_height="110px"
                     android:layout_marginLeft="243px"
                     android:layout_marginTop="450px">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="幽默"
                         android:textColor="#fff" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10px"
-                        android:paddingRight="10px"
-                        android:text="幽默"
-                        android:textColor="#fff" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -179,6 +194,7 @@
                         android:paddingRight="10px"
                         android:text="幽默"
                         android:textColor="#fff" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -186,6 +202,7 @@
                         android:paddingRight="10px"
                         android:text="幽默"
                         android:textColor="#fff" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -193,6 +210,15 @@
                         android:paddingRight="10px"
                         android:text="幽默"
                         android:textColor="#fff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10px"
+                        android:paddingRight="10px"
+                        android:text="幽默"
+                        android:textColor="#fff" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -202,6 +228,7 @@
                         android:textColor="#fff" />
                 </com.silent.fiveghost.guide.utils.FlowLayout>
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/mPersion_recyc"
                 android:layout_width="match_parent"
@@ -209,20 +236,24 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:background="#eaebed" />
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/mRoute"
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/wodeluxian" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -230,6 +261,7 @@
                         android:gravity="center"
                         android:text="我的路线" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -237,6 +269,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -245,19 +278,23 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/daoyoupeixun" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -265,6 +302,7 @@
                         android:gravity="center"
                         android:text="导游培训" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -272,6 +310,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:id="@+id/flag7"
                     android:layout_width="match_parent"
@@ -281,19 +320,23 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/lishipingjia" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -301,6 +344,7 @@
                         android:gravity="center"
                         android:text="历史评价" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -308,6 +352,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -316,6 +361,7 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/mSetting"
                 android:layout_width="match_parent"
@@ -326,11 +372,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/shezhi" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -338,6 +386,7 @@
                         android:gravity="center"
                         android:text="安全设置" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -345,6 +394,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -353,20 +403,24 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/cwls"
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/caiwu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -374,6 +428,7 @@
                         android:gravity="center"
                         android:text="财务流水" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -381,6 +436,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -389,6 +445,7 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/help_center"
                 android:layout_width="match_parent"
@@ -399,11 +456,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/bangzhu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -411,6 +470,7 @@
                         android:gravity="center"
                         android:text="帮助中心" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -418,6 +478,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -426,19 +487,23 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/tousu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -446,6 +511,7 @@
                         android:gravity="center"
                         android:text="投诉" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -453,6 +519,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -461,19 +528,23 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="90px">
+
                 <com.zhy.autolayout.AutoLinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="36px"
                         android:layout_height="36px"
                         android:layout_marginLeft="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/tuichu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="90px"
@@ -481,6 +552,7 @@
                         android:gravity="center"
                         android:text="退出" />
                 </com.zhy.autolayout.AutoLinearLayout>
+
                 <ImageView
                     android:layout_width="15px"
                     android:layout_height="26px"
@@ -488,6 +560,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
                     android:src="@mipmap/ic_launcher" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1px"
@@ -496,6 +569,7 @@
                     android:layout_marginRight="30px"
                     android:background="#d2d2d2" />
             </com.zhy.autolayout.AutoRelativeLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="190px" />

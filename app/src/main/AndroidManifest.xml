@@ -46,9 +46,9 @@
     <application
         android:name=".application.App"
         android:allowBackup="true"
-        android:icon="@mipmap/back"
+        android:icon="@mipmap/login"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/back"
+        android:roundIcon="@mipmap/login"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -167,7 +167,7 @@
             android:value="1334" />
         <!-- Android AutoLayout 设置原稿尺寸 -->
 
-
+        <activity android:name=".ui.details_robbing.Details_RobbingActivity" />
         <!-- 重置密码 -->
         <activity android:name=".ui.re_password.RePasswordActivity" />
         <!-- 路线详情 -->

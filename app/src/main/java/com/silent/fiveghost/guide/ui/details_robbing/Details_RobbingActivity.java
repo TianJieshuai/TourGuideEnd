@@ -18,6 +18,9 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 路线详情
+ */
 public class Details_RobbingActivity extends BaseActivity implements OnBannerListener, View.OnClickListener {
 
     private TextView robbing_toolbar;

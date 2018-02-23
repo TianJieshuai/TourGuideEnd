@@ -3,27 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.fragments.RouteFragment">
-   <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-       android:background="#EAEBED"
-    >
-   <include layout="@layout/route_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EAEBED"
+        android:orientation="vertical">
+
+        <include layout="@layout/route_toolbar" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Routerecycler_xml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 
-   <android.support.v7.widget.RecyclerView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/Routerecycler_xml"
-       ></android.support.v7.widget.RecyclerView>
-
-
-</LinearLayout>
-
-
-
-
+    </LinearLayout>
 
 
 </FrameLayout>
