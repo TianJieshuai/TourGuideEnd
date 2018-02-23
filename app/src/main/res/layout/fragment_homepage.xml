@@ -22,7 +22,8 @@
             android:layout_centerInParent="true"
             android:paddingTop="40px"
             android:text="首页"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="35px" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -62,7 +63,8 @@
             android:layout_alignBottom="@id/vp_banner"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal" />
+
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
