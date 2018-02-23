@@ -1,5 +1,6 @@
 package com.silent.fiveghost.guide.event;
 
+import android.util.Log;
 import android.widget.Toast;
 
 import com.silent.fiveghost.guide.application.App;
@@ -74,6 +75,7 @@ public abstract class DataEvent<T> implements CallBack<T> {
                     break;
                 default:
                     Toast.makeText(App.getContext(), ((BaseBean) t).getErrmsg(), Toast.LENGTH_SHORT).show();
+                    Log.e("请求失败", t.toString());
                     break;
             }
         }

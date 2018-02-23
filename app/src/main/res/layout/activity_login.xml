@@ -17,6 +17,7 @@
             android:background="@mipmap/back" />
 
         <ImageView
+            android:id="@+id/logo_icon"
             android:layout_width="147px"
             android:layout_height="147px"
             android:layout_gravity="center_horizontal"

@@ -3,13 +3,15 @@
     <item>
         <shape>
             <!--    边框颜色    -->
-            <solid android:color="#d6d6d6"/>
+            <solid android:color="#d6d6d6" />
         </shape>
     </item>
-    <item android:left="1dp" android:bottom="1dp">
+    <item
+        android:bottom="1dp"
+        android:left="1dp">
         <shape>
             <!--    边框里面的颜色    -->
-            <solid android:color="#ffffff"/>
+            <solid android:color="#ffffff" />
         </shape>
     </item>
 </layer-list>

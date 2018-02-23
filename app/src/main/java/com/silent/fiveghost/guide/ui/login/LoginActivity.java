@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.silent.fiveghost.guide.event.PostDataEvent;
 import com.silent.fiveghost.guide.ui.home.HomeActivity;
 import com.silent.fiveghost.guide.ui.re_password.RePasswordActivity;
 import com.silent.fiveghost.guide.ui.register.RegisterActivity;
+import com.silent.fiveghost.guide.ui.test.TestActivity;
 
 import java.util.HashMap;
 
@@ -31,6 +33,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     private Button mLogin;
     private Button mRegister;
     private TextView find_pdw;
+    private ImageView logo_icon;
 
     @Override
     protected void init() {
@@ -44,7 +47,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         mLogin = findViewById(R.id.mLogin);
         mRegister = findViewById(R.id.mRegister);
         find_pdw = findViewById(R.id.find_pdw);
+        logo_icon = findViewById(R.id.logo_icon);
 
+        logo_icon.setOnLongClickListener(this);
         mLogin.setOnClickListener(this);
         mLogin.setOnLongClickListener(this);
         mRegister.setOnClickListener(this);
@@ -69,7 +74,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     public boolean onLongClick(View v) {
         if (BuildConfig.DEBUG)
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            switch (v.getId()) {
+                case R.id.logo_icon:
+                    startActivity(TestActivity.class);
+                    break;
+                case R.id.mLogin:
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    break;
+            }
         return false;
     }
 

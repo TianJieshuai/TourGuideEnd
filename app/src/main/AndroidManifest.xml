@@ -167,7 +167,8 @@
             android:value="1334" />
         <!-- Android AutoLayout 设置原稿尺寸 -->
 
-        <!--路线详情-->
+
+        <!-- 路线详情 -->
         <activity android:name=".ui.details_robbing.Details_RobbingActivity" />
         <!-- 重置密码 -->
         <activity android:name=".ui.re_password.RePasswordActivity" />
@@ -204,8 +205,8 @@
         <!-- Android 修改手机号 -->
         <activity android:name=".ui.personalcenter.ShouJiHaoActivity" />
         <!-- Android 修改密码 -->
-        <activity android:name=".ui.personalcenter.XgMiMaActivity"></activity>
-        <!--消息-->
+        <activity android:name=".ui.personalcenter.XgMiMaActivity" />
+        <!-- 消息 -->
         <activity android:name=".ui.message.MessageActivity" />
 
         <service
@@ -218,7 +219,7 @@
             android:value="iEm7okYAfGSd5Ve5Y0jZSOOqmc0h7FEQ" />
 
         <activity android:name=".ui.order.OrderGrabbingServiceActivity" />
-
+        <activity android:name=".ui.test.TestActivity"></activity>
     </application>
 
 </manifest>
