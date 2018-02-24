@@ -206,6 +206,8 @@
         <activity android:name=".ui.personalcenter.ShouJiHaoActivity" />
         <!-- Android 修改密码 -->
         <activity android:name=".ui.personalcenter.XgMiMaActivity" />
+        <!--路线详情-->
+        <activity android:name=".ui.route_details.DetailsRouteActivity" />
         <!-- 消息 -->
         <activity android:name=".ui.message.MessageActivity" />
 

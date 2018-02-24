@@ -46,6 +46,6 @@ public class HttpPresenter {
         /*
          * 上传事件
          */
-        model.up(event.getUrl(), event.getFiles(), event);
+        model.up(event.getUrl(),  event.getFiles(), event);
     }
 }

@@ -10,12 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="300px"
         android:layout_margin="5dp"
-        android:background="@drawable/shape_route_yello">
+        android:background="@drawable/shape_route_yello"
+        android:padding="5dp">
 
-        <TextView
+        <EditText
             android:id="@+id/show"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:background="#00ffffff" />
     </ScrollView>
 
     <ScrollView

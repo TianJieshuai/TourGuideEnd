@@ -8,6 +8,7 @@ import com.silent.fiveghost.guide.http.httpapis.NewsApi;
 import com.silent.fiveghost.guide.http.httputils.RetrofitUtils;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -16,11 +17,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.RequestBody;
+import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
 
-import static com.silent.fiveghost.guide.utils.GsonUtils.*;
-import static com.silent.fiveghost.guide.utils.TypeUtils.*;
+import static com.silent.fiveghost.guide.utils.GsonUtils.fromJson;
+import static com.silent.fiveghost.guide.utils.TypeUtils.getType;
 
 
 /**
@@ -113,7 +114,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
     }
 
     @Override
-    public void up(Context context, String url, Map<String, RequestBody> files, final CallBack<T> callBack) {
+    public void up(Context context, String url, List<MultipartBody.Part> files, final CallBack<T> callBack) {
         if (TextUtils.isEmpty(url) || files == null || files.size() == 0) {
             throw new NullPointerException("url=\"" + url + "\" map = null Or map.size() = 0");
         }

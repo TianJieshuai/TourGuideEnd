@@ -4,13 +4,14 @@ import com.silent.fiveghost.guide.http.httpapis.CallBack;
 import com.silent.fiveghost.guide.http.httpfactor.HttpFactor;
 import com.silent.fiveghost.guide.http.httprequest.RetrofitHttpRequest;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
-import okhttp3.RequestBody;
+import okhttp3.MultipartBody;
 
 /**
  * 网络层
@@ -35,7 +36,7 @@ public class HttpModel {
         HttpFactor.getInstance().create(RetrofitHttpRequest.class).sendPost(null, url, map, callBack);
     }
 
-    public void up(String url, Map<String, RequestBody> files, CallBack callBack) {
+    public void up(String url, List<MultipartBody.Part> files, CallBack callBack) {
         HttpFactor.getInstance().create(RetrofitHttpRequest.class).up(null, url, files, callBack);
     }
 }

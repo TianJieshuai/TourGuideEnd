@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130px"
-    android:background="#34393F"
-    >
+    android:background="#34393F">
+
     <ImageView
+        android:id="@+id/finish_toolbar"
         android:layout_width="35px"
         android:layout_height="35px"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="70px"
-        android:id="@+id/finish_toolbar"
         android:layout_marginLeft="30px"
-        />
+        android:layout_marginTop="70px"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
+        android:id="@+id/robbing_toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="260px"
+        android:layout_marginTop="70px"
         android:text="路线详情"
         android:textColor="#fff"
-        android:id="@+id/robbing_toolbar"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="70px"
-        android:layout_marginLeft="260px"
-        android:textSize="30px"
-        />
+        android:textSize="30px" />
 
 
 </LinearLayout>

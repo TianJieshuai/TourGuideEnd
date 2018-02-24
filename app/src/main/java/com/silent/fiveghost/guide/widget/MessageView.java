@@ -66,7 +66,11 @@ public class MessageView extends RelativeLayout implements View.OnClickListener 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void sendMessage(MessageEvent event) {
         if (BuildConfig.DEBUG) Log.d("接收到消息数量", event.toString());
-        messageCount.setText(event.messageCount + "");
+        if (event.messageCount < 100) {
+            messageCount.setText(event.messageCount + "");
+        } else {
+            messageCount.setText("99+");
+        }
     }
 
     @Override

@@ -2,34 +2,41 @@ package com.silent.fiveghost.guide.ui.test;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.beans.BaseBean;
 import com.silent.fiveghost.guide.beans.upload.Upload;
+import com.silent.fiveghost.guide.event.PostDataEvent;
 import com.silent.fiveghost.guide.event.UpDataEvent;
 import com.silent.fiveghost.guide.utils.GsonUtils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
+import static com.silent.fiveghost.guide.config.Concat.CLEAN_URL;
 import static com.silent.fiveghost.guide.config.Concat.UPIMAGE_URL;
 
 public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String access_token = "c4lXtk9MXpcX5_7Ud4GMSfT_8M4ulJpk";
+    private static final String UPIMAGE_URLs = UPIMAGE_URL;
     private EditText access_token_up_test;
     private Button up_test;
-    private TextView show;
+    private EditText show;
     private EditText clean_mobile_test;
     private Button clean_test;
     private EditText send_mobile_test;
@@ -175,7 +182,14 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     private void show(Object obj) {
         Log.e("TestActivity: ", obj.toString());
-        show.setText(GsonUtils.toJson(obj) + "\n\n" + obj.toString());
+        if (obj instanceof BaseBean) {
+            show.setText("j s o n : " + GsonUtils.toJson(obj) +
+                    "\n\n toString: " + obj.toString() +
+                    "\n\n c o d e : " + ((BaseBean) obj).getErrcode() +
+                    "\n\n m  s  g : " + ((BaseBean) obj).getErrmsg());
+        } else {
+            show.setText(GsonUtils.toJson(obj) + "\n\n" + obj.toString());
+        }
     }
 
     @Override
@@ -254,25 +268,46 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void 通用验证码验证清除接口() {
+        String mobile = clean_mobile_test.getText().toString().trim();
+        if (TextUtils.isEmpty(mobile)) {
+            Toast.makeText(this, "mobile不能为空", Toast.LENGTH_SHORT).show();
+            show("mobile不能为空");
+            return;
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("mobile", mobile);
+        sendPost(new PostDataEvent<BaseBean>(CLEAN_URL, map) {
+            @Override
+            public void onSuccess(BaseBean booleanBaseBean) {
+                show(booleanBaseBean);
+            }
 
+            @Override
+            public void onSuccessOk(BaseBean booleanBaseBean) {
+
+            }
+
+            @Override
+            public void onFailure(Throwable e) {
+                show(e);
+            }
+        });
     }
 
     private void 上传图片() {
-        Map<String, RequestBody> files = new HashMap<>();
+        List<MultipartBody.Part> files = new ArrayList<>();
         boolean equals = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
         File file = null;
         if (equals) {
             String s = Environment.getExternalStorageDirectory().getAbsolutePath() + "/shareimg.png";
             file = new File(s);
         }
-        files.put("access_token", RequestBody.create(MediaType.parse("text"), access_token));
-        files.put("file" + 1 + "\"; filename=\"" + file.getName(), RequestBody.create(MediaType.parse("image/png"), file));
+        files.add(MultipartBody.Part.createFormData("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file)));
 
-        up(new UpDataEvent<BaseBean<Upload>>(UPIMAGE_URL, null, files) {
+        up(new UpDataEvent<BaseBean<Upload>>(UPIMAGE_URL, access_token, files) {
 
             @Override
             public void onSuccess(BaseBean<Upload> uploadBaseBean) {
-                super.onSuccess(uploadBaseBean);
                 show(uploadBaseBean);
             }
 

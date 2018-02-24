@@ -4,9 +4,10 @@ import android.content.Context;
 
 import com.silent.fiveghost.guide.http.httpapis.CallBack;
 
+import java.util.List;
 import java.util.Map;
 
-import okhttp3.RequestBody;
+import okhttp3.MultipartBody;
 
 /**
  * Created by shuaiJie on 2017/9/21.
@@ -44,5 +45,5 @@ public interface HttpRequest<T> {
      * @param files    文件
      * @param callBack 回调监听
      */
-    void up(Context context, String url, Map<String, RequestBody> files, CallBack<T> callBack);
+    void up(Context context, String url, List<MultipartBody.Part> files, CallBack<T> callBack);
 }

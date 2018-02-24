@@ -9,17 +9,19 @@ import com.silent.fiveghost.guide.http.httpapis.CallBack;
 import com.silent.fiveghost.guide.http.httputils.OkHttpUtils;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MultipartBody;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import static com.silent.fiveghost.guide.utils.GsonUtils.*;
-import static com.silent.fiveghost.guide.utils.InitMap.*;
-import static com.silent.fiveghost.guide.utils.TypeUtils.*;
+import static com.silent.fiveghost.guide.utils.GsonUtils.fromJson;
+import static com.silent.fiveghost.guide.utils.InitMap.initOkHttpMap;
+import static com.silent.fiveghost.guide.utils.InitMap.initStringMap;
+import static com.silent.fiveghost.guide.utils.TypeUtils.getType;
 
 /**
  * Created by shuaiJie on 2017/9/22.
@@ -214,8 +216,7 @@ public class OkHttpRequest<T> implements HttpRequest<T> {
     }
 
     @Override
-    public void up(Context context, String url, Map<String, RequestBody> files, CallBack<T> callBack) {
+    public void up(Context context, String url, List<MultipartBody.Part> files, CallBack<T> callBack) {
 
     }
-
 }

@@ -24,7 +24,7 @@ public interface Concat {
     /*注册接口-s*/
     String SIGNUP_URL = "http://120.79.137.110:80/api/v1/auth/signup";
     /*上传图片*/
-    String UPIMAGE_URL = "http://120.79.137.110/api/v1/user/image-upload";
+    String UPIMAGE_URL = "http://120.79.137.110:83/api/v1/user/image-upload?access_token=";
 
 
     String FILE_NAME = "";

@@ -17,7 +17,8 @@
             android:layout_centerInParent="true"
             android:paddingTop="40px"
             android:text="订单"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="35px" />
 
         <com.silent.fiveghost.guide.widget.MessageView
             android:layout_width="wrap_content"

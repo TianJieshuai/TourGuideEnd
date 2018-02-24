@@ -1,8 +1,8 @@
 package com.silent.fiveghost.guide.event;
 
-import java.util.Map;
+import java.util.List;
 
-import okhttp3.RequestBody;
+import okhttp3.MultipartBody;
 
 /**
  * Created by shuaiJie on 2018/1/28.
@@ -31,22 +31,23 @@ import okhttp3.RequestBody;
  */
 
 public abstract class UpDataEvent<T> extends DataEvent<T> {
-    private Map<String, RequestBody> files;
+    private List<MultipartBody.Part> files;
 
-    public UpDataEvent(String url, Map<String, String> map, Map<String, RequestBody> files) {
-        this(url, map, files, false);
+    public UpDataEvent(String url, String access_token, List<MultipartBody.Part> files) {
+        this(url, access_token, files, false);
     }
 
-    public UpDataEvent(String url, Map<String, String> map, Map<String, RequestBody> files, boolean isPreserve) {
-        super(url, map, isPreserve);
+    public UpDataEvent(String url, String access_token, List<MultipartBody.Part> files, boolean isPreserve) {
+        super(url, null, isPreserve);
+        super.url += access_token;
         this.files = files;
     }
 
-    public void setFiles(Map<String, RequestBody> files) {
+    public void setFiles(List<MultipartBody.Part> files) {
         this.files = files;
     }
 
-    public Map<String, RequestBody> getFiles() {
+    public List<MultipartBody.Part> getFiles() {
         return files;
     }
 }

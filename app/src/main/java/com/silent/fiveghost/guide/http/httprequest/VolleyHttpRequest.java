@@ -14,9 +14,10 @@ import com.silent.fiveghost.guide.http.httpapis.CallBack;
 import com.silent.fiveghost.guide.http.httputils.VolleyUtils;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Map;
 
-import okhttp3.RequestBody;
+import okhttp3.MultipartBody;
 
 import static com.silent.fiveghost.guide.utils.GsonUtils.fromJson;
 import static com.silent.fiveghost.guide.utils.InitMap.initStringMap;
@@ -197,8 +198,7 @@ public class VolleyHttpRequest<T> implements HttpRequest<T> {
     }
 
     @Override
-    public void up(Context context, String url, Map<String, RequestBody> files, CallBack<T> callBack) {
+    public void up(Context context, String url, List<MultipartBody.Part> files, CallBack<T> callBack) {
 
     }
-
 }
