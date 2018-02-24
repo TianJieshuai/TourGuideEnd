@@ -1,373 +1,426 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!--通用验证码验证清除接口-->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="300px"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_route_yello">
 
+        <TextView
+            android:id="@+id/show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <!--通用验证码验证清除接口-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/clean_mobile_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="mobile" />
-
-            <Button
-                android:id="@+id/clean_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="通用验证码验证清除接口" />
-        </LinearLayout>
-
-        <!--通用验证码接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/send_mobile_test"
-                    android:layout_width="0dp"
+                    android:id="@+id/clean_mobile_test"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:hint="mobile" />
 
-                <EditText
-                    android:id="@+id/send_module_test"
-                    android:layout_width="0dp"
+                <Button
+                    android:id="@+id/clean_test"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="module" />
-
-                <EditText
-                    android:id="@+id/send_imei_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="imei" />
+                    android:text="通用验证码验证清除接口" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/send_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="通用验证码接口" />
-        </LinearLayout>
-
-        <!--通用验证码验证接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/verify_mobile_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="mobile" />
-
-                <EditText
-                    android:id="@+id/verify_module_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="module" />
-
-                <EditText
-                    android:id="@+id/verify_code_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="code" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/verify_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="通用验证码验证接口" />
-        </LinearLayout>
-
-        <!--用户基本信息接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/access_token_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="mobile" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/info_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="用户基本信息接口" />
-        </LinearLayout>
-
-        <!--注册接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
+            <!--通用验证码接口-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/tel_signup_test"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="手机号" />
+                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/password_signup_test"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="密码" />
+                    <EditText
+                        android:id="@+id/send_mobile_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="mobile" />
 
-                <EditText
-                    android:id="@+id/category_signup_test"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="用户类型 1导游 2游客 3旅行社" />
+                    <EditText
+                        android:id="@+id/send_module_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="module" />
 
-                <EditText
-                    android:id="@+id/code_signup_test"
+                    <EditText
+                        android:id="@+id/send_imei_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="imei" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/send_test"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="验证码" />
+                    android:layout_height="wrap_content"
+                    android:text="通用验证码接口" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/signup_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="注册接口" />
-        </LinearLayout>
-
-        <!--登录接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
+            <!--通用验证码验证接口-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/tel_login_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="手机号" />
-
-                <EditText
-                    android:id="@+id/password_login_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="密码" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/login_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="登录接口" />
-        </LinearLayout>
-
-        <!--忘记密码接口-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/tel_reset_password_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="手机号" />
-
-                <EditText
-                    android:id="@+id/password_reset_password_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="密码" />
-
-                <EditText
-                    android:id="@+id/code_reset_password_test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="验证码" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/reset_password_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="忘记密码接口" />
-        </LinearLayout>
-
-        <!--旅游线路收藏列表-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/access_token_favourite_test"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="access_token" />
+                    android:layout_height="wrap_content">
 
+                    <EditText
+                        android:id="@+id/verify_mobile_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="mobile" />
+
+                    <EditText
+                        android:id="@+id/verify_module_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="module" />
+
+                    <EditText
+                        android:id="@+id/verify_code_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="code" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/verify_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="通用验证码验证接口" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/favourite_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="旅游线路收藏列表" />
-        </LinearLayout>
-
-        <!--旅游线路取消收藏-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
+            <!--用户基本信息接口-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/access_token_favourite_del_test"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="access_token" />
+                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/ids_favourite_del_test"
+                    <EditText
+                        android:id="@+id/access_token_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="mobile" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/info_test"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="ids" />
-
+                    android:layout_height="wrap_content"
+                    android:text="用户基本信息接口" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/favourite_del_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="旅游线路取消收藏" />
-        </LinearLayout>
-
-        <!--旅游线路添加收藏-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/shape_route_yello"
-            android:orientation="vertical">
-
+            <!--注册接口-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/access_token_favourite_add_test"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="access_token" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/route_id_favourite_add_test"
+                    <EditText
+                        android:id="@+id/tel_signup_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="手机号" />
+
+                    <EditText
+                        android:id="@+id/password_signup_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="密码" />
+
+                    <EditText
+                        android:id="@+id/category_signup_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="用户类型 1导游 2游客 3旅行社" />
+
+                    <EditText
+                        android:id="@+id/code_signup_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="验证码" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/signup_test"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint=" 旅游线路ID " />
-
+                    android:layout_height="wrap_content"
+                    android:text="注册接口" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/favourite_add_test"
+            <!--登录接口-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="旅游线路添加收藏" />
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tel_login_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="手机号" />
+
+                    <EditText
+                        android:id="@+id/password_login_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="密码" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/login_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="登录接口" />
+            </LinearLayout>
+
+            <!--忘记密码接口-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/tel_reset_password_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="手机号" />
+
+                    <EditText
+                        android:id="@+id/password_reset_password_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="密码" />
+
+                    <EditText
+                        android:id="@+id/code_reset_password_test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="验证码" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/reset_password_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="忘记密码接口" />
+            </LinearLayout>
+
+            <!--旅游线路收藏列表-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/access_token_favourite_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="access_token" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/favourite_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="旅游线路收藏列表" />
+            </LinearLayout>
+
+            <!--旅游线路取消收藏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/access_token_favourite_del_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="access_token" />
+
+                    <EditText
+                        android:id="@+id/ids_favourite_del_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="ids" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/favourite_del_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="旅游线路取消收藏" />
+            </LinearLayout>
+
+            <!--旅游线路添加收藏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/access_token_favourite_add_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="access_token" />
+
+                    <EditText
+                        android:id="@+id/route_id_favourite_add_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint=" 旅游线路ID " />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/favourite_add_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="旅游线路添加收藏" />
+            </LinearLayout>
+
+            <!--上传-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_route_yello"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/access_token_up_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:hint="access_token" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="图片" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/up_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="用户图片上传接口" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

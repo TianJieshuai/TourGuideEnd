@@ -16,6 +16,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
 import static com.silent.fiveghost.guide.utils.GsonUtils.*;
@@ -37,7 +38,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
     @Override
     public void sendGet(final Context context, String url, Map<String, String> map, final CallBack<T> callBack) {
         if (TextUtils.isEmpty(url)) {
-            new NullPointerException("url=\"" + url + "\"");
+            throw new NullPointerException("url=\"" + url + "\"");
         }
         /**
          * 使用RetrofitUtils的create方法创建api接口对象
@@ -52,35 +53,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
         /**
          * 配置被观察者
          */
-        observable.subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull ResponseBody responseBody) {
-                        try {
-                            String string = responseBody.string();
-                            callBack.onSuccess((T) fromJson(string, getType(callBack)));
-                        } catch (IOException e) {
-                            callBack.onFailure(e);
-                        }
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        callBack.onFailure(e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+        disposeObservable(observable, callBack);
 
     }
 
@@ -94,7 +67,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
     @Override
     public void sendGet(Context context, String url, final CallBack<T> callBack) {
         if (TextUtils.isEmpty(url)) {
-            new NullPointerException("url=\"" + url + "\"");
+            throw new NullPointerException("url=\"" + url + "\"");
         }
         /**
          * 使用RetrofitUtils的create方法创建api接口对象
@@ -109,35 +82,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
         /**
          * 配置被观察者
          */
-        observable.subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull ResponseBody responseBody) {
-                        try {
-                            String string = responseBody.string();
-                            callBack.onSuccess((T) fromJson(string, getType(callBack)));
-                        } catch (IOException e) {
-                            callBack.onFailure(e);
-                        }
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        callBack.onFailure(e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
+        disposeObservable(observable, callBack);
     }
 
     /**
@@ -149,7 +94,7 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
     @Override
     public void sendPost(final Context context, String url, Map<String, String> map, final CallBack<T> callBack) {
         if (TextUtils.isEmpty(url) || map == null || map.size() == 0) {
-            new NullPointerException("url=\"" + url + "\" map = null Or map.size() = 0");
+            throw new NullPointerException("url=\"" + url + "\" map = null Or map.size() = 0");
         }
         /**
          * 使用RetrofitUtils的create方法创建api接口对象
@@ -164,6 +109,35 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
         /**
          * 配置被观察者
          */
+        disposeObservable(observable, callBack);
+    }
+
+    @Override
+    public void up(Context context, String url, Map<String, RequestBody> files, final CallBack<T> callBack) {
+        if (TextUtils.isEmpty(url) || files == null || files.size() == 0) {
+            throw new NullPointerException("url=\"" + url + "\" map = null Or map.size() = 0");
+        }
+
+        /**
+         * 使用RetrofitUtils的create方法创建api接口对象
+         */
+        NewsApi newsApi = RetrofitUtils.getInstance().create(NewsApi.class);
+
+        /**
+         * 使用api接口对象发送网络请求 返回被观察者
+         */
+        Observable<ResponseBody> observable = newsApi.up(url, files);
+
+        /**
+         * 配置被观察者
+         */
+        disposeObservable(observable, callBack);
+    }
+
+    /**
+     * 配置被观察者
+     */
+    private void disposeObservable(Observable<ResponseBody> observable, final CallBack<T> callBack) {
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -194,4 +168,6 @@ public class RetrofitHttpRequest<T> implements HttpRequest<T> {
                     }
                 });
     }
+
+
 }

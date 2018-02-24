@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
+import okhttp3.RequestBody;
 
 /**
  * 网络层
@@ -32,5 +33,9 @@ public class HttpModel {
 
     public void sendPost(String url, Map<String, String> map, CallBack callBack) {
         HttpFactor.getInstance().create(RetrofitHttpRequest.class).sendPost(null, url, map, callBack);
+    }
+
+    public void up(String url, Map<String, RequestBody> files, CallBack callBack) {
+        HttpFactor.getInstance().create(RetrofitHttpRequest.class).up(null, url, files, callBack);
     }
 }

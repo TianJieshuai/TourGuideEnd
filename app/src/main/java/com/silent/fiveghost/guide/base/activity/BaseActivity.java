@@ -23,6 +23,7 @@ import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.event.DataEvent;
 import com.silent.fiveghost.guide.event.GetDataEvent;
 import com.silent.fiveghost.guide.event.PostDataEvent;
+import com.silent.fiveghost.guide.event.UpDataEvent;
 import com.silent.fiveghost.guide.utils.GsonUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -454,10 +455,17 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      * *****************************************************************************************
      */
     protected void sendPost(PostDataEvent event) {
+        // POST请求
         sendHttp(event);
     }
 
     protected void sendGet(GetDataEvent event) {
+        // GET请求
+        sendHttp(event);
+    }
+
+    protected void up(UpDataEvent event) {
+        // 上传
         sendHttp(event);
     }
 

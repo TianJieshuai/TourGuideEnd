@@ -3,11 +3,14 @@ package com.silent.fiveghost.guide.http.httpapis;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PartMap;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 
@@ -45,4 +48,13 @@ public interface NewsApi {
     @FormUrlEncoded
     @POST
     Observable<ResponseBody> sendPost(@Url String url, @FieldMap Map<String, String> map);
+
+    /**
+     * @param url 使用注解替换基础地址和网络接口
+     *            也可以使用@Path 填充到注解的参数,一般为网络接口的项目路径/项目名 注意是用path不能动态替换基础地址
+     * @return 返回被观察者
+     */
+    @Multipart
+    @POST
+    Observable<ResponseBody> up(@Url String url, @PartMap Map<String, RequestBody> files);
 }

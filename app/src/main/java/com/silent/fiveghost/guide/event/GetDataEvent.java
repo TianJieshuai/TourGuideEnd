@@ -31,11 +31,11 @@ import java.util.Map;
 public abstract class GetDataEvent<T> extends DataEvent<T> {
 
     public GetDataEvent(String url, Map<String, String> map) {
-        super(url, map);
+        this(url, map, false);
     }
 
     public GetDataEvent(String url) {
-        super(url);
+        this(url, null, false);
     }
 
     public GetDataEvent(String url, Map<String, String> map, boolean isPreserve) {

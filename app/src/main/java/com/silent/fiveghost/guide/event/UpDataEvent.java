@@ -2,6 +2,8 @@ package com.silent.fiveghost.guide.event;
 
 import java.util.Map;
 
+import okhttp3.RequestBody;
+
 /**
  * Created by shuaiJie on 2018/1/28.
  * .                       .::::.
@@ -28,13 +30,23 @@ import java.util.Map;
  * 电子邮箱：510889082@qq.com
  */
 
-public abstract class PostDataEvent<T> extends DataEvent<T> {
+public abstract class UpDataEvent<T> extends DataEvent<T> {
+    private Map<String, RequestBody> files;
 
-    public PostDataEvent(String url, Map<String, String> map) {
-        this(url, map, false);
+    public UpDataEvent(String url, Map<String, String> map, Map<String, RequestBody> files) {
+        this(url, map, files, false);
     }
 
-    public PostDataEvent(String url, Map<String, String> map, boolean isPreserve) {
+    public UpDataEvent(String url, Map<String, String> map, Map<String, RequestBody> files, boolean isPreserve) {
         super(url, map, isPreserve);
+        this.files = files;
+    }
+
+    public void setFiles(Map<String, RequestBody> files) {
+        this.files = files;
+    }
+
+    public Map<String, RequestBody> getFiles() {
+        return files;
     }
 }

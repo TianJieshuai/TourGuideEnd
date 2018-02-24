@@ -2,6 +2,7 @@ package com.silent.fiveghost.guide.presenter;
 
 import com.silent.fiveghost.guide.event.GetDataEvent;
 import com.silent.fiveghost.guide.event.PostDataEvent;
+import com.silent.fiveghost.guide.event.UpDataEvent;
 import com.silent.fiveghost.guide.model.HttpModel;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -38,5 +39,13 @@ public class HttpPresenter {
             model.sendGet(event.getUrl(), event.getMap(), event);
         else
             model.sendGet(event.getUrl(), event);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void up(UpDataEvent event) {
+        /*
+         * 上传事件
+         */
+        model.up(event.getUrl(), event.getFiles(), event);
     }
 }

@@ -1,5 +1,6 @@
 package com.silent.fiveghost.guide.base.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,9 +14,11 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.silent.fiveghost.guide.R;
+import com.silent.fiveghost.guide.base.activity.BaseActivity;
 import com.silent.fiveghost.guide.event.DataEvent;
 import com.silent.fiveghost.guide.event.GetDataEvent;
 import com.silent.fiveghost.guide.event.PostDataEvent;
+import com.silent.fiveghost.guide.event.UpDataEvent;
 import com.silent.fiveghost.guide.utils.GsonUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -214,7 +217,7 @@ public abstract class BaseFragment extends Fragment {
         // 初始化基础控件
         initViews();
         initData(getArguments());
-        
+
         //检测加载头布局
         checkLoadHeader();
         //检测加载身体布局
@@ -315,14 +318,38 @@ public abstract class BaseFragment extends Fragment {
      * *****************************************************************************************
      */
     protected void sendPost(PostDataEvent event) {
+        // POST请求
         sendHttp(event);
     }
 
     protected void sendGet(GetDataEvent event) {
+        // GET请求
+        sendHttp(event);
+    }
+
+    protected void up(UpDataEvent event) {
+        // 上传
         sendHttp(event);
     }
 
     private void sendHttp(DataEvent event) {
         EventBus.getDefault().post(event);
+    }
+
+    /**
+     * ***************************************************************************************
+     * 页面跳转 ********************************************************************************
+     * *****************************************************************************************
+     *
+     * @param clz
+     */
+    public <T extends BaseActivity> void startActivity(Class<T> clz) {
+        // 单跳转
+        super.startActivity(new Intent(getContext(), clz));
+    }
+
+    public <T extends BaseActivity> void startActivityForResult(Class<T> clz, int requestCode) {
+        // 带回传跳转
+        super.startActivityForResult(new Intent(getContext(), clz), requestCode);
     }
 }
