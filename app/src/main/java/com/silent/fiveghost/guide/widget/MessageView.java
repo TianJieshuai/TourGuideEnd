@@ -13,6 +13,7 @@ import com.silent.fiveghost.guide.BuildConfig;
 import com.silent.fiveghost.guide.R;
 import com.silent.fiveghost.guide.event.MessageEvent;
 import com.silent.fiveghost.guide.ui.message.MessageActivity;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -58,6 +59,7 @@ public class MessageView extends RelativeLayout implements View.OnClickListener 
     public MessageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         View inflate = inflate(getContext(), R.layout.message_view, this);
+        AutoUtils.auto(inflate);
         messageCount = inflate.findViewById(R.id.messageCount);
         EventBus.getDefault().register(this);
         setOnClickListener(this);

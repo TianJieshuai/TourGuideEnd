@@ -1,12 +1,17 @@
 package com.silent.fiveghost.guide.ui.test;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.silent.fiveghost.guide.R;
@@ -69,6 +74,8 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     private EditText access_token_favourite_add_test;
     private EditText route_id_favourite_add_test;
     private Button favourite_add_test;
+    private View button_show;
+    private PopupWindow window;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +96,10 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        show = findViewById(R.id.show);
+        button_show = findViewById(R.id.button_show);
+        button_show.setOnClickListener(this);
+        initPopup();
+        show.setOnClickListener(this);
         /* *************************************************************************************
          * 上传图片
          */
@@ -180,6 +190,13 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
         favourite_add_test.setOnClickListener(this);
     }
 
+    public void initPopup() {
+        window = new PopupWindow(LayoutInflater.from(this).inflate(R.layout.test_popup, null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        show = window.getContentView().findViewById(R.id.show);
+        window.setBackgroundDrawable(new ColorDrawable(0x00000000));
+        window.setFocusable(true);
+    }
+
     private void show(Object obj) {
         Log.e("TestActivity: ", obj.toString());
         if (obj instanceof BaseBean) {
@@ -190,11 +207,20 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
         } else {
             show.setText(GsonUtils.toJson(obj) + "\n\n" + obj.toString());
         }
+        onClick(show);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.show:
+            case R.id.button_show:
+                if (!window.isShowing()) {
+                    window.showAtLocation(base, Gravity.CENTER, 0, 0);
+                } else {
+                    window.dismiss();
+                }
+                break;
             case R.id.up_test:
                 上传图片();
                 break;
