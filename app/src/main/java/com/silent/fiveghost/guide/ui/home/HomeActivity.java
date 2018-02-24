@@ -108,6 +108,7 @@ public class HomeActivity extends BaseActivity {
                     EventBus.getDefault().removeAllStickyEvents();
                     EventBus.getDefault().postSticky(new MessageEvent(x));
                 }
+                EventBus.getDefault().postSticky(new MessageEvent(0));
             }
         });
     }
