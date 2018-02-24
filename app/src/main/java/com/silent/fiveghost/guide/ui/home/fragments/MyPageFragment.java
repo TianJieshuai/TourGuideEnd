@@ -98,17 +98,12 @@ public class MyPageFragment extends BaseFragment implements View.OnClickListener
     public void alphaChanging(float alpha) {
 
         mPersion_toolbar.setVisibility(View.VISIBLE);
-        float s = (1 - alpha) * 1;
+        float s = (1 - alpha) * 3;
         if (s > 1) {
             s = 1;
 
-            mTitle1.setVisibility(View.GONE);
-            tp1.setVisibility(View.GONE);
         }
-        else {
-            mTitle1.setVisibility(View.VISIBLE);
-            tp1.setVisibility(View.VISIBLE);
-        }
+
         mPersion_toolbar.setAlpha(s);
 
     }
