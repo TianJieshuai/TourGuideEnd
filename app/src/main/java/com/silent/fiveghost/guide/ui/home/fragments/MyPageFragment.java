@@ -34,7 +34,6 @@ public class MyPageFragment extends BaseFragment implements View.OnClickListener
     private AutoRelativeLayout mPersion_toolbar;
     private XScrollView mPersonalScroll;
     private TextView mTitle1;
-    private AutoRelativeLayout tp1;
 
     @Override
     protected void initData(Bundle arguments) {
@@ -53,7 +52,6 @@ public class MyPageFragment extends BaseFragment implements View.OnClickListener
         mSetting = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.mSetting);
         mPersonalScroll = (com.silent.fiveghost.guide.utils.XScrollView) findViewById(R.id.mPersonalScroll);
         mTitle1 = (TextView) findViewById(R.id.mTitle1);
-        tp1 = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.tp1);
         mPersion_toolbar = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.mPersion_toolbar);
         mRoute = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.mRoute);
         help_center = (com.zhy.autolayout.AutoRelativeLayout) findViewById(R.id.help_center);
